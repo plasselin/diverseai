@@ -1,0 +1,1424 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  NewProductComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/ecommerce/newproduct/newproduct.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./newproduct.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./newproduct.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#buttonEl" >buttonEl</a>
+                            </li>
+                            <li>
+                                <a href="#categoryOptions" >categoryOptions</a>
+                            </li>
+                            <li>
+                                <a href="#colorOptions" >colorOptions</a>
+                            </li>
+                            <li>
+                                <a href="#product" >product</a>
+                            </li>
+                            <li>
+                                <a href="#showRemove" >showRemove</a>
+                            </li>
+                            <li>
+                                <a href="#text" >text</a>
+                            </li>
+                            <li>
+                                <a href="#uploadedFiles" >uploadedFiles</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onChipRemove" >onChipRemove</a>
+                            </li>
+                            <li>
+                                <a href="#onColorSelect" >onColorSelect</a>
+                            </li>
+                            <li>
+                                <a href="#onImageMouseLeave" >onImageMouseLeave</a>
+                            </li>
+                            <li>
+                                <a href="#onImageMouseOver" >onImageMouseOver</a>
+                            </li>
+                            <li>
+                                <a href="#onUpload" >onUpload</a>
+                            </li>
+                            <li>
+                                <a href="#removeImage" >removeImage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onChipRemove"></a>
+                    <span class="name">
+                        <span ><b>onChipRemove</b></span>
+                        <a href="#onChipRemove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onChipRemove(item: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onColorSelect"></a>
+                    <span class="name">
+                        <span ><b>onColorSelect</b></span>
+                        <a href="#onColorSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onColorSelect(color: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="63"
+                                    class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>color</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onImageMouseLeave"></a>
+                    <span class="name">
+                        <span ><b>onImageMouseLeave</b></span>
+                        <a href="#onImageMouseLeave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onImageMouseLeave(file: <a href="../interfaces/Image.html" target="_self">Image</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Image.html" target="_self" >Image</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onImageMouseOver"></a>
+                    <span class="name">
+                        <span ><b>onImageMouseOver</b></span>
+                        <a href="#onImageMouseOver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onImageMouseOver(file: <a href="../interfaces/Image.html" target="_self">Image</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Image.html" target="_self" >Image</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onUpload"></a>
+                    <span class="name">
+                        <span ><b>onUpload</b></span>
+                        <a href="#onUpload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onUpload(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="69"
+                                    class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeImage"></a>
+                    <span class="name">
+                        <span ><b>removeImage</b></span>
+                        <a href="#removeImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeImage(file: <a href="../interfaces/Image.html" target="_self">Image</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Image.html" target="_self" >Image</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buttonEl"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>buttonEl</b></span>
+                        <a href="#buttonEl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>QueryList&lt;ElementRef&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChildren(&#x27;buttonEl&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categoryOptions"></a>
+                    <span class="name">
+                        <span ><b>categoryOptions</b></span>
+                        <a href="#categoryOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;Sneakers&#x27;, &#x27;Apparel&#x27;, &#x27;Socks&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="colorOptions"></a>
+                    <span class="name">
+                        <span ><b>colorOptions</b></span>
+                        <a href="#colorOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+        { name: &#x27;Black&#x27;, background: &#x27;bg-gray-900&#x27; },
+        { name: &#x27;Orange&#x27;, background: &#x27;bg-orange-500&#x27; },
+        { name: &#x27;Navy&#x27;, background: &#x27;bg-blue-500&#x27; },
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="product"></a>
+                    <span class="name">
+                        <span ><b>product</b></span>
+                        <a href="#product"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Product.html" target="_self" >Product</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        name: &#x27;&#x27;,
+        price: &#x27;&#x27;,
+        code: &#x27;&#x27;,
+        sku: &#x27;&#x27;,
+        status: &#x27;Draft&#x27;,
+        tags: [&#x27;Nike&#x27;, &#x27;Sneaker&#x27;],
+        category: &#x27;Sneakers&#x27;,
+        colors: [&#x27;Blue&#x27;],
+        stock: &#x27;Sneakers&#x27;,
+        inStock: true,
+        description: &#x27;&#x27;,
+        images: [],
+    }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showRemove"></a>
+                    <span class="name">
+                        <span ><b>showRemove</b></span>
+                        <a href="#showRemove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="text"></a>
+                    <span class="name">
+                        <span ><b>text</b></span>
+                        <a href="#text"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadedFiles"></a>
+                    <span class="name">
+                        <span ><b>uploadedFiles</b></span>
+                        <a href="#uploadedFiles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/components/ecommerce/newproduct/newproduct.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ViewChildren, QueryList, ElementRef } from &#x27;@angular/core&#x27;;
+
+interface Product {
+    name: string;
+    price: string;
+    code: string;
+    sku: string;
+    status: string;
+    tags: string[];
+    category: string;
+    colors: string[];
+    stock: string;
+    inStock: boolean;
+    description: string;
+    images: Image[];
+}
+
+interface Image {
+    name: string;
+    objectURL: string;
+}
+
+@Component({
+    templateUrl: &#x27;./newproduct.component.html&#x27;,
+    styleUrls: [&#x27;./newproduct.component.scss&#x27;],
+})
+export class NewProductComponent {
+    @ViewChildren(&#x27;buttonEl&#x27;) buttonEl!: QueryList&lt;ElementRef&gt;;
+
+    text: string &#x3D; &#x27;&#x27;;
+
+    categoryOptions &#x3D; [&#x27;Sneakers&#x27;, &#x27;Apparel&#x27;, &#x27;Socks&#x27;];
+
+    colorOptions: any[] &#x3D; [
+        { name: &#x27;Black&#x27;, background: &#x27;bg-gray-900&#x27; },
+        { name: &#x27;Orange&#x27;, background: &#x27;bg-orange-500&#x27; },
+        { name: &#x27;Navy&#x27;, background: &#x27;bg-blue-500&#x27; },
+    ];
+
+    product: Product &#x3D; {
+        name: &#x27;&#x27;,
+        price: &#x27;&#x27;,
+        code: &#x27;&#x27;,
+        sku: &#x27;&#x27;,
+        status: &#x27;Draft&#x27;,
+        tags: [&#x27;Nike&#x27;, &#x27;Sneaker&#x27;],
+        category: &#x27;Sneakers&#x27;,
+        colors: [&#x27;Blue&#x27;],
+        stock: &#x27;Sneakers&#x27;,
+        inStock: true,
+        description: &#x27;&#x27;,
+        images: [],
+    };
+
+    uploadedFiles: any[] &#x3D; [];
+
+    showRemove: boolean &#x3D; false;
+
+    onChipRemove(item: string) {
+        this.product.tags &#x3D; this.product.tags.filter((i) &#x3D;&gt; i !&#x3D;&#x3D; item);
+    }
+
+    onColorSelect(color: string) {
+        this.product.colors.indexOf(color) &#x3D;&#x3D; -1
+            ? this.product.colors.push(color)
+            : this.product.colors.splice(this.product.colors.indexOf(color), 1);
+    }
+
+    onUpload(event: any) {
+        for (let file of event.files) {
+            this.product.images.push(file);
+        }
+    }
+
+    onImageMouseOver(file: Image) {
+        this.buttonEl.toArray().forEach((el) &#x3D;&gt; {
+            el.nativeElement.id &#x3D;&#x3D;&#x3D; file.name
+                ? (el.nativeElement.style.display &#x3D; &#x27;flex&#x27;)
+                : null;
+        });
+    }
+
+    onImageMouseLeave(file: Image) {
+        this.buttonEl.toArray().forEach((el) &#x3D;&gt; {
+            el.nativeElement.id &#x3D;&#x3D;&#x3D; file.name
+                ? (el.nativeElement.style.display &#x3D; &#x27;none&#x27;)
+                : null;
+        });
+    }
+
+    removeImage(file: Image) {
+        this.product.images &#x3D; this.product.images.filter((i) &#x3D;&gt; i !&#x3D;&#x3D; file);
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;span class&#x3D;&quot;block text-900 font-bold text-xl mb-4&quot;&gt;Create Product&lt;/span&gt;
+    &lt;div class&#x3D;&quot;grid grid-nogutter flex-wrap gap-3 p-fluid&quot;&gt;
+        &lt;div class&#x3D;&quot;col-12 lg:col-8&quot;&gt;
+            &lt;div class&#x3D;&quot;grid formgrid&quot;&gt;
+                &lt;div class&#x3D;&quot;col-12 field&quot;&gt;
+                    &lt;input
+                        pInputText
+                        type&#x3D;&quot;text&quot;
+                        placeholder&#x3D;&quot;Product Name&quot;
+                        label&#x3D;&quot;Product Name&quot;
+                        [(ngModel)]&#x3D;&quot;product.name&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-4 field&quot;&gt;
+                    &lt;input
+                        pInputText
+                        type&#x3D;&quot;text&quot;
+                        placeholder&#x3D;&quot;Price&quot;
+                        label&#x3D;&quot;Price&quot;
+                        [(ngModel)]&#x3D;&quot;product.price&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-4 field&quot;&gt;
+                    &lt;input
+                        pInputText
+                        type&#x3D;&quot;text&quot;
+                        placeholder&#x3D;&quot;Product Code&quot;
+                        label&#x3D;&quot;Product Code&quot;
+                        [(ngModel)]&#x3D;&quot;product.code&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-4 field&quot;&gt;
+                    &lt;input
+                        pInputText
+                        type&#x3D;&quot;text&quot;
+                        placeholder&#x3D;&quot;Product SKU&quot;
+                        label&#x3D;&quot;SKU&quot;
+                        [(ngModel)]&#x3D;&quot;product.sku&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 field&quot;&gt;
+                    &lt;p-editor
+                        [(ngModel)]&#x3D;&quot;product.description&quot;
+                        [style]&#x3D;&quot;{ height: &#x27;250px&#x27; }&quot;
+                    &gt;&lt;/p-editor&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 field&quot;&gt;
+                    &lt;p-fileUpload
+                        #fileUploader
+                        name&#x3D;&quot;demo[]&quot;
+                        url&#x3D;&quot;./upload.php&quot;
+                        (onUpload)&#x3D;&quot;onUpload($event)&quot;
+                        [customUpload]&#x3D;&quot;true&quot;
+                        [multiple]&#x3D;&quot;true&quot;
+                        (onSelect)&#x3D;&quot;onUpload($event)&quot;
+                        accept&#x3D;&quot;image/*&quot;
+                        [showUploadButton]&#x3D;&quot;true&quot;
+                        [showCancelButton]&#x3D;&quot;false&quot;
+                        [auto]&#x3D;&quot;true&quot;
+                        styleClass&#x3D;&quot;border-1 surface-border surface-card border-round&quot;
+                    &gt;
+                        &lt;ng-template pTemplate&#x3D;&quot;content&quot;&gt;
+                            &lt;div
+                                class&#x3D;&quot;h-15rem overflow-y-auto py-3 border-round&quot;
+                                style&#x3D;&quot;cursor: copy&quot;
+                                (click)&#x3D;&quot;
+                                    fileUploader.advancedFileInput.nativeElement.click()
+                                &quot;
+                            &gt;
+                                &lt;div
+                                    *ngIf&#x3D;&quot;!product.images.length&quot;
+                                    class&#x3D;&quot;flex flex-column w-full h-full justify-content-center align-items-center&quot;
+                                &gt;
+                                    &lt;i
+                                        class&#x3D;&quot;pi pi-file text-4xl text-primary&quot;
+                                    &gt;&lt;/i&gt;
+                                    &lt;span
+                                        class&#x3D;&quot;block font-semibold text-900 text-lg mt-3&quot;
+                                        &gt;Drop or select images&lt;/span
+                                    &gt;
+                                &lt;/div&gt;
+                                &lt;div
+                                    class&#x3D;&quot;flex flex-wrap gap-3 border-round&quot;
+                                    *ngIf&#x3D;&quot;product.images.length&quot;
+                                &gt;
+                                    &lt;div
+                                        *ngFor&#x3D;&quot;
+                                            let file of product.images;
+                                            let i &#x3D; index
+                                        &quot;
+                                        class&#x3D;&quot;h-full relative w-7rem h-7rem border-3 border-transparent border-round hover:bg-primary transition-duration-100 cursor-auto&quot;
+                                        (mouseenter)&#x3D;&quot;onImageMouseOver(file)&quot;
+                                        (mouseleave)&#x3D;&quot;onImageMouseLeave(file)&quot;
+                                        style&#x3D;&quot;padding: 1px&quot;
+                                    &gt;
+                                        &lt;img
+                                            [src]&#x3D;&quot;file.objectURL&quot;
+                                            class&#x3D;&quot;w-full h-full border-round shadow-2&quot;
+                                            [alt]&#x3D;&quot;file.name&quot;
+                                        /&gt;
+                                        &lt;button
+                                            [id]&#x3D;&quot;file.name&quot;
+                                            #buttonEl
+                                            pButton
+                                            pRipple
+                                            type&#x3D;&quot;button&quot;
+                                            icon&#x3D;&quot;pi pi-times&quot;
+                                            class&#x3D;&quot;p-button-rounded p-button-primary text-sm absolute justify-content-center align-items-center cursor-pointer w-2rem h-2rem&quot;
+                                            style&#x3D;&quot;
+                                                top: -10px;
+                                                right: -10px;
+                                                display: none;
+                                            &quot;
+                                            (click)&#x3D;&quot;
+                                                $event.stopPropagation();
+                                                removeImage(file)
+                                            &quot;
+                                        &gt;&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/ng-template&gt;
+                    &lt;/p-fileUpload&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;flex-1 w-full lg:w-3 xl:w-4 flex flex-column row-gap-3&quot;&gt;
+            &lt;div class&#x3D;&quot;border-1 surface-border border-round&quot;&gt;
+                &lt;span
+                    class&#x3D;&quot;text-900 font-bold block border-bottom-1 surface-border p-3&quot;
+                    &gt;Publish&lt;/span
+                &gt;
+                &lt;div class&#x3D;&quot;p-3&quot;&gt;
+                    &lt;div
+                        class&#x3D;&quot;bg-gray-100 py-2 px-3 flex align-items-center border-round&quot;
+                    &gt;
+                        &lt;span
+                            class&#x3D;&quot;text-black-alpha-90 font-bold mr-3&quot;
+                            &gt;Status:&lt;/span
+                        &gt;
+                        &lt;span class&#x3D;&quot;text-black-alpha-60 font-semibold&quot;&gt;{{
+                            product.status
+                        }}&lt;/span&gt;
+                        &lt;button
+                            pButton
+                            pRipple
+                            type&#x3D;&quot;button&quot;
+                            icon&#x3D;&quot;pi pi-fw pi-pencil&quot;
+                            class&#x3D;&quot;p-button-rounded p-button-text text-black-alpha-60 ml-auto&quot;
+                        &gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;border-1 surface-border border-round&quot;&gt;
+                &lt;span
+                    class&#x3D;&quot;text-900 font-bold block border-bottom-1 surface-border p-3&quot;
+                    &gt;Tags&lt;/span
+                &gt;
+                &lt;div class&#x3D;&quot;p-3 flex flex-wrap gap-1&quot;&gt;
+                    &lt;p-chip
+                        *ngFor&#x3D;&quot;let tag of product.tags; let i &#x3D; index&quot;
+                        styleClass&#x3D;&quot;mr-2 py-2 px-3 text-900 font-bold surface-card border-1 surface-border&quot;
+                        [style]&#x3D;&quot;{ &#x27;border-radius&#x27;: &#x27;20px&#x27; }&quot;
+                    &gt;
+                        &lt;span class&#x3D;&quot;mr-3&quot;&gt;{{ tag }}&lt;/span&gt;
+                        &lt;span
+                            class&#x3D;&quot;chip-remove-icon flex align-items-center justify-content-center border-1 surface-border bg-gray-100 border-circle cursor-pointer&quot;
+                            (click)&#x3D;&quot;onChipRemove(tag)&quot;
+                        &gt;
+                            &lt;i
+                                class&#x3D;&quot;pi pi-fw pi-times text-black-alpha-60&quot;
+                            &gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                    &lt;/p-chip&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;border-1 surface-border border-round&quot;&gt;
+                &lt;span
+                    class&#x3D;&quot;text-900 font-bold block border-bottom-1 surface-border p-3&quot;
+                    &gt;Category&lt;/span
+                &gt;
+                &lt;div class&#x3D;&quot;p-3&quot;&gt;
+                    &lt;p-dropdown
+                        [options]&#x3D;&quot;categoryOptions&quot;
+                        [(ngModel)]&#x3D;&quot;product.category&quot;
+                        placeholder&#x3D;&quot;Select a category&quot;
+                    &gt;&lt;/p-dropdown&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;border-1 surface-border border-round&quot;&gt;
+                &lt;span
+                    class&#x3D;&quot;text-900 font-bold block border-bottom-1 surface-border p-3&quot;
+                    &gt;Colors&lt;/span
+                &gt;
+                &lt;div class&#x3D;&quot;p-3 flex&quot;&gt;
+                    &lt;div
+                        *ngFor&#x3D;&quot;let color of colorOptions&quot;
+                        class&#x3D;&quot;w-2rem h-2rem mr-2 border-1 surface-border border-circle cursor-pointer flex justify-content-center align-items-center&quot;
+                        [class]&#x3D;&quot;color.background&quot;
+                        (click)&#x3D;&quot;onColorSelect(color.name)&quot;
+                    &gt;
+                        &lt;i
+                            class&#x3D;&quot;pi pi-check text-sm text-white&quot;
+                            *ngIf&#x3D;&quot;product.colors.indexOf(color.name) !&#x3D;&#x3D; -1&quot;
+                        &gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;border-1 surface-border border-round&quot;&gt;
+                &lt;span
+                    class&#x3D;&quot;text-900 font-bold block border-bottom-1 surface-border p-3&quot;
+                    &gt;Stock&lt;/span
+                &gt;
+                &lt;div class&#x3D;&quot;p-3&quot;&gt;
+                    &lt;p-dropdown
+                        [options]&#x3D;&quot;categoryOptions&quot;
+                        [(ngModel)]&#x3D;&quot;product.stock&quot;
+                        placeholder&#x3D;&quot;Select stock&quot;
+                    &gt;&lt;/p-dropdown&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div
+                class&#x3D;&quot;border-1 surface-border flex justify-content-between align-items-center py-2 px-3 border-round&quot;
+            &gt;
+                &lt;span class&#x3D;&quot;text-900 font-bold p-3&quot;&gt;In stock&lt;/span&gt;
+                &lt;p-inputSwitch [(ngModel)]&#x3D;&quot;product.inStock&quot;&gt;&lt;/p-inputSwitch&gt;
+            &lt;/div&gt;
+
+            &lt;div
+                class&#x3D;&quot;flex flex-column sm:flex-row justify-content-between align-items-center gap-3 py-2&quot;
+            &gt;
+                &lt;button
+                    pButton
+                    pRipple
+                    class&#x3D;&quot;p-button-danger flex-1 p-button-outlined&quot;
+                    label&#x3D;&quot;Discard&quot;
+                    icon&#x3D;&quot;pi pi-fw pi-trash&quot;
+                &gt;&lt;/button&gt;
+                &lt;button
+                    pButton
+                    pRipple
+                    class&#x3D;&quot;p-button-primary flex-1 border-round&quot;
+                    label&#x3D;&quot;Save&quot;
+                    icon&#x3D;&quot;pi pi-fw pi-check&quot;
+                &gt;&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./newproduct.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.chip-remove-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    i {
+        font-size: 9px;
+    }
+}
+
+:host ::ng-deep {
+    .p-fileupload {
+        padding: 0;
+
+        .p-fileupload-buttonbar {
+            display: none;
+        }
+
+        .p-fileupload-content {
+            border: 0 none;
+        }
+
+        .p-fileupload-row {
+            display: none;
+        }
+
+        .p-progressbar {
+            display: none;
+        }    
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card">    <span class="block text-900 font-bold text-xl mb-4">Create Product</span>    <div class="grid grid-nogutter flex-wrap gap-3 p-fluid">        <div class="col-12 lg:col-8">            <div class="grid formgrid">                <div class="col-12 field">                    <input                        pInputText                        type="text"                        placeholder="Product Name"                        label="Product Name"                        [(ngModel)]="product.name"                    />                </div>                <div class="col-12 lg:col-4 field">                    <input                        pInputText                        type="text"                        placeholder="Price"                        label="Price"                        [(ngModel)]="product.price"                    />                </div>                <div class="col-12 lg:col-4 field">                    <input                        pInputText                        type="text"                        placeholder="Product Code"                        label="Product Code"                        [(ngModel)]="product.code"                    />                </div>                <div class="col-12 lg:col-4 field">                    <input                        pInputText                        type="text"                        placeholder="Product SKU"                        label="SKU"                        [(ngModel)]="product.sku"                    />                </div>                <div class="col-12 field">                    <p-editor                        [(ngModel)]="product.description"                        [style]="{ height: \'250px\' }"                    ></p-editor>                </div>                <div class="col-12 field">                    <p-fileUpload                        #fileUploader                        name="demo[]"                        url="./upload.php"                        (onUpload)="onUpload($event)"                        [customUpload]="true"                        [multiple]="true"                        (onSelect)="onUpload($event)"                        accept="image/*"                        [showUploadButton]="true"                        [showCancelButton]="false"                        [auto]="true"                        styleClass="border-1 surface-border surface-card border-round"                    >                        <ng-template pTemplate="content">                            <div                                class="h-15rem overflow-y-auto py-3 border-round"                                style="cursor: copy"                                (click)="                                    fileUploader.advancedFileInput.nativeElement.click()                                "                            >                                <div                                    *ngIf="!product.images.length"                                    class="flex flex-column w-full h-full justify-content-center align-items-center"                                >                                    <i                                        class="pi pi-file text-4xl text-primary"                                    ></i>                                    <span                                        class="block font-semibold text-900 text-lg mt-3"                                        >Drop or select images</span                                    >                                </div>                                <div                                    class="flex flex-wrap gap-3 border-round"                                    *ngIf="product.images.length"                                >                                    <div                                        *ngFor="                                            let file of product.images;                                            let i = index                                        "                                        class="h-full relative w-7rem h-7rem border-3 border-transparent border-round hover:bg-primary transition-duration-100 cursor-auto"                                        (mouseenter)="onImageMouseOver(file)"                                        (mouseleave)="onImageMouseLeave(file)"                                        style="padding: 1px"                                    >                                        <img                                            [src]="file.objectURL"                                            class="w-full h-full border-round shadow-2"                                            [alt]="file.name"                                        />                                        <button                                            [id]="file.name"                                            #buttonEl                                            pButton                                            pRipple                                            type="button"                                            icon="pi pi-times"                                            class="p-button-rounded p-button-primary text-sm absolute justify-content-center align-items-center cursor-pointer w-2rem h-2rem"                                            style="                                                top: -10px;                                                right: -10px;                                                display: none;                                            "                                            (click)="                                                $event.stopPropagation();                                                removeImage(file)                                            "                                        ></button>                                    </div>                                </div>                            </div>                        </ng-template>                    </p-fileUpload>                </div>            </div>        </div>        <div class="flex-1 w-full lg:w-3 xl:w-4 flex flex-column row-gap-3">            <div class="border-1 surface-border border-round">                <span                    class="text-900 font-bold block border-bottom-1 surface-border p-3"                    >Publish</span                >                <div class="p-3">                    <div                        class="bg-gray-100 py-2 px-3 flex align-items-center border-round"                    >                        <span                            class="text-black-alpha-90 font-bold mr-3"                            >Status:</span                        >                        <span class="text-black-alpha-60 font-semibold">{{                            product.status                        }}</span>                        <button                            pButton                            pRipple                            type="button"                            icon="pi pi-fw pi-pencil"                            class="p-button-rounded p-button-text text-black-alpha-60 ml-auto"                        ></button>                    </div>                </div>            </div>            <div class="border-1 surface-border border-round">                <span                    class="text-900 font-bold block border-bottom-1 surface-border p-3"                    >Tags</span                >                <div class="p-3 flex flex-wrap gap-1">                    <p-chip                        *ngFor="let tag of product.tags; let i = index"                        styleClass="mr-2 py-2 px-3 text-900 font-bold surface-card border-1 surface-border"                        [style]="{ \'border-radius\': \'20px\' }"                    >                        <span class="mr-3">{{ tag }}</span>                        <span                            class="chip-remove-icon flex align-items-center justify-content-center border-1 surface-border bg-gray-100 border-circle cursor-pointer"                            (click)="onChipRemove(tag)"                        >                            <i                                class="pi pi-fw pi-times text-black-alpha-60"                            ></i>                        </span>                    </p-chip>                </div>            </div>            <div class="border-1 surface-border border-round">                <span                    class="text-900 font-bold block border-bottom-1 surface-border p-3"                    >Category</span                >                <div class="p-3">                    <p-dropdown                        [options]="categoryOptions"                        [(ngModel)]="product.category"                        placeholder="Select a category"                    ></p-dropdown>                </div>            </div>            <div class="border-1 surface-border border-round">                <span                    class="text-900 font-bold block border-bottom-1 surface-border p-3"                    >Colors</span                >                <div class="p-3 flex">                    <div                        *ngFor="let color of colorOptions"                        class="w-2rem h-2rem mr-2 border-1 surface-border border-circle cursor-pointer flex justify-content-center align-items-center"                        [class]="color.background"                        (click)="onColorSelect(color.name)"                    >                        <i                            class="pi pi-check text-sm text-white"                            *ngIf="product.colors.indexOf(color.name) !== -1"                        ></i>                    </div>                </div>            </div>            <div class="border-1 surface-border border-round">                <span                    class="text-900 font-bold block border-bottom-1 surface-border p-3"                    >Stock</span                >                <div class="p-3">                    <p-dropdown                        [options]="categoryOptions"                        [(ngModel)]="product.stock"                        placeholder="Select stock"                    ></p-dropdown>                </div>            </div>            <div                class="border-1 surface-border flex justify-content-between align-items-center py-2 px-3 border-round"            >                <span class="text-900 font-bold p-3">In stock</span>                <p-inputSwitch [(ngModel)]="product.inStock"></p-inputSwitch>            </div>            <div                class="flex flex-column sm:flex-row justify-content-between align-items-center gap-3 py-2"            >                <button                    pButton                    pRipple                    class="p-button-danger flex-1 p-button-outlined"                    label="Discard"                    icon="pi pi-fw pi-trash"                ></button>                <button                    pButton                    pRipple                    class="p-button-primary flex-1 border-round"                    label="Save"                    icon="pi pi-fw pi-check"                ></button>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NewProductComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NewProductComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

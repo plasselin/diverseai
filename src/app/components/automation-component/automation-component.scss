@@ -1,0 +1,51 @@
+:host, ::ng-deep .automation-info-card {
+    //background-color: #2e3b4e;
+    border-radius: 12px;
+    padding: 2rem; /* Increased padding */
+    max-width: 1200px;
+    margin: 2rem auto; /* Added vertical margin to center the card and add spacing from the top */
+}
+
+:host, ::ng-deep .automation-content {
+    padding: 0; /* Removed extra padding inside the content */
+}
+
+:host, ::ng-deep .intro-text {
+    font-size: 1.2rem;
+    color: #f5f5f5;
+    margin-bottom: 2rem; /* Increased bottom margin for better spacing */
+    text-align: center;
+}
+
+:host, ::ng-deep .p-divider {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem; /* Added margin for spacing below divider */
+}
+
+:host, ::ng-deep .automation-feature {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #ddd;
+    padding: 1.5rem; /* Added padding for content inside panels */
+}
+
+:host, ::ng-deep .p-panel {
+    background-color: #3e4a59;
+    color: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 2rem; /* Increased space between panels */
+}
+
+:host, ::ng-deep .mt-5 {
+    margin-top: 5rem;
+}
+
+:host, ::ng-deep .text-accent {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+:host, ::ng-deep  app-automation.ng-star-inserted{
+    background-color: transparent;
+}

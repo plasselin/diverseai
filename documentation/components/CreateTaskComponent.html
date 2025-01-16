@@ -1,0 +1,1098 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CreateTaskComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/apps/tasklist/create-task/create-task.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../interfaces/Message.html" target="_self" >MessageService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-create-task</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./create-task.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dialogConfig" >dialogConfig</a>
+                            </li>
+                            <li>
+                                <a href="#dialogSubscription" >dialogSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#filteredMembers" >filteredMembers</a>
+                            </li>
+                            <li>
+                                <a href="#members" >members</a>
+                            </li>
+                            <li>
+                                <a href="#subscription" >subscription</a>
+                            </li>
+                            <li>
+                                <a href="#task" >task</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cancelTask" >cancelTask</a>
+                            </li>
+                            <li>
+                                <a href="#filterMembers" >filterMembers</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#resetTask" >resetTask</a>
+                            </li>
+                            <li>
+                                <a href="#save" >save</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(memberService: MemberService, messageService: <a href="../interfaces/Message.html" target="_self">MessageService</a>, taskService: <a href="../injectables/TaskService.html" target="_self">TaskService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>memberService</td>
+
+                                                        <td>
+                                                                    <code>MemberService</code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+
+                                                        <td>
+                                                                        <code><a href="../interfaces/Message.html" target="_self" >MessageService</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                        <td>taskService</td>
+
+                                                        <td>
+                                                                        <code><a href="../injectables/TaskService.html" target="_self" >TaskService</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelTask"></a>
+                    <span class="name">
+                        <span ><b>cancelTask</b></span>
+                        <a href="#cancelTask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelTask()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterMembers"></a>
+                    <span class="name">
+                        <span ><b>filterMembers</b></span>
+                        <a href="#filterMembers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterMembers(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetTask"></a>
+                    <span class="name">
+                        <span ><b>resetTask</b></span>
+                        <a href="#resetTask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetTask()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="save"></a>
+                    <span class="name">
+                        <span ><b>save</b></span>
+                        <a href="#save"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>save()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialogConfig"></a>
+                    <span class="name">
+                        <span ><b>dialogConfig</b></span>
+                        <a href="#dialogConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DialogConfig.html" target="_self" >DialogConfig</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{header: &#x27;&#x27;, visible: false}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialogSubscription"></a>
+                    <span class="name">
+                        <span ><b>dialogSubscription</b></span>
+                        <a href="#dialogSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredMembers"></a>
+                    <span class="name">
+                        <span ><b>filteredMembers</b></span>
+                        <a href="#filteredMembers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Member[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="members"></a>
+                    <span class="name">
+                        <span ><b>members</b></span>
+                        <a href="#members"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Member[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscription"></a>
+                    <span class="name">
+                        <span ><b>subscription</b></span>
+                        <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="task"></a>
+                    <span class="name">
+                        <span ><b>task</b></span>
+                        <a href="#task"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Task.html" target="_self" >Task</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/apps/tasklist/create-task/create-task.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { MessageService } from &#x27;primeng/api&#x27;;
+import { Member } from &#x27;src/app/api/member&#x27;;
+import { DialogConfig, Task } from &#x27;src/app/api/task&#x27;;
+import { TaskService } from &#x27;../service/task.service&#x27;;
+import { MemberService } from &#x27;src/app/service/member.service&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+
+@Component({
+    selector: &#x27;app-create-task&#x27;,
+    templateUrl: &#x27;./create-task.component.html&#x27;,
+    providers: [MessageService]
+})
+export class CreateTaskComponent implements OnInit, OnDestroy {
+
+    task!: Task;
+
+    members: Member[] &#x3D; [];
+
+    filteredMembers: Member[] &#x3D; [];
+
+    dialogConfig: DialogConfig &#x3D; {header: &#x27;&#x27;, visible: false};
+
+    subscription: Subscription;
+
+    dialogSubscription: Subscription;
+
+    constructor(private memberService: MemberService, private messageService: MessageService, private taskService: TaskService) {
+        this.subscription &#x3D; this.taskService.selectedTask$.subscribe(data &#x3D;&gt; this.task &#x3D; data);
+        this.dialogSubscription &#x3D; this.taskService.dialogSource$.subscribe(data &#x3D;&gt; {
+            this.dialogConfig &#x3D; data;
+
+            if(this.dialogConfig.newTask) {
+                this.resetTask();
+            }
+        });
+    }
+
+    ngOnInit(): void {
+        this.memberService.getMembers().then(members &#x3D;&gt; this.members &#x3D; members);
+        this.resetTask();
+    }
+
+    filterMembers(event: any) {
+        let filtered: Member[] &#x3D; [];
+        let query &#x3D; event.query;
+
+        for (let i &#x3D; 0; i &lt; this.members.length; i++) {
+            let member &#x3D; this.members[i];
+            if (member.name?.toLowerCase().indexOf(query.toLowerCase()) &#x3D;&#x3D; 0) {
+                filtered.push(member);
+            }
+        }
+
+        this.filteredMembers &#x3D; filtered;
+    }
+
+    save() {
+        this.task.id &#x3D; Math.floor(Math.random() * 1000);
+        this.messageService.add({ severity: &#x27;success&#x27;, summary: &#x27;Success&#x27;, detail: &#x60;Task &quot;${this.task.name}&quot; created successfully.&#x60; });
+        this.taskService.addTask(this.task);
+        this.taskService.closeDialog();
+    }
+
+    cancelTask(){
+        this.resetTask()
+        this.taskService.closeDialog();
+    }
+
+    resetTask() {
+        this.task &#x3D; { id: this.task &amp;&amp; this.task.id ? this.task.id : Math.floor(Math.random() * 1000), status: &#x27;Waiting&#x27; };
+    }
+
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;p-toast&gt;&lt;/p-toast&gt;
+&lt;p-dialog
+    [header]&#x3D;&quot;dialogConfig.header || &#x27;&#x27;&quot;
+    [(visible)]&#x3D;&quot;dialogConfig.visible&quot;
+    [modal]&#x3D;&quot;true&quot;
+    [dismissableMask]&#x3D;&quot;true&quot;
+    styleClass&#x3D;&quot;mx-3 sm:mx-0 sm:w-full md:w-8 lg:w-6&quot;
+    contentStyleClass&#x3D;&quot;border-round-bottom border-top-1 surface-border p-0&quot;
+&gt;
+    &lt;div class&#x3D;&quot;p-4&quot;&gt;
+        &lt;div class&#x3D;&quot;grid p-fluid formgrid&quot;&gt;
+            &lt;div class&#x3D;&quot;col-12 field&quot;&gt;
+                &lt;label for&#x3D;&quot;name&quot; class&#x3D;&quot;text-900 font-semibold&quot;
+                    &gt;Task Name&lt;/label
+                &gt;
+                &lt;input
+                    id&#x3D;&quot;name&quot;
+                    type&#x3D;&quot;text&quot;
+                    placeholder&#x3D;&quot;Title&quot;
+                    pInputText
+                    [(ngModel)]&#x3D;&quot;task.name&quot;
+                /&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-12 field&quot;&gt;
+                &lt;label for&#x3D;&quot;description&quot; class&#x3D;&quot;text-900 font-semibold&quot;
+                    &gt;Description&lt;/label
+                &gt;
+                &lt;p-editor
+                    [(ngModel)]&#x3D;&quot;task.description&quot;
+                    [style]&#x3D;&quot;{ height: &#x27;150px&#x27; }&quot;
+                &gt;&lt;/p-editor&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-6 field mt-0&quot;&gt;
+                &lt;label for&#x3D;&quot;start&quot; class&#x3D;&quot;text-900 font-semibold&quot;
+                    &gt;Start Date&lt;/label
+                &gt;
+                &lt;p-calendar
+                    appendTo&#x3D;&quot;body&quot;
+                    dateFormat&#x3D;&quot;yy-mm-dd&quot;
+                    [showTime]&#x3D;&quot;false&quot;
+                    inputId&#x3D;&quot;start&quot;
+                    placeholder&#x3D;&quot;Start Date&quot;
+                    [(ngModel)]&#x3D;&quot;task.startDate&quot;
+                &gt;&lt;/p-calendar&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-6 field mt-0&quot;&gt;
+                &lt;label for&#x3D;&quot;end&quot; class&#x3D;&quot;text-900 font-semibold&quot;&gt;Due Date&lt;/label&gt;
+                &lt;p-calendar
+                    appendTo&#x3D;&quot;body&quot;
+                    dateFormat&#x3D;&quot;yy-mm-dd&quot;
+                    [showTime]&#x3D;&quot;false&quot;
+                    inputId&#x3D;&quot;end&quot;
+                    placeholder&#x3D;&quot;Due Date&quot;
+                    [(ngModel)]&#x3D;&quot;task.endDate&quot;
+                &gt;&lt;/p-calendar&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-12 field&quot;&gt;
+                &lt;label for&#x3D;&quot;members&quot; class&#x3D;&quot;text-900 font-semibold&quot;
+                    &gt;Add Team Member&lt;/label
+                &gt;
+                &lt;p-autoComplete
+                    appendTo&#x3D;&quot;body&quot;
+                    inputId&#x3D;&quot;members&quot;
+                    [(ngModel)]&#x3D;&quot;task.members&quot;
+                    [suggestions]&#x3D;&quot;filteredMembers&quot;
+                    (completeMethod)&#x3D;&quot;filterMembers($event)&quot;
+                    field&#x3D;&quot;name&quot;
+                    [multiple]&#x3D;&quot;true&quot;
+                    placeholder&#x3D;&quot;Choose team members&quot;
+                    [inputStyle]&#x3D;&quot;{ height: &#x27;2.5rem&#x27; }&quot;
+                &gt;
+                    &lt;ng-template let-member pTemplate&#x3D;&quot;selectedItem&quot;&gt;
+                        &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+                            &lt;img
+                                src&#x3D;&quot;assets/demo/images/avatar/{{
+                                    member.image
+                                }}&quot;
+                                [alt]&#x3D;&quot;member.name&quot;
+                                class&#x3D;&quot;h-2rem w-2rem mr-2&quot;
+                            /&gt;
+                            &lt;span class&#x3D;&quot;text-900 font-medium&quot;&gt;{{
+                                member.name
+                            }}&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/ng-template&gt;
+                    &lt;ng-template let-member pTemplate&#x3D;&quot;item&quot;&gt;
+                        &lt;div class&#x3D;&quot;flex align-items-center border-round&quot;&gt;
+                            &lt;img
+                                src&#x3D;&quot;assets/demo/images/avatar/{{
+                                    member.image
+                                }}&quot;
+                                [alt]&#x3D;&quot;member.name&quot;
+                                class&#x3D;&quot;h-2rem w-2rem mr-2&quot;
+                            /&gt;
+                            &lt;span class&#x3D;&quot;text-900 font-medium&quot;&gt;{{
+                                member.name
+                            }}&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/ng-template&gt;
+                &lt;/p-autoComplete&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-12 flex justify-content-end mt-4&quot;&gt;
+                &lt;button
+                    pButton
+                    pRipple
+                    class&#x3D;&quot;p-button-outlined w-8rem mr-3&quot;
+                    icon&#x3D;&quot;pi pi-times&quot;
+                    label&#x3D;&quot;Cancel&quot;
+                    (click)&#x3D;&quot;cancelTask()&quot;
+                &gt;&lt;/button&gt;
+                &lt;button
+                    pButton
+                    pRipple
+                    class&#x3D;&quot;p-button-primary w-8rem&quot;
+                    icon&#x3D;&quot;pi pi-check&quot;
+                    label&#x3D;&quot;Save&quot;
+                    (click)&#x3D;&quot;save()&quot;
+                &gt;&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/p-dialog&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><p-toast></p-toast><p-dialog    [header]="dialogConfig.header || \'\'"    [(visible)]="dialogConfig.visible"    [modal]="true"    [dismissableMask]="true"    styleClass="mx-3 sm:mx-0 sm:w-full md:w-8 lg:w-6"    contentStyleClass="border-round-bottom border-top-1 surface-border p-0">    <div class="p-4">        <div class="grid p-fluid formgrid">            <div class="col-12 field">                <label for="name" class="text-900 font-semibold"                    >Task Name</label                >                <input                    id="name"                    type="text"                    placeholder="Title"                    pInputText                    [(ngModel)]="task.name"                />            </div>            <div class="col-12 field">                <label for="description" class="text-900 font-semibold"                    >Description</label                >                <p-editor                    [(ngModel)]="task.description"                    [style]="{ height: \'150px\' }"                ></p-editor>            </div>            <div class="col-6 field mt-0">                <label for="start" class="text-900 font-semibold"                    >Start Date</label                >                <p-calendar                    appendTo="body"                    dateFormat="yy-mm-dd"                    [showTime]="false"                    inputId="start"                    placeholder="Start Date"                    [(ngModel)]="task.startDate"                ></p-calendar>            </div>            <div class="col-6 field mt-0">                <label for="end" class="text-900 font-semibold">Due Date</label>                <p-calendar                    appendTo="body"                    dateFormat="yy-mm-dd"                    [showTime]="false"                    inputId="end"                    placeholder="Due Date"                    [(ngModel)]="task.endDate"                ></p-calendar>            </div>            <div class="col-12 field">                <label for="members" class="text-900 font-semibold"                    >Add Team Member</label                >                <p-autoComplete                    appendTo="body"                    inputId="members"                    [(ngModel)]="task.members"                    [suggestions]="filteredMembers"                    (completeMethod)="filterMembers($event)"                    field="name"                    [multiple]="true"                    placeholder="Choose team members"                    [inputStyle]="{ height: \'2.5rem\' }"                >                    <ng-template let-member pTemplate="selectedItem">                        <div class="flex align-items-center">                            <img                                src="assets/demo/images/avatar/{{                                    member.image                                }}"                                [alt]="member.name"                                class="h-2rem w-2rem mr-2"                            />                            <span class="text-900 font-medium">{{                                member.name                            }}</span>                        </div>                    </ng-template>                    <ng-template let-member pTemplate="item">                        <div class="flex align-items-center border-round">                            <img                                src="assets/demo/images/avatar/{{                                    member.image                                }}"                                [alt]="member.name"                                class="h-2rem w-2rem mr-2"                            />                            <span class="text-900 font-medium">{{                                member.name                            }}</span>                        </div>                    </ng-template>                </p-autoComplete>            </div>            <div class="col-12 flex justify-content-end mt-4">                <button                    pButton                    pRipple                    class="p-button-outlined w-8rem mr-3"                    icon="pi pi-times"                    label="Cancel"                    (click)="cancelTask()"                ></button>                <button                    pButton                    pRipple                    class="p-button-primary w-8rem"                    icon="pi pi-check"                    label="Save"                    (click)="save()"                ></button>            </div>        </div>    </div></p-dialog></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CreateTaskComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreateTaskComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,561 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ProfileCreateComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/profile/create/profilecreate.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./profilecreate.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#countries" >countries</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="9"
+                                    class="link-to-prism">src/app/components/profile/create/profilecreate.component.ts:9</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="countries"></a>
+                    <span class="name">
+                        <span ><b>countries</b></span>
+                        <a href="#countries"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/components/profile/create/profilecreate.component.ts:7</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+    templateUrl: &#x27;./profilecreate.component.html&#x27;,
+})
+export class ProfileCreateComponent implements OnInit {
+    countries: any[] &#x3D; [];
+
+    ngOnInit() {
+        this.countries &#x3D; [
+            { name: &#x27;Australia&#x27;, code: &#x27;AU&#x27; },
+            { name: &#x27;Brazil&#x27;, code: &#x27;BR&#x27; },
+            { name: &#x27;China&#x27;, code: &#x27;CN&#x27; },
+            { name: &#x27;Egypt&#x27;, code: &#x27;EG&#x27; },
+            { name: &#x27;France&#x27;, code: &#x27;FR&#x27; },
+            { name: &#x27;Germany&#x27;, code: &#x27;DE&#x27; },
+            { name: &#x27;India&#x27;, code: &#x27;IN&#x27; },
+            { name: &#x27;Japan&#x27;, code: &#x27;JP&#x27; },
+            { name: &#x27;Spain&#x27;, code: &#x27;ES&#x27; },
+            { name: &#x27;United States&#x27;, code: &#x27;US&#x27; },
+        ];
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;span class&#x3D;&quot;text-900 text-xl font-bold mb-4 block&quot;&gt;Create User&lt;/span&gt;
+    &lt;div class&#x3D;&quot;grid&quot;&gt;
+        &lt;div class&#x3D;&quot;col-12 lg:col-2&quot;&gt;
+            &lt;div class&#x3D;&quot;text-900 font-medium text-xl mb-3&quot;&gt;Profile&lt;/div&gt;
+            &lt;p class&#x3D;&quot;m-0 p-0 text-600 line-height-3 mr-3&quot;&gt;
+                Odio euismod lacinia at quis risus sed vulputate odio.
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-12 lg:col-10&quot;&gt;
+            &lt;div class&#x3D;&quot;grid formgrid p-fluid&quot;&gt;
+                &lt;div class&#x3D;&quot;field mb-4 col-12&quot;&gt;
+                    &lt;label for&#x3D;&quot;nickname&quot; class&#x3D;&quot;font-medium text-900&quot;
+                        &gt;Nickname&lt;/label
+                    &gt;
+                    &lt;input id&#x3D;&quot;nickname&quot; type&#x3D;&quot;text&quot; pInputText /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field mb-4 col-12&quot;&gt;
+                    &lt;label for&#x3D;&quot;avatar&quot; class&#x3D;&quot;font-medium text-900&quot;
+                        &gt;Avatar&lt;/label
+                    &gt;
+                    &lt;p-fileUpload
+                        mode&#x3D;&quot;basic&quot;
+                        name&#x3D;&quot;avatar&quot;
+                        url&#x3D;&quot;./upload.php&quot;
+                        accept&#x3D;&quot;image/*&quot;
+                        [maxFileSize]&#x3D;&quot;1000000&quot;
+                        styleClass&#x3D;&quot;p-button-outlined p-button-plain&quot;
+                        chooseLabel&#x3D;&quot;Upload Image&quot;
+                    &gt;&lt;/p-fileUpload&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field mb-4 col-12&quot;&gt;
+                    &lt;label for&#x3D;&quot;bio&quot; class&#x3D;&quot;font-medium text-900&quot;&gt;Bio&lt;/label&gt;
+                    &lt;textarea
+                        id&#x3D;&quot;bio&quot;
+                        type&#x3D;&quot;text&quot;
+                        pInputTextarea
+                        rows&#x3D;&quot;5&quot;
+                        [autoResize]&#x3D;&quot;true&quot;
+                    &gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field mb-4 col-12 md:col-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;email&quot; class&#x3D;&quot;font-medium text-900&quot;
+                        &gt;Email&lt;/label
+                    &gt;
+                    &lt;input id&#x3D;&quot;email&quot; type&#x3D;&quot;text&quot; pInputText /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field mb-4 col-12 md:col-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;country&quot; class&#x3D;&quot;font-medium text-900&quot;
+                        &gt;Country&lt;/label
+                    &gt;
+                    &lt;p-dropdown
+                        inputId&#x3D;&quot;country&quot;
+                        [options]&#x3D;&quot;countries&quot;
+                        optionLabel&#x3D;&quot;name&quot;
+                        [filter]&#x3D;&quot;true&quot;
+                        filterBy&#x3D;&quot;name&quot;
+                        [showClear]&#x3D;&quot;true&quot;
+                        placeholder&#x3D;&quot;Select a Country&quot;
+                    &gt;
+                        &lt;ng-template let-country pTemplate&#x3D;&quot;item&quot;&gt;
+                            &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+                                &lt;img
+                                    src&#x3D;&quot;assets/demo/images/flag/flag_placeholder.png&quot;
+                                    [class]&#x3D;&quot;
+                                        &#x27;mr-2 flag flag-&#x27; +
+                                        country.code.toLowerCase()
+                                    &quot;
+                                    style&#x3D;&quot;width: 18px&quot;
+                                /&gt;
+                                &lt;div&gt;{{ country.name }}&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/ng-template&gt;
+                    &lt;/p-dropdown&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field mb-4 col-12 md:col-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;city&quot; class&#x3D;&quot;font-medium text-900&quot;&gt;City&lt;/label&gt;
+                    &lt;input id&#x3D;&quot;city&quot; type&#x3D;&quot;text&quot; pInputText /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field mb-4 col-12 md:col-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;state&quot; class&#x3D;&quot;font-medium text-900&quot;
+                        &gt;State&lt;/label
+                    &gt;
+                    &lt;input id&#x3D;&quot;state&quot; type&#x3D;&quot;text&quot; pInputText /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field mb-4 col-12&quot;&gt;
+                    &lt;label for&#x3D;&quot;website&quot; class&#x3D;&quot;font-medium text-900&quot;
+                        &gt;Website&lt;/label
+                    &gt;
+                    &lt;p-inputGroup&gt;
+                        &lt;p-inputGroupAddon&gt;
+                            &lt;span&gt;www&lt;/span&gt;
+                        &lt;/p-inputGroupAddon&gt;
+                        &lt;input id&#x3D;&quot;website&quot; type&#x3D;&quot;text&quot; pInputText /&gt;
+                    &lt;/p-inputGroup&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12&quot;&gt;
+                    &lt;button
+                        pButton
+                        pRipple
+                        label&#x3D;&quot;Create User&quot;
+                        class&#x3D;&quot;w-auto mt-3&quot;
+                    &gt;&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card">    <span class="text-900 text-xl font-bold mb-4 block">Create User</span>    <div class="grid">        <div class="col-12 lg:col-2">            <div class="text-900 font-medium text-xl mb-3">Profile</div>            <p class="m-0 p-0 text-600 line-height-3 mr-3">                Odio euismod lacinia at quis risus sed vulputate odio.            </p>        </div>        <div class="col-12 lg:col-10">            <div class="grid formgrid p-fluid">                <div class="field mb-4 col-12">                    <label for="nickname" class="font-medium text-900"                        >Nickname</label                    >                    <input id="nickname" type="text" pInputText />                </div>                <div class="field mb-4 col-12">                    <label for="avatar" class="font-medium text-900"                        >Avatar</label                    >                    <p-fileUpload                        mode="basic"                        name="avatar"                        url="./upload.php"                        accept="image/*"                        [maxFileSize]="1000000"                        styleClass="p-button-outlined p-button-plain"                        chooseLabel="Upload Image"                    ></p-fileUpload>                </div>                <div class="field mb-4 col-12">                    <label for="bio" class="font-medium text-900">Bio</label>                    <textarea                        id="bio"                        type="text"                        pInputTextarea                        rows="5"                        [autoResize]="true"                    ></textarea>                </div>                <div class="field mb-4 col-12 md:col-6">                    <label for="email" class="font-medium text-900"                        >Email</label                    >                    <input id="email" type="text" pInputText />                </div>                <div class="field mb-4 col-12 md:col-6">                    <label for="country" class="font-medium text-900"                        >Country</label                    >                    <p-dropdown                        inputId="country"                        [options]="countries"                        optionLabel="name"                        [filter]="true"                        filterBy="name"                        [showClear]="true"                        placeholder="Select a Country"                    >                        <ng-template let-country pTemplate="item">                            <div class="flex align-items-center">                                <img                                    src="assets/demo/images/flag/flag_placeholder.png"                                    [class]="                                        \'mr-2 flag flag-\' +                                        country.code.toLowerCase()                                    "                                    style="width: 18px"                                />                                <div>{{ country.name }}</div>                            </div>                        </ng-template>                    </p-dropdown>                </div>                <div class="field mb-4 col-12 md:col-6">                    <label for="city" class="font-medium text-900">City</label>                    <input id="city" type="text" pInputText />                </div>                <div class="field mb-4 col-12 md:col-6">                    <label for="state" class="font-medium text-900"                        >State</label                    >                    <input id="state" type="text" pInputText />                </div>                <div class="field mb-4 col-12">                    <label for="website" class="font-medium text-900"                        >Website</label                    >                    <p-inputGroup>                        <p-inputGroupAddon>                            <span>www</span>                        </p-inputGroupAddon>                        <input id="website" type="text" pInputText />                    </p-inputGroup>                </div>                <div class="col-12">                    <button                        pButton                        pRipple                        label="Create User"                        class="w-auto mt-3"                    ></button>                </div>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProfileCreateComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProfileCreateComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

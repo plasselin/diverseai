@@ -1,0 +1,514 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1>Changelog</h1>
+<h1>17.0.0</h1>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Upgrade to PrimeNG 17</li>
+<li>Upgrade to Angular 17</li>
+</ul>
+<h1>16.0.0</h1>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Upgrade to PrimeNG 16</li>
+<li>Upgrade to Angular 16</li>
+</ul>
+<h1>15.1.1</h1>
+<ul>
+<li>Update themes</li>
+</ul>
+<h1>15.1.0</h1>
+<ul>
+<li>General style adjustments</li>
+</ul>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>New Drawer menu</li>
+<li>Horizontal &amp; Slim &amp; SlimPlus menu scroll</li>
+</ul>
+<h2>15.0.0</h2>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Update to PrimeNG 15</li>
+<li>Update to Angular 15</li>
+<li>Migrated to NextGen implementation.</li>
+<li>New sample apps</li>
+<li>New sample pages</li>
+<li>New landing</li>
+<li>New dashboards</li>
+</ul>
+<h2>14.0.1</h2>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>Fixed a bug causes menu malfunction in menu service.</li>
+</ul>
+<h2>14.0.0</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Upgrade to PrimeNG 14</li>
+<li>Upgrade to Angular 14</li>
+</ul>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Update to PrimeNG 14</li>
+<li>Update to Angular 14</li>
+<li>Add primary color variable to theme variables.</li>
+</ul>
+<h2>13.1.1</h2>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>Router paths fixed</li>
+</ul>
+<h2>13.1.0</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Update your project to PrimeNG 13.1.0</li>
+</ul>
+<h2>13.0.0</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Update your project to Angular 13.</li>
+<li>Update theme files and layout files.</li>
+</ul>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Upgrade to Angular and PrimeNG 13</li>
+</ul>
+<h2>12.2.0</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Update theme files and layout files.</li>
+</ul>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Styles of new PrimeNG components</li>
+</ul>
+<h2>12.0.0</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Update your project to Angular 12.</li>
+<li>Update app.* components</li>
+<li>Update theme files and layout files.</li>
+</ul>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Upgrade to Angular and PrimeNG 12</li>
+<li>Styles of new PrimeNG components</li>
+<li>PrimeFlex 3+ support</li>
+</ul>
+<h2>11.0.1</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Update theme files and layout files.</li>
+</ul>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>Search panel is not visible (dark mode)</li>
+</ul>
+<h2>11.0.0</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Update your project to Angular 11.</li>
+<li>Update app.main.component.ts and app.component.ts</li>
+<li>Update app.menu.component.ts and app.menuitem.component.ts</li>
+<li>Update theme files and layout files.</li>
+</ul>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Upgrade to Angular and PrimeNG 11</li>
+<li>Styles of new PrimeNG components</li>
+</ul>
+<h2>10.1.0</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Update theme files and layout files.</li>
+<li>Update app.* components</li>
+<li>Use app.inlinemenu.component instead of app.profile.component</li>
+</ul>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Implemented new Avalon design</li>
+<li>Added dark mode, topbar and menu colors</li>
+</ul>
+<h2>10.0.1</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Update app.component.ts and app.main.component.ts</li>
+<li>Update app.login.component.html</li>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>Ripple effect is not working outside of the main application</li>
+<li>Ripple effect is not working on Login page</li>
+</ul>
+<h2>10.0.0</h2>
+<p><strong>Migration Guide</strong></p>
+<ul>
+<li>Update your project to Angular 10.</li>
+<li>Update theme files and layout files.</li>
+</ul>
+<p><strong>Implemented New Features and Enhancements:</strong></p>
+<ul>
+<li>Migrate to PrimeOne Design Architecture</li>
+<li>Upgrade to Angular and PrimeNG 10</li>
+</ul>
+<h2>8.0.1 to 9.0.0</h2>
+<p>Angular 9 and PrimeNG 9</p>
+<ul>
+<li>Update dependencies with <a href="https://angular.io/cli/update">ng update</a>.</li>
+<li>Update theme.css and layout.css files.</li>
+<li>Update app.menu.component.ts while retaining your MenuModel.</li>
+<li>Include app.menuitem.component.ts under app folder and define it app.module.ts with declarations property.</li>
+<li>Include app.menu.service.ts under app folder and define it app.module.ts with providers property.</li>
+</ul>
+<h2>8.0.0 to 8.0.1</h2>
+<ul>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>7.1.1 to 8.0.0</h2>
+<ul>
+<li>Update your project to Angular 8 with ng update. View the official update guide -<a href="https://update.angular.io/">https://update.angular.io/</a>- for more information.</li>
+<li>Update app.main.component.ts.</li>
+<li>Update app.menu.component.ts.</li>
+<li>Update app.rightpanel.component.ts.</li>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>7.1.0 to 7.1.1</h2>
+<ul>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>7.0.1 to 7.1.0</h2>
+<ul>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>7.0.0 to 7.0.1</h2>
+<ul>
+<li>Update theme css files.</li>
+</ul>
+<h2>6.1.1 to 7.0.0</h2>
+<ul>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>6.1.0 to 6.1.1</h2>
+<ul>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>6.0.0 to 6.1.0</h2>
+<p>Adds support for new features in PrimeNG 6.1.x</p>
+<ul>
+<li>Update theme css files.</li>
+</ul>
+<h2>5.2.4 to 6.0.0</h2>
+<p>Brings support for Angular 6 and RxJS 6, adds theming for new components in PrimeNG such as the new TreeTable and improves behaviors of the layout menus.</p>
+<ul>
+<li>Update app.module.ts and app.component.ts.</li>
+<li>Update app.topbar.component.ts.</li>
+<li>Update app.profile.component.ts.</li>
+<li>Update app.menu.component.ts.</li>
+<li>Update app.breadcrumb.component.ts and app.breadcrumb.service.ts.</li>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>5.2.3 to 5.2.4</h2>
+<ul>
+<li>Update theme css files.</li>
+</ul>
+<h2>5.2.2 to 5.2.3</h2>
+<ul>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>5.2.1 to 5.2.2</h2>
+<ul>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>5.2.0 to 5.2.1</h2>
+<p>Aligns input focus animation with the Material specs.</p>
+<ul>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>5.0.0 to 5.2.0</h2>
+<p>Adds support for PrimeNG 5.2.0 (e.g. TurboTable), replaces nanoscroller with PrimeNG ScrollPanel and reimplements ripple effect to run outside of NgZone for better performance.</p>
+<ul>
+<li>Remove nanoscroller as it is replaced by ScrollPanel component of PrimeNG.</li>
+<li>Update app.component.ts and app.component.html.</li>
+<li>Update app.menu.component.ts.</li>
+<li>Update app.rightpanel.component.ts.</li>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>4.3.0 to 5.0.0</h2>
+<ul>
+<li>Update app.component.ts and app.component.html.</li>
+<li>Define breadcrumbservice as a provider in your app.module</li>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>4.2.0 to 4.3.0</h2>
+<ul>
+<li>Update theme css files.</li>
+</ul>
+<h2>4.1.1 to 4.2.0</h2>
+<ul>
+<li>Update app.<em>.ts and app.</em>.html files under app folder.</li>
+<li>Update theme css and layout css files.</li>
+</ul>
+<h2>4.0.1 to 4.1.0</h2>
+<ul>
+<li>Update layout css files.</li>
+<li>Update theme css files.</li>
+<li>Update AppSubmenu component in app.menu.component.ts.</li>
+</ul>
+<h2>4.0.0 to 4.0.1</h2>
+<ul>
+<li>Update layout css files.</li>
+</ul>
+<h2>2.1 to 4.0.0</h2>
+<ul>
+<li>Includes version updates to PrimeNG 4 and Angular 4.</li>
+<li>Update theme css files.</li>
+</ul>
+<h2>2.0.5 to 2.1.0</h2>
+<ul>
+<li>Project is updated to CLI RC2, Angular 4-RC3 and PrimeNG 4-RC1.</li>
+<li>Add <em>import {trigger,state,style,transition,animate} from &#39;@angular/animations&#39;;</em> to app.menu.components.ts and remove these imports from &#39;angular/core&#39;.</li>
+<li>Add <em>import {BrowserAnimationsModule} from &#39;@angular/platform-browser/animations&#39;;</em> to app.module.ts and import the module to your application.</li>
+<li>Update theme css files, there are no changes to the layout.</li>
+</ul>
+<h2>2.0.4 to 2.0.5</h2>
+<ul>
+<li>No change required, missing .angular-cli.json file in 2.0.4 is added.</li>
+</ul>
+<h2>2.0.3 to 2.0.4</h2>
+<ul>
+<li>No change required, only CLI version is updated to RC</li>
+</ul>
+<h2>2.0.2 to 2.0.3</h2>
+<ul>
+<li>Update AppSubmenu component in app.menu.component.ts by replacing the itemClick method implementation.</li>
+<li>Update layout css files, there are no changes on themes.</li>
+<li>Update app.component.ts by changing onTopbarMenuButtonClick method implementation to add <em>event.preventDefault()</em> at the end.</li>
+<li>Remove [ngClass]=&quot;{&#39;menu-button-rotate&#39;: app.rotateMenuButton}&quot; from menu-button in app.topbar.component.ts.</li>
+</ul>
+<h2>2.0.1 to 2.0.2</h2>
+<ul>
+<li>Update AppSubmenu component in app.menu.component.ts</li>
+<li>Update layout css files, there are no changes on themes.</li>
+<li>Update app.component.ts.</li>
+<li>Add pInputText to search input at app.topbar.component.ts</li>
+</ul>
+<h2>2.0.0 to 2.0.1</h2>
+<ul>
+<li>Update AppSubmenu component in app.menu.component.ts</li>
+<li>Update layout css and theme css files.</li>
+<li>Update app.component.ts.</li>
+</ul>
+<h2>1.1.0 to 2.0.0</h2>
+<ul>
+<li>Update PrimeNG to at least 2.0.</li>
+<li>Replace app.component.ts and app.component.html</li>
+<li>Remove layout.js</li>
+<li>Update the scripts and styles section at angular-cli.json</li>
+<li>Define menu using PrimeNG MenuModel</li>
+</ul>
+<h2>1.0.3 to 1.1.0</h2>
+<ul>
+<li>Update css files of layout and theme.</li>
+</ul>
+<h2>1.0.2 to 1.0.3</h2>
+<ul>
+<li>Update css files of layout and theme.</li>
+</ul>
+<h2>1.0.1 to 1.0.2</h2>
+<ul>
+<li>Update layout.js</li>
+</ul>
+<h2>1.0.0 to 1.0.1</h2>
+<ul>
+<li>Update layout.js</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'changelog.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

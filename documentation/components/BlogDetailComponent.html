@@ -1,0 +1,567 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  BlogDetailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/apps/blog/blog-detail/blog-detail.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./blog-detail.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#comments" >comments</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+    <section data-compodoc="block-properties">
+
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="comments"></a>
+                    <span class="name">
+                        <span ><b>comments</b></span>
+                        <a href="#comments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Comment[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+        {
+            image: &#x27;assets/demo/images/avatar/circle/avatar-f-3@2x.png&#x27;,
+            name: &#x27;Courtney Henry&#x27;,
+            date: &#x27;03 February 2022&#x27;,
+            description:
+                &#x27;Reprehenderit ut voluptas sapiente ratione nostrum est.&#x27;,
+        },
+        {
+            image: &#x27;assets/demo/images/avatar/circle/avatar-f-1@2x.png&#x27;,
+            name: &#x27;Esther Howard&#x27;,
+            date: &#x27;03 February 2022&#x27;,
+            description:
+                &#x27;How likely are you to recommend our company to your friends and family ?&#x27;,
+        },
+        {
+            image: &#x27;assets/demo/images/avatar/circle/avatar-f-4@2x.png&#x27;,
+            name: &#x27;Darlene Robertson&#x27;,
+            date: &#x27;03 February 2022&#x27;,
+            description: &#x27;Quo quia sit nihil nemo doloremque et.&#x27;,
+        },
+        {
+            image: &#x27;assets/demo/images/avatar/circle/avatar-f-5@2x.png&#x27;,
+            name: &#x27;Esther Howard&#x27;,
+            date: &#x27;03 February 2022&#x27;,
+            description:
+                &#x27;How likely are you to recommend our company to your friends and family ?&#x27;,
+        },
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/components/apps/blog/blog-detail/blog-detail.component.ts:7</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { Comment } from &#x27;src/app/api/blog&#x27;;
+@Component({
+    templateUrl: &#x27;./blog-detail.component.html&#x27;,
+})
+export class BlogDetailComponent {
+    comments: Comment[] &#x3D; [
+        {
+            image: &#x27;assets/demo/images/avatar/circle/avatar-f-3@2x.png&#x27;,
+            name: &#x27;Courtney Henry&#x27;,
+            date: &#x27;03 February 2022&#x27;,
+            description:
+                &#x27;Reprehenderit ut voluptas sapiente ratione nostrum est.&#x27;,
+        },
+        {
+            image: &#x27;assets/demo/images/avatar/circle/avatar-f-1@2x.png&#x27;,
+            name: &#x27;Esther Howard&#x27;,
+            date: &#x27;03 February 2022&#x27;,
+            description:
+                &#x27;How likely are you to recommend our company to your friends and family ?&#x27;,
+        },
+        {
+            image: &#x27;assets/demo/images/avatar/circle/avatar-f-4@2x.png&#x27;,
+            name: &#x27;Darlene Robertson&#x27;,
+            date: &#x27;03 February 2022&#x27;,
+            description: &#x27;Quo quia sit nihil nemo doloremque et.&#x27;,
+        },
+        {
+            image: &#x27;assets/demo/images/avatar/circle/avatar-f-5@2x.png&#x27;,
+            name: &#x27;Esther Howard&#x27;,
+            date: &#x27;03 February 2022&#x27;,
+            description:
+                &#x27;How likely are you to recommend our company to your friends and family ?&#x27;,
+        },
+    ];
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;div
+        class&#x3D;&quot;flex justify-content-between flex-column-reverse md:flex-row align-items-center&quot;
+    &gt;
+        &lt;div&gt;
+            &lt;div
+                class&#x3D;&quot;text-xl text-900 mb-4 mt-4 md:mt-0 text-center md:text-left font-semibold md:pr-4&quot;
+            &gt;
+                How To Get Started Tutorial
+            &lt;/div&gt;
+            &lt;div
+                class&#x3D;&quot;flex flex-wrap justify-content-center md:justify-content-start gap-3&quot;
+            &gt;
+                &lt;span
+                    class&#x3D;&quot;inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round&quot;
+                &gt;
+                    &lt;i
+                        class&#x3D;&quot;pi pi-clock text-primary mr-2&quot;
+                    &gt;&lt;/i&gt;
+                    &lt;span class&#x3D;&quot;text-900&quot;&gt;2d ago&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span
+                    class&#x3D;&quot;inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round&quot;
+                &gt;
+                    &lt;i
+                        class&#x3D;&quot;pi pi-comments text-primary mr-2&quot;
+                    &gt;&lt;/i&gt;
+                    &lt;span class&#x3D;&quot;text-900&quot;&gt;24&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;span
+                    class&#x3D;&quot;inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round&quot;
+                &gt;
+                    &lt;i
+                        class&#x3D;&quot;pi pi-eye text-primary mr-2&quot;
+                    &gt;&lt;/i&gt;
+                    &lt;span class&#x3D;&quot;text-900&quot;&gt;124&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;flex flex-column align-items-center justify-content-center&quot;&gt;
+            &lt;img
+                class&#x3D;&quot;w-4rem h-4rem&quot;
+                src&#x3D;&quot;assets/demo/images/avatar/circle/avatar-f-2@2x.png&quot;
+            /&gt;
+            &lt;span class&#x3D;&quot;mt-3 font-bold text-900 text-center white-space-nowrap&quot;
+                &gt;Jane Cooper&lt;/span
+            &gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;text-center my-6&quot;&gt;
+        &lt;img
+            src&#x3D;&quot;assets/demo/images/blog/blogdetail.png&quot;
+            alt&#x3D;&quot;Image&quot;
+            class&#x3D;&quot;w-full&quot;
+        /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;text-2xl text-900 mb-4 font-semibold&quot;&gt;
+        Sodales massa, morbi convallis
+    &lt;/div&gt;
+    &lt;p class&#x3D;&quot;line-height-3 text-lg mb-4&quot;&gt;
+        First, a disclaimer - the entire process of writing a blog post often
+        takes more than a couple of hours, even if you can type eighty words per
+        minute and your writing skills are sharp. From the seed of the idea to
+        finally hitting “Publish,” you might spend several days or maybe even a
+        week “writing” a blog post, but it&#x27;s important to spend those vital
+        hours planning your post and even thinking about Your Post(yes, thinking
+        counts as working if you&#x27;re a blogger) before you actually write it.
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;line-height-3 text-lg mb-4&quot;&gt;
+        There&#x27;s an old maxim that states, “No fun for the writer, no fun for the
+        reader.”No matter what industry you&#x27;re working in, as a blogger, you
+        should live and die by this statement.
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;line-height-3 text-lg mb-4&quot;&gt;
+        Before you do any of the following steps, be sure to pick a topic that
+        actually interests you. Nothing - and I mean NOTHING- will kill a blog
+        post more effectively than a lack of enthusiasm from the writer. You can
+        tell when a writer is bored by their subject, and it&#x27;s so cringe-worthy
+        it&#x27;s a little embarrassing.
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;line-height-3 text-lg mb-4&quot;&gt;
+        I can hear your objections already. “But Dan, I have to blog for a
+        cardboard box manufacturing company.” I feel your pain, I really do.
+        During the course of my career, I&#x27;ve written content for dozens of
+        clients in some less-than-thrilling industries (such as financial
+        regulatory compliance and corporate housing), but the hallmark of a
+        professional blogger is the ability to write well about any topic, no
+        matter how dry it may be. Blogging is a lot easier, however, if you can
+        muster at least a little enthusiasm for the topic at hand.
+    &lt;/p&gt;
+    &lt;div class&#x3D;&quot;text-2xl text-900 mb-4 font-semibold&quot;&gt;
+        Commodo ultrices orci tempus et fermentum, pellentesque ultricies.
+    &lt;/div&gt;
+    &lt;ul class&#x3D;&quot;text-xl p-0 my-0 ml-5&quot; &gt;
+        &lt;li class&#x3D;&quot;mb-3 line-height-3&quot;&gt;
+            Fermentum neque odio laoreet morbi sit. Venenatis in quam ut non.
+        &lt;/li&gt;
+        &lt;li class&#x3D;&quot;mb-3 line-height-3&quot;&gt;
+            Enim in porta facilisi a vulputate fermentum, morbi. Consequat, id
+            praesent tristique euismod pellentesque.
+        &lt;/li&gt;
+        &lt;li class&#x3D;&quot;mb-3 line-height-3&quot;&gt;Implements This is an external link&lt;/li&gt;
+        &lt;li class&#x3D;&quot;line-height-3&quot;&gt;
+            Scelerisque ultricies tincidunt lectus faucibus non morbi sed nibh
+            varius. Quam a, habitasse egestaseleifend.
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class&#x3D;&quot;flex flex-column sm:flex-row my-8 w-full gap-3&quot;&gt;
+        &lt;button
+            pButton
+            pRipple
+            icon&#x3D;&quot;pi pi-twitter&quot;
+            class&#x3D;&quot;p-button-secondary&quot;
+            label&#x3D;&quot;Twitter&quot;
+        &gt;&lt;/button&gt;
+        &lt;button
+            pButton
+            pRipple
+            icon&#x3D;&quot;pi pi-facebook&quot;
+            class&#x3D;&quot;p-button-secondary&quot;
+            label&#x3D;&quot;Facebook&quot;
+        &gt;&lt;/button&gt;
+        &lt;button
+            [routerLink]&#x3D;&quot;[&#x27;/apps/blog/edit&#x27;]&quot;
+            pButton
+            pRipple
+            icon&#x3D;&quot;pi pi-pencil&quot;
+            class&#x3D;&quot;sm:ml-auto&quot;
+            label&#x3D;&quot;Edit Post&quot;
+        &gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;app-blog-comments [comments]&#x3D;&quot;comments&quot;&gt;&lt;/app-blog-comments&gt;
+    &lt;app-new-comment&gt;&lt;/app-new-comment&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card">    <div        class="flex justify-content-between flex-column-reverse md:flex-row align-items-center"    >        <div>            <div                class="text-xl text-900 mb-4 mt-4 md:mt-0 text-center md:text-left font-semibold md:pr-4"            >                How To Get Started Tutorial            </div>            <div                class="flex flex-wrap justify-content-center md:justify-content-start gap-3"            >                <span                    class="inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round"                >                    <i                        class="pi pi-clock text-primary mr-2"                    ></i>                    <span class="text-900">2d ago</span>                </span>                <span                    class="inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round"                >                    <i                        class="pi pi-comments text-primary mr-2"                    ></i>                    <span class="text-900">24</span>                </span>                <span                    class="inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round"                >                    <i                        class="pi pi-eye text-primary mr-2"                    ></i>                    <span class="text-900">124</span>                </span>            </div>        </div>        <div class="flex flex-column align-items-center justify-content-center">            <img                class="w-4rem h-4rem"                src="assets/demo/images/avatar/circle/avatar-f-2@2x.png"            />            <span class="mt-3 font-bold text-900 text-center white-space-nowrap"                >Jane Cooper</span            >        </div>    </div>    <div class="text-center my-6">        <img            src="assets/demo/images/blog/blogdetail.png"            alt="Image"            class="w-full"        />    </div>    <div class="text-2xl text-900 mb-4 font-semibold">        Sodales massa, morbi convallis    </div>    <p class="line-height-3 text-lg mb-4">        First, a disclaimer - the entire process of writing a blog post often        takes more than a couple of hours, even if you can type eighty words per        minute and your writing skills are sharp. From the seed of the idea to        finally hitting “Publish,” you might spend several days or maybe even a        week “writing” a blog post, but it\'s important to spend those vital        hours planning your post and even thinking about Your Post(yes, thinking        counts as working if you\'re a blogger) before you actually write it.    </p>    <p class="line-height-3 text-lg mb-4">        There\'s an old maxim that states, “No fun for the writer, no fun for the        reader.”No matter what industry you\'re working in, as a blogger, you        should live and die by this statement.    </p>    <p class="line-height-3 text-lg mb-4">        Before you do any of the following steps, be sure to pick a topic that        actually interests you. Nothing - and I mean NOTHING- will kill a blog        post more effectively than a lack of enthusiasm from the writer. You can        tell when a writer is bored by their subject, and it\'s so cringe-worthy        it\'s a little embarrassing.    </p>    <p class="line-height-3 text-lg mb-4">        I can hear your objections already. “But Dan, I have to blog for a        cardboard box manufacturing company.” I feel your pain, I really do.        During the course of my career, I\'ve written content for dozens of        clients in some less-than-thrilling industries (such as financial        regulatory compliance and corporate housing), but the hallmark of a        professional blogger is the ability to write well about any topic, no        matter how dry it may be. Blogging is a lot easier, however, if you can        muster at least a little enthusiasm for the topic at hand.    </p>    <div class="text-2xl text-900 mb-4 font-semibold">        Commodo ultrices orci tempus et fermentum, pellentesque ultricies.    </div>    <ul class="text-xl p-0 my-0 ml-5" >        <li class="mb-3 line-height-3">            Fermentum neque odio laoreet morbi sit. Venenatis in quam ut non.        </li>        <li class="mb-3 line-height-3">            Enim in porta facilisi a vulputate fermentum, morbi. Consequat, id            praesent tristique euismod pellentesque.        </li>        <li class="mb-3 line-height-3">Implements This is an external link</li>        <li class="line-height-3">            Scelerisque ultricies tincidunt lectus faucibus non morbi sed nibh            varius. Quam a, habitasse egestaseleifend.        </li>    </ul>    <div class="flex flex-column sm:flex-row my-8 w-full gap-3">        <button            pButton            pRipple            icon="pi pi-twitter"            class="p-button-secondary"            label="Twitter"        ></button>        <button            pButton            pRipple            icon="pi pi-facebook"            class="p-button-secondary"            label="Facebook"        ></button>        <button            [routerLink]="[\'/apps/blog/edit\']"            pButton            pRipple            icon="pi pi-pencil"            class="sm:ml-auto"            label="Edit Post"        ></button>    </div>    <app-blog-comments [comments]="comments"></app-blog-comments>    <app-new-comment></app-new-comment></div></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BlogDetailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BlogDetailComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

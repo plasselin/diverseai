@@ -1,0 +1,27 @@
+.home-card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.logo-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+}
+
+.logo-image {
+    max-height: 600px;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+}

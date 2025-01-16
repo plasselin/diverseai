@@ -1,0 +1,894 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SignupComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/auth/signup/signup.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-signup</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./signup.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#errorMessage" >errorMessage</a>
+                            </li>
+                            <li>
+                                <a href="#formErrors" >formErrors</a>
+                            </li>
+                            <li>
+                                <a href="#signupForm" >signupForm</a>
+                            </li>
+                            <li>
+                                <a href="#successMessage" >successMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#passwordMatchValidator" >passwordMatchValidator</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/auth/signup/signup.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="32"
+                                    class="link-to-prism">src/app/components/auth/signup/signup.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="43"
+                                    class="link-to-prism">src/app/components/auth/signup/signup.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="passwordMatchValidator"></a>
+                    <span class="name">
+                        <span ><b>passwordMatchValidator</b></span>
+                        <a href="#passwordMatchValidator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>passwordMatchValidator(form: FormGroup)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/components/auth/signup/signup.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>form</td>
+                                            <td>
+                                                        <code>FormGroup</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorMessage"></a>
+                    <span class="name">
+                        <span ><b>errorMessage</b></span>
+                        <a href="#errorMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/auth/signup/signup.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formErrors"></a>
+                    <span class="name">
+                        <span ><b>formErrors</b></span>
+                        <a href="#formErrors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/auth/signup/signup.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signupForm"></a>
+                    <span class="name">
+                        <span ><b>signupForm</b></span>
+                        <a href="#signupForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/auth/signup/signup.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="successMessage"></a>
+                    <span class="name">
+                        <span ><b>successMessage</b></span>
+                        <a href="#successMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/auth/signup/signup.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { AuthService } from &#x27;../auth.service&#x27;; // Adjust the path as needed
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+    selector: &#x27;app-signup&#x27;,
+    templateUrl: &#x27;./signup.component.html&#x27;,
+})
+export class SignupComponent implements OnInit {
+    signupForm: FormGroup;
+    errorMessage: string &#x3D; &#x27;&#x27;;
+    formErrors: any &#x3D; {};
+    successMessage: string &#x3D; &#x27;&#x27;;
+    constructor(
+        private fb: FormBuilder,
+        private authService: AuthService,
+        private router: Router
+    ) {
+        this.signupForm &#x3D; this.fb.group({
+            username: [&#x27;&#x27;, [Validators.required, Validators.maxLength(150)]],
+            email: [&#x27;&#x27;, [Validators.email]],
+            first_name: [&#x27;&#x27;, Validators.required],
+            last_name: [&#x27;&#x27;],
+            password: [&#x27;&#x27;, [Validators.required, Validators.minLength(8)]],
+            password2: [&#x27;&#x27;, Validators.required],
+        }, {
+            validators: this.passwordMatchValidator
+        });
+    }
+
+    ngOnInit(): void { }
+
+    passwordMatchValidator(form: FormGroup): any {
+        if (form.get(&#x27;password&#x27;)?.value !&#x3D;&#x3D; form.get(&#x27;password2&#x27;)?.value) {
+            return { mismatch: true };
+        } else {
+            return null;
+        }
+    }
+
+
+    onSubmit(): void {
+        if (this.signupForm.valid) {
+            this.authService.register(this.signupForm.value).subscribe({
+                next: () &#x3D;&gt; {
+                    this.successMessage &#x3D; &#x27;Registration successful! Please check your email to confirm your account.&#x27;;
+                    this.signupForm.reset(); // Optionally reset the form
+                },
+                error: (error) &#x3D;&gt; {
+                    // Handle errors
+                }
+            });
+        }
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div
+    class&#x3D;&quot;h-screen text-bluegray-200&quot;
+    style&#x3D;&quot;background: linear-gradient(180deg, #525d72 0%, #69768d 100%)&quot;
+&gt;
+    &lt;div class&#x3D;&quot;flex justify-content-center align-items-center h-full&quot;&gt;
+        &lt;div
+            class&#x3D;&quot;h-full text-center py-6 px-4 flex justify-content-between flex-column max-w-30rem&quot;
+        &gt;
+            &lt;a [routerLink]&#x3D;&quot;[&#x27;/signup&#x27;]&quot;&gt;
+                &lt;img
+                    src&#x3D;&quot;assets/layout/images/logo_notext.svg&quot;
+                    alt&#x3D;&quot;poseidon-layout&quot;
+                    height&#x3D;&quot;45px&quot;
+                /&gt;
+            &lt;/a&gt;
+            &lt;div&gt;
+                &lt;h2 class&#x3D;&quot;text-bluegray-200&quot;&gt;Create Your Account&lt;/h2&gt;
+                &lt;form [formGroup]&#x3D;&quot;signupForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+                    &lt;!-- Username --&gt;
+                    &lt;input
+                        type&#x3D;&quot;text&quot;
+                        pInputText
+                        formControlName&#x3D;&quot;username&quot;
+                        placeholder&#x3D;&quot;Username&quot;
+                        class&#x3D;&quot;w-11 mb-4 text-bluegray-600 surface-ground&quot;
+                    /&gt;
+                    &lt;div *ngIf&#x3D;&quot;signupForm.get(&#x27;username&#x27;)?.invalid &amp;&amp; signupForm.get(&#x27;username&#x27;)?.touched&quot; class&#x3D;&quot;text-red-500&quot;&gt;
+                        Username is required and must be 150 characters or fewer.
+                    &lt;/div&gt;
+                    &lt;div *ngIf&#x3D;&quot;formErrors[&#x27;username&#x27;]&quot; class&#x3D;&quot;text-red-500&quot;&gt;
+                        {{ formErrors[&#x27;username&#x27;] }}
+                    &lt;/div&gt;
+
+                    &lt;!-- Email --&gt;
+                    &lt;input
+                        type&#x3D;&quot;email&quot;
+                        pInputText
+                        formControlName&#x3D;&quot;email&quot;
+                        placeholder&#x3D;&quot;Email&quot;
+                        class&#x3D;&quot;w-11 mb-4 text-bluegray-600 surface-ground&quot;
+                    /&gt;
+                    &lt;div *ngIf&#x3D;&quot;signupForm.get(&#x27;email&#x27;)?.invalid &amp;&amp; signupForm.get(&#x27;email&#x27;)?.touched&quot; class&#x3D;&quot;text-red-500&quot;&gt;
+                        Enter a valid email.
+                    &lt;/div&gt;
+                    &lt;div *ngIf&#x3D;&quot;formErrors[&#x27;email&#x27;]&quot; class&#x3D;&quot;text-red-500&quot;&gt;
+                        {{ formErrors[&#x27;email&#x27;] }}
+                    &lt;/div&gt;
+
+                    &lt;!-- First Name --&gt;
+                    &lt;input
+                        type&#x3D;&quot;text&quot;
+                        pInputText
+                        formControlName&#x3D;&quot;first_name&quot;
+                        placeholder&#x3D;&quot;First Name&quot;
+                        class&#x3D;&quot;w-11 mb-4 text-bluegray-600 surface-ground&quot;
+                    /&gt;
+                    &lt;div *ngIf&#x3D;&quot;signupForm.get(&#x27;first_name&#x27;)?.invalid &amp;&amp; signupForm.get(&#x27;first_name&#x27;)?.touched&quot; class&#x3D;&quot;text-red-500&quot;&gt;
+                        First name is required.
+                    &lt;/div&gt;
+                    &lt;div *ngIf&#x3D;&quot;formErrors[&#x27;first_name&#x27;]&quot; class&#x3D;&quot;text-red-500&quot;&gt;
+                        {{ formErrors[&#x27;first_name&#x27;] }}
+                    &lt;/div&gt;
+
+                    &lt;!-- Last Name (Optional) --&gt;
+                    &lt;input
+                        type&#x3D;&quot;text&quot;
+                        pInputText
+                        formControlName&#x3D;&quot;last_name&quot;
+                        placeholder&#x3D;&quot;Last Name&quot;
+                        class&#x3D;&quot;w-11 mb-4 text-bluegray-600 surface-ground&quot;
+                    /&gt;
+
+                    &lt;!-- Password --&gt;
+                    &lt;input
+                        type&#x3D;&quot;password&quot;
+                        pInputText
+                        formControlName&#x3D;&quot;password&quot;
+                        placeholder&#x3D;&quot;Password&quot;
+                        class&#x3D;&quot;w-11 mb-4 text-bluegray-600 surface-ground&quot;
+                    /&gt;
+                    &lt;div *ngIf&#x3D;&quot;signupForm.get(&#x27;password&#x27;)?.invalid &amp;&amp; signupForm.get(&#x27;password&#x27;)?.touched&quot; class&#x3D;&quot;text-red-500&quot;&gt;
+                        Password must be at least 8 characters.
+                    &lt;/div&gt;
+                    &lt;div *ngIf&#x3D;&quot;formErrors[&#x27;password&#x27;]&quot; class&#x3D;&quot;text-red-500&quot;&gt;
+                        {{ formErrors[&#x27;password&#x27;] }}
+                    &lt;/div&gt;
+
+                    &lt;!-- Confirm Password --&gt;
+                    &lt;input
+                        type&#x3D;&quot;password&quot;
+                        pInputText
+                        formControlName&#x3D;&quot;password2&quot;
+                        placeholder&#x3D;&quot;Confirm Password&quot;
+                        class&#x3D;&quot;w-11 mb-4 text-bluegray-600 surface-ground&quot;
+                    /&gt;
+                    &lt;div *ngIf&#x3D;&quot;signupForm.errors?.[&#x27;mismatch&#x27;] &amp;&amp; signupForm.get(&#x27;password2&#x27;)?.touched&quot; class&#x3D;&quot;text-red-500&quot;&gt;
+                        Passwords do not match.
+                    &lt;/div&gt;
+
+                    &lt;!-- Submit Button --&gt;
+                    &lt;button
+                        pButton
+                        pRipple
+                        label&#x3D;&quot;SIGN UP&quot;
+                        type&#x3D;&quot;submit&quot;
+                        class&#x3D;&quot;w-11&quot;
+                        [disabled]&#x3D;&quot;signupForm.invalid&quot;
+                    &gt;&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;!-- src/app/components/signup/signup.component.html --&gt;
+                &lt;div *ngIf&#x3D;&quot;successMessage&quot; class&#x3D;&quot;text-green-500 mt-4&quot;&gt;{{ successMessage }}&lt;/div&gt;
+
+                &lt;!-- General Error Message --&gt;
+                &lt;div *ngIf&#x3D;&quot;errorMessage&quot; class&#x3D;&quot;text-red-500 mt-4&quot;&gt;{{ errorMessage }}&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;p class&#x3D;&quot;font-semibold m-0 text-bluegray-200&quot;&gt;
+                Already have an account?
+                &lt;a [routerLink]&#x3D;&quot;[&#x27;/auth/login&#x27;]&quot; class&#x3D;&quot;cursor-pointer text-white&quot;&gt; Login&lt;/a&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;app-config [minimal]&#x3D;&quot;true&quot;&gt;&lt;/app-config&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div    class="h-screen text-bluegray-200"    style="background: linear-gradient(180deg, #525d72 0%, #69768d 100%)">    <div class="flex justify-content-center align-items-center h-full">        <div            class="h-full text-center py-6 px-4 flex justify-content-between flex-column max-w-30rem"        >            <a [routerLink]="[\'/signup\']">                <img                    src="assets/layout/images/logo_notext.svg"                    alt="poseidon-layout"                    height="45px"                />            </a>            <div>                <h2 class="text-bluegray-200">Create Your Account</h2>                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">                    <!-- Username -->                    <input                        type="text"                        pInputText                        formControlName="username"                        placeholder="Username"                        class="w-11 mb-4 text-bluegray-600 surface-ground"                    />                    <div *ngIf="signupForm.get(\'username\')?.invalid && signupForm.get(\'username\')?.touched" class="text-red-500">                        Username is required and must be 150 characters or fewer.                    </div>                    <div *ngIf="formErrors[\'username\']" class="text-red-500">                        {{ formErrors[\'username\'] }}                    </div>                    <!-- Email -->                    <input                        type="email"                        pInputText                        formControlName="email"                        placeholder="Email"                        class="w-11 mb-4 text-bluegray-600 surface-ground"                    />                    <div *ngIf="signupForm.get(\'email\')?.invalid && signupForm.get(\'email\')?.touched" class="text-red-500">                        Enter a valid email.                    </div>                    <div *ngIf="formErrors[\'email\']" class="text-red-500">                        {{ formErrors[\'email\'] }}                    </div>                    <!-- First Name -->                    <input                        type="text"                        pInputText                        formControlName="first_name"                        placeholder="First Name"                        class="w-11 mb-4 text-bluegray-600 surface-ground"                    />                    <div *ngIf="signupForm.get(\'first_name\')?.invalid && signupForm.get(\'first_name\')?.touched" class="text-red-500">                        First name is required.                    </div>                    <div *ngIf="formErrors[\'first_name\']" class="text-red-500">                        {{ formErrors[\'first_name\'] }}                    </div>                    <!-- Last Name (Optional) -->                    <input                        type="text"                        pInputText                        formControlName="last_name"                        placeholder="Last Name"                        class="w-11 mb-4 text-bluegray-600 surface-ground"                    />                    <!-- Password -->                    <input                        type="password"                        pInputText                        formControlName="password"                        placeholder="Password"                        class="w-11 mb-4 text-bluegray-600 surface-ground"                    />                    <div *ngIf="signupForm.get(\'password\')?.invalid && signupForm.get(\'password\')?.touched" class="text-red-500">                        Password must be at least 8 characters.                    </div>                    <div *ngIf="formErrors[\'password\']" class="text-red-500">                        {{ formErrors[\'password\'] }}                    </div>                    <!-- Confirm Password -->                    <input                        type="password"                        pInputText                        formControlName="password2"                        placeholder="Confirm Password"                        class="w-11 mb-4 text-bluegray-600 surface-ground"                    />                    <div *ngIf="signupForm.errors?.[\'mismatch\'] && signupForm.get(\'password2\')?.touched" class="text-red-500">                        Passwords do not match.                    </div>                    <!-- Submit Button -->                    <button                        pButton                        pRipple                        label="SIGN UP"                        type="submit"                        class="w-11"                        [disabled]="signupForm.invalid"                    ></button>                </form>                <!-- src/app/components/signup/signup.component.html -->                <div *ngIf="successMessage" class="text-green-500 mt-4">{{ successMessage }}</div>                <!-- General Error Message -->                <div *ngIf="errorMessage" class="text-red-500 mt-4">{{ errorMessage }}</div>            </div>            <p class="font-semibold m-0 text-bluegray-200">                Already have an account?                <a [routerLink]="[\'/auth/login\']" class="cursor-pointer text-white"> Login</a>            </p>        </div>    </div></div><app-config [minimal]="true"></app-config></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SignupComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SignupComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

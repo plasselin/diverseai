@@ -1,0 +1,33 @@
+<p-card class="home-card">
+    <div class="home-card-content">
+        <div class="text-content">
+            <section>
+                <span class="block text-6xl font-bold mb-1">Pierre-Luc Asselin</span>
+                <div class="text-6xl text-primary font-bold mb-3">Developer Portfolio</div>
+                <p class="mt-0 mb-4 text-700 line-height-3">
+                    This website was first created as a side project to learn the Django framework as well as the OpenAI API.
+                    Along the way, I figured I would need a portfolio website, so I decided to use this project as its base and will add new features along the way.
+                </p>
+                <p class="mt-0 mb-4 text-700 line-height-3">
+                    If you are here, that means I am currently unemployed, so I have to limit the API calls for each visitor.
+                    I do not set a hard limit on tokens since the chatbot uses TTS and STT, and that would make the demo hard to evaluate,
+                    so I gave each visitor up to 40 prompts they can use to check how I implemented the OpenAI API with Angular 17,
+                    a Django backend, and a PostgreSQL database to handle the models.
+                </p>
+                <p class="mt-0 mb-4 text-700 line-height-3">
+                    I have decided to leave the Store as is so that you may see the State with Redux and evaluate my implementation of NGRX.
+                    You should also be able to see the JSON objects in the console when using the chatbot.
+                </p>
+                <a href="https://www.linkedin.com/in/pierre-luc-asselin-254450299" target="_blank">
+                    <button pButton pRipple label="LinkedIn Profile" type="button" class="mr-3 p-button-raised"></button>
+                </a>
+                <a href="https://github.com/plasselin" target="_blank">
+                    <button pButton pRipple label="GitHub Profile" type="button" class="p-button-outlined"></button>
+                </a>
+            </section>
+        </div>
+        <div class="logo-content">
+            <img src="/assets/layout/images/logo.png" alt="Company Logo" class="logo-image">
+        </div>
+    </div>
+</p-card>

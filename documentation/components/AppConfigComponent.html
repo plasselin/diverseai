@@ -1,0 +1,2000 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AppConfigComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/layout/config/app.config.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-config</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.config.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#componentThemes" >componentThemes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#layoutService" >layoutService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuService" >menuService</a>
+                            </li>
+                            <li>
+                                <a href="#menuThemes" >menuThemes</a>
+                            </li>
+                            <li>
+                                <a href="#scales" >scales</a>
+                            </li>
+                            <li>
+                                <a href="#scenes" >scenes</a>
+                            </li>
+                            <li>
+                                <a href="#selectedScene" >selectedScene</a>
+                            </li>
+                            <li>
+                                <a href="#topbarThemes" >topbarThemes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changeTheme" >changeTheme</a>
+                            </li>
+                            <li>
+                                <a href="#decrementScale" >decrementScale</a>
+                            </li>
+                            <li>
+                                <a href="#incrementScale" >incrementScale</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onConfigButtonClick" >onConfigButtonClick</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#minimal" >minimal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#visible" >visible</a>
+                                </li>
+                                <li>
+                                    <a href="#scale" >scale</a>
+                                </li>
+                                <li>
+                                    <a href="#menuMode" >menuMode</a>
+                                </li>
+                                <li>
+                                    <a href="#colorScheme" >colorScheme</a>
+                                </li>
+                                <li>
+                                    <a href="#inputStyle" >inputStyle</a>
+                                </li>
+                                <li>
+                                    <a href="#ripple" >ripple</a>
+                                </li>
+                                <li>
+                                    <a href="#menuTheme" >menuTheme</a>
+                                </li>
+                                <li>
+                                    <a href="#topbarTheme" >topbarTheme</a>
+                                </li>
+                                <li>
+                                    <a href="#componentTheme" >componentTheme</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(layoutService: <a href="../injectables/LayoutService.html" target="_self">LayoutService</a>, menuService: <a href="../injectables/MenuService.html" target="_self">MenuService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/layout/config/app.config.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>layoutService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>menuService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MenuService.html" target="_self" >MenuService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="minimal"></a>
+                        <b>minimal</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/layout/config/app.config.component.ts:14</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeTheme"></a>
+                    <span class="name">
+                        <span ><b>changeTheme</b></span>
+                        <a href="#changeTheme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeTheme(theme: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="159"
+                                    class="link-to-prism">src/app/layout/config/app.config.component.ts:159</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>theme</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="decrementScale"></a>
+                    <span class="name">
+                        <span ><b>decrementScale</b></span>
+                        <a href="#decrementScale"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>decrementScale()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="163"
+                                    class="link-to-prism">src/app/layout/config/app.config.component.ts:163</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="incrementScale"></a>
+                    <span class="name">
+                        <span ><b>incrementScale</b></span>
+                        <a href="#incrementScale"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>incrementScale()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">src/app/layout/config/app.config.component.ts:167</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="126"
+                                    class="link-to-prism">src/app/layout/config/app.config.component.ts:126</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onConfigButtonClick"></a>
+                    <span class="name">
+                        <span ><b>onConfigButtonClick</b></span>
+                        <a href="#onConfigButtonClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onConfigButtonClick()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="155"
+                                    class="link-to-prism">src/app/layout/config/app.config.component.ts:155</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="componentThemes"></a>
+                    <span class="name">
+                        <span ><b>componentThemes</b></span>
+                        <a href="#componentThemes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/layout/config/app.config.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="layoutService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>layoutService</b></span>
+                        <a href="#layoutService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/layout/config/app.config.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuService</b></span>
+                        <a href="#menuService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/MenuService.html" target="_self" >MenuService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/layout/config/app.config.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuThemes"></a>
+                    <span class="name">
+                        <span ><b>menuThemes</b></span>
+                        <a href="#menuThemes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/layout/config/app.config.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scales"></a>
+                    <span class="name">
+                        <span ><b>scales</b></span>
+                        <a href="#scales"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[12, 13, 14, 15, 16]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/layout/config/app.config.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scenes"></a>
+                    <span class="name">
+                        <span ><b>scenes</b></span>
+                        <a href="#scenes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/layout/config/app.config.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedScene"></a>
+                    <span class="name">
+                        <span ><b>selectedScene</b></span>
+                        <a href="#selectedScene"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal&lt;string&gt;(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/layout/config/app.config.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="topbarThemes"></a>
+                    <span class="name">
+                        <span ><b>topbarThemes</b></span>
+                        <a href="#topbarThemes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/layout/config/app.config.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="visible"></a>
+                        <span class="name"><b>visible</b><a href="#visible"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>visible()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/layout/config/app.config.component.ts:33</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>visible(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/layout/config/app.config.component.ts:36</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="scale"></a>
+                        <span class="name"><b>scale</b><a href="#scale"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>scale()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/layout/config/app.config.component.ts:40</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>scale(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/layout/config/app.config.component.ts:43</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuMode"></a>
+                        <span class="name"><b>menuMode</b><a href="#menuMode"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>menuMode()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/layout/config/app.config.component.ts:50</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>menuMode(_val: <a href="../undefineds/MenuMode.html" target="_self">MenuMode</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/layout/config/app.config.component.ts:53</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/typealiases.html#MenuMode" target="_self" >MenuMode</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="colorScheme"></a>
+                        <span class="name"><b>colorScheme</b><a href="#colorScheme"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>colorScheme()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/layout/config/app.config.component.ts:60</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>colorScheme(_val: <a href="../undefineds/ColorScheme.html" target="_self">ColorScheme</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/layout/config/app.config.component.ts:63</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/typealiases.html#ColorScheme" target="_self" >ColorScheme</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="inputStyle"></a>
+                        <span class="name"><b>inputStyle</b><a href="#inputStyle"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>inputStyle()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/layout/config/app.config.component.ts:74</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>inputStyle(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/layout/config/app.config.component.ts:77</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ripple"></a>
+                        <span class="name"><b>ripple</b><a href="#ripple"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>ripple()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/layout/config/app.config.component.ts:86</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>ripple(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/layout/config/app.config.component.ts:89</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuTheme"></a>
+                        <span class="name"><b>menuTheme</b><a href="#menuTheme"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>menuTheme()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/layout/config/app.config.component.ts:96</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>menuTheme(_val: <a href="../undefineds/ColorScheme.html" target="_self">ColorScheme</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/layout/config/app.config.component.ts:99</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/typealiases.html#ColorScheme" target="_self" >ColorScheme</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="topbarTheme"></a>
+                        <span class="name"><b>topbarTheme</b><a href="#topbarTheme"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>topbarTheme()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/layout/config/app.config.component.ts:106</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>topbarTheme(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/app/layout/config/app.config.component.ts:109</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="componentTheme"></a>
+                        <span class="name"><b>componentTheme</b><a href="#componentTheme"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>componentTheme()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/layout/config/app.config.component.ts:116</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>componentTheme(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/app/layout/config/app.config.component.ts:119</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit, signal } from &#x27;@angular/core&#x27;;
+import { MenuService } from &#x27;../app.menu.service&#x27;;
+import {
+    ColorScheme,
+    LayoutService,
+    MenuMode,
+} from &#x27;../service/app.layout.service&#x27;;
+
+@Component({
+    selector: &#x27;app-config&#x27;,
+    templateUrl: &#x27;./app.config.component.html&#x27;,
+})
+export class AppConfigComponent implements OnInit {
+    @Input() minimal: boolean &#x3D; false;
+
+    componentThemes: any[] &#x3D; [];
+
+    menuThemes: any[] &#x3D; [];
+
+    topbarThemes: any[] &#x3D; [];
+
+    scenes: any[] &#x3D; [];
+
+    scales: number[] &#x3D; [12, 13, 14, 15, 16];
+
+    selectedScene &#x3D; signal&lt;string&gt;(&#x27;&#x27;);
+
+    constructor(
+        public layoutService: LayoutService,
+        public menuService: MenuService
+    ) {}
+
+    get visible(): boolean {
+        return this.layoutService.state.configSidebarVisible;
+    }
+    set visible(_val: boolean) {
+        this.layoutService.state.configSidebarVisible &#x3D; _val;
+    }
+
+    get scale(): number {
+        return this.layoutService.config().scale;
+    }
+    set scale(_val: number) {
+        this.layoutService.config.update((config) &#x3D;&gt; ({
+            ...config,
+            scale: _val,
+        }));
+    }
+
+    get menuMode(): MenuMode {
+        return this.layoutService.config().menuMode;
+    }
+    set menuMode(_val: MenuMode) {
+        this.layoutService.config().menuMode &#x3D; _val;
+        if (this.layoutService.isHorizontal()) {
+            this.menuService.reset();
+        }
+    }
+
+    get colorScheme(): ColorScheme {
+        return this.layoutService.config().colorScheme;
+    }
+    set colorScheme(_val: ColorScheme) {
+        if (_val !&#x3D;&#x3D; this.layoutService.config().colorScheme) {
+            this.layoutService.config.update((config) &#x3D;&gt; ({
+                ...config,
+                menuTheme: _val,
+                topbarTheme: _val,
+                colorScheme: _val,
+            }));
+        }
+    }
+
+    get inputStyle(): string {
+        return this.layoutService.config().inputStyle;
+    }
+    set inputStyle(_val: string) {
+        this.layoutService.config.update((config) &#x3D;&gt; ({
+            ...config,
+            inputStyle: _val,
+        }));
+    }
+
+
+
+    get ripple(): boolean {
+        return this.layoutService.config().ripple;
+    }
+    set ripple(_val: boolean) {
+        this.layoutService.config.update((config) &#x3D;&gt; ({
+            ...config,
+            ripple: _val,
+        }));
+    }
+
+    get menuTheme(): string {
+        return this.layoutService.config().menuTheme;
+    }
+    set menuTheme(_val: ColorScheme) {
+        this.layoutService.config.update((config) &#x3D;&gt; ({
+            ...config,
+            menuTheme: _val,
+        }));
+    }
+
+    get topbarTheme(): string {
+        return this.layoutService.config().topbarTheme;
+    }
+    set topbarTheme(_val: string) {
+        this.layoutService.config.update((config) &#x3D;&gt; ({
+            ...config,
+            topbarTheme: _val,
+        }));
+    }
+
+    get componentTheme(): string {
+        return this.layoutService.config().componentTheme;
+    }
+    set componentTheme(_val: string) {
+        this.layoutService.config.update((config) &#x3D;&gt; ({
+            ...config,
+            componentTheme: _val,
+        }));
+    }
+
+    ngOnInit() {
+        this.componentThemes &#x3D; [
+            { name: &#x27;denim&#x27;, color: &#x27;rgb(47, 142, 229)&#x27; },
+            { name: &#x27;sea-green&#x27;, color: &#x27;rgb(48, 160, 89)&#x27; },
+            { name: &#x27;amethyst&#x27;, color: &#x27;rgb(131, 76, 168)&#x27; },
+            { name: &#x27;wedgewood&#x27;, color: &#x27;rgb(85, 125, 170)&#x27; },
+            { name: &#x27;tapestry&#x27;, color: &#x27;rgb(167, 72, 150)&#x27; },
+            { name: &#x27;cape-palliser&#x27;, color: &#x27;rgb(164, 107, 62)&#x27; },
+            { name: &#x27;apple&#x27;, color: &#x27;rgb(82, 162, 53)&#x27; },
+            { name: &#x27;gigas&#x27;, color: &#x27;rgb(87, 81, 169)&#x27; },
+            { name: &#x27;jungle-green&#x27;, color: &#x27;rgb(43, 159, 156)&#x27; },
+            { name: &#x27;camelot&#x27;, color: &#x27;rgb(165, 67, 87)&#x27; },
+            { name: &#x27;amber&#x27;, color: &#x27;rgb(212, 147, 65)&#x27; },
+            { name: &#x27;cyan&#x27;, color: &#x27;rgb(57, 157, 178)&#x27; },
+        ];
+
+        this.menuThemes &#x3D; [
+            { name: &#x27;light&#x27;, color: &#x27;#ffffff&#x27; },
+            { name: &#x27;dark&#x27;, color: &#x27;#212529&#x27; },
+            { name: &#x27;dim&#x27;, color: &#x27;#212529&#x27; },
+        ];
+
+        this.topbarThemes &#x3D; [
+            { name: &#x27;light&#x27;, color: &#x27;#FFFFFF&#x27; },
+            { name: &#x27;dark&#x27;, color: &#x27;#212529&#x27; },
+            { name: &#x27;dim&#x27;, color: &#x27;#1565C0&#x27; },
+        ];
+    }
+
+    onConfigButtonClick() {
+        this.layoutService.showConfigSidebar();
+    }
+
+    changeTheme(theme: string) {
+        this.componentTheme &#x3D; theme;
+    }
+
+    decrementScale() {
+        this.scale--;
+    }
+
+    incrementScale() {
+        this.scale++;
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;layout-config&quot;&gt;
+    &lt;p-button
+        type&#x3D;&quot;button&quot;
+        (click)&#x3D;&quot;onConfigButtonClick()&quot;
+        icon&#x3D;&quot;pi pi-cog&quot;
+        styleClass&#x3D;&quot;layout-config-button&quot;
+    &gt;&lt;/p-button&gt;
+
+    &lt;p-sidebar
+        [(visible)]&#x3D;&quot;visible&quot;
+        [position]&#x3D;&quot;&#x27;right&#x27;&quot;
+        [transitionOptions]&#x3D;&quot;&#x27;.3s cubic-bezier(0, 0, 0.2, 1)&#x27;&quot;
+    &gt;
+        &lt;div class&#x3D;&quot;p-3&quot;&gt;
+            &lt;h5&gt;Layout/Theme Scale&lt;/h5&gt;
+            &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+                &lt;button
+                    icon&#x3D;&quot;pi pi-minus&quot;
+                    type&#x3D;&quot;button&quot;
+                    pButton
+                    (click)&#x3D;&quot;decrementScale()&quot;
+                    class&#x3D;&quot;p-button-text p-button-rounded w-2rem h-2rem mr-2&quot;
+               
+                    [disabled]&#x3D;&quot;scale &#x3D;&#x3D;&#x3D; scales[0]&quot;
+                &gt;&lt;/button&gt;
+                &lt;div class&#x3D;&quot;flex gap-2 align-items-center&quot;&gt;
+                    &lt;i
+                        class&#x3D;&quot;pi pi-circle-fill text-300&quot;
+                        *ngFor&#x3D;&quot;let s of scales&quot;
+                        [ngClass]&#x3D;&quot;{ &#x27;text-primary-500&#x27;: s &#x3D;&#x3D;&#x3D; scale }&quot;
+                    &gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;button
+                    icon&#x3D;&quot;pi pi-plus&quot;
+                    type&#x3D;&quot;button&quot;
+                    pButton
+                    (click)&#x3D;&quot;incrementScale()&quot;
+                    class&#x3D;&quot;p-button-text p-button-rounded w-2rem h-2rem ml-2&quot;
+                    [disabled]&#x3D;&quot;scale &#x3D;&#x3D;&#x3D; scales[scales.length - 1]&quot;
+                &gt;&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;h5&gt;Color Scheme&lt;/h5&gt;
+            &lt;div class&#x3D;&quot;flex gap-4&quot;&gt;
+                &lt;div class&#x3D;&quot;field-radiobutton flex-1&quot;&gt;
+                    &lt;p-radioButton
+                        name&#x3D;&quot;colorScheme&quot;
+                        value&#x3D;&quot;light&quot;
+                        [(ngModel)]&#x3D;&quot;colorScheme&quot;
+                        inputId&#x3D;&quot;light&quot;
+                    &gt;&lt;/p-radioButton&gt;
+                    &lt;label for&#x3D;&quot;light&quot; &gt;Light&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;field-radiobutton flex-1&quot;&gt;
+                    &lt;p-radioButton
+                        name&#x3D;&quot;colorScheme&quot;
+                        value&#x3D;&quot;dark&quot;
+                        [(ngModel)]&#x3D;&quot;colorScheme&quot;
+                        inputId&#x3D;&quot;dark&quot;
+                    &gt;&lt;/p-radioButton&gt;
+                    &lt;label for&#x3D;&quot;dark&quot; &gt;Dark&lt;/label&gt;
+                &lt;/div&gt;
+
+                &lt;div class&#x3D;&quot;field-radiobutton flex-1&quot;&gt;
+                    &lt;p-radioButton
+                        name&#x3D;&quot;colorScheme&quot;
+                        value&#x3D;&quot;dim&quot;
+                        [(ngModel)]&#x3D;&quot;colorScheme&quot;
+                        inputId&#x3D;&quot;dim&quot;
+                    &gt;&lt;/p-radioButton&gt;
+                    &lt;label for&#x3D;&quot;dim&quot; &gt;Dim&lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;ng-container *ngIf&#x3D;&quot;!minimal&quot;&gt;
+                &lt;h5&gt;Menu Themes&lt;/h5&gt;
+                &lt;div class&#x3D;&quot;flex gap-4&quot;&gt;
+                    &lt;div
+                        class&#x3D;&quot;field-radiobutton flex-1&quot;
+                        *ngFor&#x3D;&quot;let theme of menuThemes&quot;
+                    &gt;
+                        &lt;p-radioButton
+                            name&#x3D;&quot;colorScheme&quot;
+                            [value]&#x3D;&quot;theme.name&quot;
+                            [disabled]&#x3D;&quot;colorScheme !&#x3D;&#x3D; &#x27;light&#x27;&quot;
+                            [(ngModel)]&#x3D;&quot;menuTheme&quot;
+                            [inputId]&#x3D;&quot;theme.name&quot;
+                        &gt;&lt;/p-radioButton&gt;
+                        &lt;label [for]&#x3D;&quot;theme.name&quot;&gt;{{
+                            theme.name | titlecase
+                        }}&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;h5&gt;Topbar Themes&lt;/h5&gt;
+                &lt;div class&#x3D;&quot;flex gap-4&quot;&gt;
+                    &lt;div
+                        class&#x3D;&quot;field-radiobutton flex-1&quot;
+                        *ngFor&#x3D;&quot;let theme of topbarThemes&quot;
+                    &gt;
+                        &lt;p-radioButton
+                            name&#x3D;&quot;colorScheme&quot;
+                            [value]&#x3D;&quot;theme.name&quot;
+                            [disabled]&#x3D;&quot;colorScheme !&#x3D;&#x3D; &#x27;light&#x27;&quot;
+                            [(ngModel)]&#x3D;&quot;topbarTheme&quot;
+                            [inputId]&#x3D;&quot;theme.name&quot;
+                        &gt;&lt;/p-radioButton&gt;
+                        &lt;label [for]&#x3D;&quot;theme.name&quot; &gt;{{
+                            theme.name | titlecase
+                        }}&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/ng-container&gt;
+
+            &lt;ng-container *ngIf&#x3D;&quot;!minimal&quot;&gt;
+                &lt;h5&gt;Menu Mode&lt;/h5&gt;
+                &lt;div class&#x3D;&quot;flex flex-wrap row-gap-3&quot;&gt;
+                    &lt;div class&#x3D;&quot;flex align-items-center gap-2 w-6&quot;&gt;
+                        &lt;p-radioButton
+                            name&#x3D;&quot;menuMode&quot;
+                            value&#x3D;&quot;static&quot;
+                            [(ngModel)]&#x3D;&quot;menuMode&quot;
+                            inputId&#x3D;&quot;mode1&quot;
+                        &gt;&lt;/p-radioButton&gt;
+                        &lt;label for&#x3D;&quot;mode1&quot; 
+                            &gt;Static&lt;/label
+                        &gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;flex align-items-center gap-2 w-6&quot;&gt;
+                        &lt;p-radioButton
+                            name&#x3D;&quot;menuMode&quot;
+                            value&#x3D;&quot;overlay&quot;
+                            [(ngModel)]&#x3D;&quot;menuMode&quot;
+                            inputId&#x3D;&quot;mode2&quot;
+                        &gt;&lt;/p-radioButton&gt;
+                        &lt;label for&#x3D;&quot;mode2&quot; 
+                            &gt;Overlay&lt;/label
+                        &gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;flex align-items-center gap-2 w-6&quot;&gt;
+                        &lt;p-radioButton
+                            name&#x3D;&quot;menuMode&quot;
+                            value&#x3D;&quot;horizontal&quot;
+                            [(ngModel)]&#x3D;&quot;menuMode&quot;
+                            inputId&#x3D;&quot;mode5&quot;
+                        &gt;&lt;/p-radioButton&gt;
+                        &lt;label for&#x3D;&quot;mode4&quot; 
+                            &gt;Horizontal&lt;/label
+                        &gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/ng-container&gt;
+
+            &lt;ng-container *ngIf&#x3D;&quot;!minimal&quot;&gt;
+                &lt;h5&gt;Input Style&lt;/h5&gt;
+                &lt;div class&#x3D;&quot;flex gap-4&quot;&gt;
+                    &lt;div class&#x3D;&quot;field-radiobutton flex-1&quot;&gt;
+                        &lt;p-radioButton
+                            name&#x3D;&quot;inputStyle&quot;
+                            value&#x3D;&quot;outlined&quot;
+                            [(ngModel)]&#x3D;&quot;inputStyle&quot;
+                            inputId&#x3D;&quot;outlined_input&quot;
+                        &gt;&lt;/p-radioButton&gt;
+                        &lt;label for&#x3D;&quot;outlined_input&quot; 
+                            &gt;Outlined&lt;/label
+                        &gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;field-radiobutton flex-1&quot;&gt;
+                        &lt;p-radioButton
+                            name&#x3D;&quot;inputStyle&quot;
+                            value&#x3D;&quot;filled&quot;
+                            [(ngModel)]&#x3D;&quot;inputStyle&quot;
+                            inputId&#x3D;&quot;filled_input&quot;
+                        &gt;&lt;/p-radioButton&gt;
+                        &lt;label for&#x3D;&quot;filled_input&quot; 
+                            &gt;Filled&lt;/label
+                        &gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/ng-container&gt;
+
+            &lt;h5&gt;Ripple Effect&lt;/h5&gt;
+            &lt;p-inputSwitch
+                [(ngModel)]&#x3D;&quot;ripple&quot;
+                styleClass&#x3D;&quot;mb-3&quot;
+            &gt;&lt;/p-inputSwitch&gt;
+            
+            &lt;h5&gt;Component Themes&lt;/h5&gt;
+            &lt;div class&#x3D;&quot;flex flex-wrap row-gap-3&quot;&gt;
+                &lt;div class&#x3D;&quot;w-3&quot; *ngFor&#x3D;&quot;let theme of componentThemes&quot;&gt;
+                    &lt;button
+                        type&#x3D;&quot;button&quot;
+                        *ngIf&#x3D;&quot;
+                            (layoutService.config().colorScheme &#x3D;&#x3D;&#x3D; &#x27;dark&#x27; &amp;&amp;
+                                theme.name &#x3D;&#x3D;&#x3D; &#x27;black&#x27;) &#x3D;&#x3D;&#x3D; false
+                        &quot;
+                        class&#x3D;&quot;cursor-pointer p-link w-2rem h-2rem border-round shadow-2 flex-shrink-0 flex justify-content-center align-items-center border-circle&quot;
+                        (click)&#x3D;&quot;changeTheme(theme.name)&quot;
+                        [ngStyle]&#x3D;&quot;{ &#x27;background-color&#x27;: theme.color }&quot;
+                    &gt;
+                        &lt;i
+                            *ngIf&#x3D;&quot;componentTheme &#x3D;&#x3D;&#x3D; theme.name&quot;
+                            [class]&#x3D;&quot;
+                                theme.name &#x3D;&#x3D; &#x27;white&#x27;
+                                    ? &#x27;pi pi-check text-gray-900 &#x27;
+                                    : &#x27;pi pi-check text-white&#x27;
+                            &quot;
+                        &gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/p-sidebar&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="layout-config">    <p-button        type="button"        (click)="onConfigButtonClick()"        icon="pi pi-cog"        styleClass="layout-config-button"    ></p-button>    <p-sidebar        [(visible)]="visible"        [position]="\'right\'"        [transitionOptions]="\'.3s cubic-bezier(0, 0, 0.2, 1)\'"    >        <div class="p-3">            <h5>Layout/Theme Scale</h5>            <div class="flex align-items-center">                <button                    icon="pi pi-minus"                    type="button"                    pButton                    (click)="decrementScale()"                    class="p-button-text p-button-rounded w-2rem h-2rem mr-2"                                   [disabled]="scale === scales[0]"                ></button>                <div class="flex gap-2 align-items-center">                    <i                        class="pi pi-circle-fill text-300"                        *ngFor="let s of scales"                        [ngClass]="{ \'text-primary-500\': s === scale }"                    ></i>                </div>                <button                    icon="pi pi-plus"                    type="button"                    pButton                    (click)="incrementScale()"                    class="p-button-text p-button-rounded w-2rem h-2rem ml-2"                    [disabled]="scale === scales[scales.length - 1]"                ></button>            </div>            <h5>Color Scheme</h5>            <div class="flex gap-4">                <div class="field-radiobutton flex-1">                    <p-radioButton                        name="colorScheme"                        value="light"                        [(ngModel)]="colorScheme"                        inputId="light"                    ></p-radioButton>                    <label for="light" >Light</label>                </div>                <div class="field-radiobutton flex-1">                    <p-radioButton                        name="colorScheme"                        value="dark"                        [(ngModel)]="colorScheme"                        inputId="dark"                    ></p-radioButton>                    <label for="dark" >Dark</label>                </div>                <div class="field-radiobutton flex-1">                    <p-radioButton                        name="colorScheme"                        value="dim"                        [(ngModel)]="colorScheme"                        inputId="dim"                    ></p-radioButton>                    <label for="dim" >Dim</label>                </div>            </div>            <ng-container *ngIf="!minimal">                <h5>Menu Themes</h5>                <div class="flex gap-4">                    <div                        class="field-radiobutton flex-1"                        *ngFor="let theme of menuThemes"                    >                        <p-radioButton                            name="colorScheme"                            [value]="theme.name"                            [disabled]="colorScheme !== \'light\'"                            [(ngModel)]="menuTheme"                            [inputId]="theme.name"                        ></p-radioButton>                        <label [for]="theme.name">{{                            theme.name | titlecase                        }}</label>                    </div>                </div>                <h5>Topbar Themes</h5>                <div class="flex gap-4">                    <div                        class="field-radiobutton flex-1"                        *ngFor="let theme of topbarThemes"                    >                        <p-radioButton                            name="colorScheme"                            [value]="theme.name"                            [disabled]="colorScheme !== \'light\'"                            [(ngModel)]="topbarTheme"                            [inputId]="theme.name"                        ></p-radioButton>                        <label [for]="theme.name" >{{                            theme.name | titlecase                        }}</label>                    </div>                </div>            </ng-container>            <ng-container *ngIf="!minimal">                <h5>Menu Mode</h5>                <div class="flex flex-wrap row-gap-3">                    <div class="flex align-items-center gap-2 w-6">                        <p-radioButton                            name="menuMode"                            value="static"                            [(ngModel)]="menuMode"                            inputId="mode1"                        ></p-radioButton>                        <label for="mode1"                             >Static</label                        >                    </div>                    <div class="flex align-items-center gap-2 w-6">                        <p-radioButton                            name="menuMode"                            value="overlay"                            [(ngModel)]="menuMode"                            inputId="mode2"                        ></p-radioButton>                        <label for="mode2"                             >Overlay</label                        >                    </div>                    <div class="flex align-items-center gap-2 w-6">                        <p-radioButton                            name="menuMode"                            value="horizontal"                            [(ngModel)]="menuMode"                            inputId="mode5"                        ></p-radioButton>                        <label for="mode4"                             >Horizontal</label                        >                    </div>                </div>            </ng-container>            <ng-container *ngIf="!minimal">                <h5>Input Style</h5>                <div class="flex gap-4">                    <div class="field-radiobutton flex-1">                        <p-radioButton                            name="inputStyle"                            value="outlined"                            [(ngModel)]="inputStyle"                            inputId="outlined_input"                        ></p-radioButton>                        <label for="outlined_input"                             >Outlined</label                        >                    </div>                    <div class="field-radiobutton flex-1">                        <p-radioButton                            name="inputStyle"                            value="filled"                            [(ngModel)]="inputStyle"                            inputId="filled_input"                        ></p-radioButton>                        <label for="filled_input"                             >Filled</label                        >                    </div>                </div>            </ng-container>            <h5>Ripple Effect</h5>            <p-inputSwitch                [(ngModel)]="ripple"                styleClass="mb-3"            ></p-inputSwitch>                        <h5>Component Themes</h5>            <div class="flex flex-wrap row-gap-3">                <div class="w-3" *ngFor="let theme of componentThemes">                    <button                        type="button"                        *ngIf="                            (layoutService.config().colorScheme === \'dark\' &&                                theme.name === \'black\') === false                        "                        class="cursor-pointer p-link w-2rem h-2rem border-round shadow-2 flex-shrink-0 flex justify-content-center align-items-center border-circle"                        (click)="changeTheme(theme.name)"                        [ngStyle]="{ \'background-color\': theme.color }"                    >                        <i                            *ngIf="componentTheme === theme.name"                            [class]="                                theme.name == \'white\'                                    ? \'pi pi-check text-gray-900 \'                                    : \'pi pi-check text-white\'                            "                        ></i>                    </button>                </div>            </div>        </div>    </p-sidebar></div></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AppConfigComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppConfigComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

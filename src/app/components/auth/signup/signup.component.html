@@ -1,0 +1,54 @@
+<div class="h-screen text-bluegray-200" style="background: #3f3f3f">
+    <div class="flex justify-content-center align-items-center h-full">
+        <div class="h-full text-center py-6 px-4 flex justify-content-between flex-column max-w-30rem">
+            <a [routerLink]="['/signup']">
+                <img src="assets/layout/images/logo.png" alt="poseidon-layout" height="200px" />
+            </a>
+            <div>
+                <h2 class="text-bluegray-200">Create Your Account</h2>
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                    <!-- Username -->
+                    <input type="text" pInputText formControlName="username" placeholder="Username" class="w-11 mb-4 text-bluegray-600 surface-ground" />
+                    <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="text-red-500">
+                        Username is required and must be 150 characters or fewer.
+                    </div>
+
+                    <!-- Email -->
+                    <input type="email" pInputText formControlName="email" placeholder="Email" class="w-11 mb-4 text-bluegray-600 surface-ground" />
+                    <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="text-red-500">
+                        Enter a valid email.
+                    </div>
+
+                    <!-- Password -->
+                    <input type="password" pInputText formControlName="password" placeholder="Password" class="w-11 mb-4 text-bluegray-600 surface-ground" />
+                    <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="text-red-500">
+                        Password must be at least 8 characters.
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <input type="password" pInputText formControlName="password2" placeholder="Confirm Password" class="w-11 mb-4 text-bluegray-600 surface-ground" />
+                    <div *ngIf="signupForm.get('password2')?.invalid && signupForm.get('password2')?.touched" class="text-red-500">
+                        Passwords must match.
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button pButton pRipple label="SIGN UP" type="submit" class="w-11" [disabled]="signupForm.invalid || (loading$ | async)"></button>
+                </form>
+
+                <!-- Success and Error Messages -->
+                <div *ngIf="successMessage$ | async as successMessage" class="text-green-500 mt-4">
+                    {{ successMessage }}
+                </div>
+                <div *ngIf="errorMessage$ | async as errorMessage" class="text-red-500 mt-4">
+                    {{ errorMessage || 'Registration failed. Please try again.' }}
+                </div>
+            </div>
+
+            <p class="font-semibold m-0 text-bluegray-200">
+                Already have an account?
+                <a [routerLink]="['/auth/login']" class="cursor-pointer text-white"> Login</a>
+            </p>
+        </div>
+    </div>
+    <app-config [minimal]="true"></app-config>
+</div>

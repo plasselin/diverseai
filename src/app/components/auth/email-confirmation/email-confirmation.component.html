@@ -1,0 +1,16 @@
+
+<div
+    class="h-screen confirmation-container"
+    style="background: #3f3f3f"
+>
+    <div *ngIf="!isError" class="success-message">
+        <h2>{{ confirmationMessage }}</h2>
+        <a [routerLink]="['/auth/login']" class="btn btn-primary">Go to Login</a>
+    </div>
+
+    <div *ngIf="isError" class="error-message">
+        <h2>{{ confirmationMessage }}</h2>
+        <a [routerLink]="['/auth/signup']" class="btn btn-primary">Sign Up Again</a>
+    </div>
+</div>
+

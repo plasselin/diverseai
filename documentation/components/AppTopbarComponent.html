@@ -1,0 +1,997 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AppTopbarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/layout/app.topbar.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-topbar</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.topbar.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./app.topbar.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#config" >config</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#el" >el</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#layoutService" >layoutService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#menuButton" >menuButton</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#mobileMenuButton" >mobileMenuButton</a>
+                            </li>
+                            <li>
+                                <a href="#subscription" >subscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onMenuButtonClick" >onMenuButtonClick</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(layoutService: <a href="../injectables/LayoutService.html" target="_self">LayoutService</a>, el: ElementRef)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/layout/app.topbar.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>layoutService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>el</td>
+                                                  
+                                                        <td>
+                                                                    <code>ElementRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMenuButtonClick"></a>
+                    <span class="name">
+                        <span ><b>onMenuButtonClick</b></span>
+                        <a href="#onMenuButtonClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMenuButtonClick()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/layout/app.topbar.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/AppConfig.html" target="_self" >AppConfig</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/layout/app.topbar.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="el"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>el</b></span>
+                        <a href="#el"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/layout/app.topbar.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="layoutService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>layoutService</b></span>
+                        <a href="#layoutService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/layout/app.topbar.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuButton"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>menuButton</b></span>
+                        <a href="#menuButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;menuButton&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/layout/app.topbar.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mobileMenuButton"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>mobileMenuButton</b></span>
+                        <a href="#mobileMenuButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;mobileMenuButton&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/layout/app.topbar.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscription"></a>
+                    <span class="name">
+                        <span ><b>subscription</b></span>
+                        <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/layout/app.topbar.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, ViewChild } from &#x27;@angular/core&#x27;;
+import { AppConfig, LayoutService } from &#x27;./service/app.layout.service&#x27;;
+
+@Component({
+    selector: &#x27;app-topbar&#x27;,
+    templateUrl: &#x27;./app.topbar.component.html&#x27;,
+    styleUrl: &#x27;./app.topbar.scss&#x27;,
+})
+export class AppTopbarComponent {
+    @ViewChild(&#x27;menuButton&#x27;) menuButton!: ElementRef;
+
+    @ViewChild(&#x27;mobileMenuButton&#x27;) mobileMenuButton!: ElementRef;
+
+    config!: AppConfig;
+
+    subscription: any;
+
+    constructor(public layoutService: LayoutService, public el: ElementRef) {
+        this.subscription &#x3D; this.layoutService.configUpdate$.subscribe(
+            (config) &#x3D;&gt; {
+                this.config &#x3D; config;
+            }
+        );
+    }
+
+    onMenuButtonClick() {
+        this.layoutService.onMenuToggle();
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div
+    class&#x3D;&quot;layout-topbar&quot;
+    [ngClass]&#x3D;&quot;{
+        &#x27;border-bottom-none&#x27;: layoutService.config().topbarTheme !&#x3D;&#x3D; &#x27;light&#x27;
+    }&quot;
+&gt;
+    &lt;div class&#x3D;&quot;layout-topbar-start&quot;&gt;
+        &lt;!-- Mobile Menu Button --&gt;
+        &lt;a
+            #mobileMenuButton
+            class&#x3D;&quot;layout-menu-button lg:hidden&quot;
+            (click)&#x3D;&quot;onMenuButtonClick()&quot;
+            pRipple
+        &gt;
+            &lt;i class&#x3D;&quot;pi pi-bars&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+
+        &lt;!-- Logo --&gt;
+        &lt;a class&#x3D;&quot;layout-topbar-logo&quot;  routerLink&#x3D;&quot;/&quot;&gt;
+            &lt;img
+                src&#x3D;&quot;./assets/layout/images/logo_nptext.png&quot;
+                alt&#x3D;&quot;Diverseai-Logo&quot;
+            /&gt;
+        &lt;/a&gt;
+        &lt;span class&#x3D;&quot;px-4 &quot;&gt;&lt;h3 [style]&#x3D;&quot;{&#x27;margin-bottom&#x27;:&#x27;0&#x27;}&quot;&gt;Diverse AI&lt;/h3&gt;&lt;/span&gt;
+        &lt;!-- User Icon for Mobile (Removed Notifications and Comments) --&gt;
+        &lt;a
+            class&#x3D;&quot;lg:hidden&quot;
+            pStyleClass&#x3D;&quot;@next&quot;
+            enterFromClass&#x3D;&quot;hidden&quot;
+            enterActiveClass&#x3D;&quot;scalein&quot;
+            leaveToClass&#x3D;&quot;hidden&quot;
+            leaveActiveClass&#x3D;&quot;fadeout&quot;
+            [hideOnOutsideClick]&#x3D;&quot;true&quot;
+        &gt;
+            &lt;div class&#x3D;&quot;material-symbols-outlined user-icon&quot;&gt;
+                account_circle
+            &lt;/div&gt;
+        &lt;/a&gt;
+
+        &lt;!-- User Dropdown Menu --&gt;
+        &lt;div class&#x3D;&quot;layout-topbar-menu shadow-2 px-3 hidden&quot; style&#x3D;&quot;top: 9rem&quot;&gt;
+            &lt;ul class&#x3D;&quot;list-none p-0 m-0&quot;&gt;
+                &lt;li class&#x3D;&quot;mb-2&quot;&gt;
+                    &lt;div class&#x3D;&quot;flex gap-3 p-3 bg-primary-600&quot;&gt;
+                        &lt;div class&#x3D;&quot;material-symbols-outlined user-icon&quot; style&#x3D;&quot;height: 30px; width: 30px&quot;&gt;
+                            account_circle
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;flex flex-column cursor-pointer&quot;&gt;
+                            &lt;span class&#x3D;&quot;font-semibold text-white&quot;&gt;&lt;/span&gt;
+                            &lt;span class&#x3D;&quot;text-xs font-normal text-white&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class&#x3D;&quot;py-3 px-4 flex gap-2 cursor-pointer&quot;&gt;
+                    &lt;a&gt;
+                        &lt;i class&#x3D;&quot;pi pi-cog pi-star text-lg mr-3&quot;&gt;&lt;/i&gt;
+                        &lt;span class&#x3D;&quot;font-semibold&quot;&gt;Settings&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class&#x3D;&quot;py-3 px-4 flex gap-2 cursor-pointer&quot;&gt;
+                    &lt;a&gt;
+                        &lt;i class&#x3D;&quot;pi pi-file pi-lock text-lg mr-3&quot;&gt;&lt;/i&gt;
+                        &lt;span class&#x3D;&quot;font-semibold&quot;&gt;Terms of Usage&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class&#x3D;&quot;py-3 px-4 flex gap-2 cursor-pointer&quot;&gt;
+                    &lt;a&gt;
+                        &lt;i class&#x3D;&quot;pi pi-compass pi-image text-lg mr-3&quot;&gt;&lt;/i&gt;
+                        &lt;span class&#x3D;&quot;font-semibold&quot;&gt;Support&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class&#x3D;&quot;py-3 px-4 flex gap-2 cursor-pointer&quot;&gt;
+                    &lt;a&gt;
+                        &lt;i class&#x3D;&quot;pi pi-power-off pi-image text-lg mr-3&quot;&gt;&lt;/i&gt;
+                        &lt;span class&#x3D;&quot;font-semibold&quot;&gt;Logout&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;layout-topbar-end surface-border&quot;&gt;
+        &lt;div class&#x3D;&quot;layout-topbar-actions-start&quot;&gt;
+            &lt;!-- Desktop Menu Button --&gt;
+            &lt;a
+                *ngIf&#x3D;&quot;!layoutService.isHorizontal()&quot;
+                #menuButton
+                class&#x3D;&quot;layout-menu-button hidden lg:flex&quot;
+                (click)&#x3D;&quot;onMenuButtonClick()&quot;
+                pRipple
+            &gt;
+                &lt;i class&#x3D;&quot;pi pi-bars&quot;&gt;&lt;/i&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;layout-topbar-actions-end&quot;&gt;
+            &lt;ul class&#x3D;&quot;layout-topbar-items&quot;&gt;
+                &lt;!-- Search Bar --&gt;
+                &lt;li class&#x3D;&quot;layout-topbar-search hidden lg:flex&quot;&gt;
+                    &lt;i class&#x3D;&quot;pi pi-search&quot;&gt;&lt;/i&gt;
+                    &lt;input pInputText type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search...&quot; /&gt;
+                &lt;/li&gt;
+
+                &lt;!-- Responsive Search for Mobile --&gt;
+                &lt;li class&#x3D;&quot;lg:hidden&quot;&gt;
+                    &lt;a
+                        pStyleClass&#x3D;&quot;@next&quot;
+                        enterFromClass&#x3D;&quot;hidden&quot;
+                        enterActiveClass&#x3D;&quot;scalein&quot;
+                        leaveToClass&#x3D;&quot;hidden&quot;
+                        leaveActiveClass&#x3D;&quot;fadeout&quot;
+                        [hideOnOutsideClick]&#x3D;&quot;true&quot;
+                        pRipple
+                    &gt;
+                        &lt;i class&#x3D;&quot;pi pi-search&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                    &lt;div
+                        class&#x3D;&quot;layout-topbar-search hidden absolute origin-top surface-overlay p-2 border-top-1 surface-border shadow-2&quot;
+                        style&#x3D;&quot;top: 3.5rem&quot;
+                    &gt;
+                        &lt;span class&#x3D;&quot;p-input-icon-left w-full&quot;&gt;
+                            &lt;i class&#x3D;&quot;pi pi-search&quot;&gt;&lt;/i&gt;
+                            &lt;input
+                                type&#x3D;&quot;text&quot;
+                                pInputText
+                                placeholder&#x3D;&quot;Search&quot;
+                                class&#x3D;&quot;w-full&quot;
+                            /&gt;
+                        &lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+
+                &lt;!-- Removed Notifications and Comments Icons --&gt;
+
+                &lt;!-- Settings Icon --&gt;
+                &lt;li&gt;
+                    &lt;a
+                        pStyleClass&#x3D;&quot;@next&quot;
+                        enterFromClass&#x3D;&quot;hidden&quot;
+                        enterActiveClass&#x3D;&quot;scalein&quot;
+                        leaveToClass&#x3D;&quot;hidden&quot;
+                        leaveActiveClass&#x3D;&quot;fadeout&quot;
+                        [hideOnOutsideClick]&#x3D;&quot;true&quot;
+                        pRipple
+                    &gt;
+                        &lt;i class&#x3D;&quot;pi pi-cog&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                    &lt;div
+                        class&#x3D;&quot;layout-topbar-menu shadow-2 pt-0 hidden cursor-pointer&quot;
+                    &gt;
+                        &lt;ul class&#x3D;&quot;list-none p-0 m-0&quot;&gt;
+                            &lt;li class&#x3D;&quot;flex justify-content-between align-items-center px-3 p-3 mb-3&quot;&gt;
+                                &lt;h6 class&#x3D;&quot;m-0 font-semibold&quot;&gt;Settings&lt;/h6&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a
+                                    class&#x3D;&quot;py-2 px-3 flex gap-2 align-items-center cursor-pointer&quot;
+                                &gt;
+                                    &lt;div
+                                        class&#x3D;&quot;flex align-items-center justify-content-center border-1 border-circle border-transparent bg-blue-100 text-500&quot;
+                                        style&#x3D;&quot;height: 30px; width: 30px&quot;
+                                    &gt;
+                                        &lt;i
+                                            class&#x3D;&quot;pi pi-user text-lg text-blue-500&quot;
+                                        &gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                    &lt;h6 class&#x3D;&quot;m-0 font-semibold&quot;&gt;
+                                        Account Info
+                                    &lt;/h6&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a
+                                    class&#x3D;&quot;py-2 px-3 flex gap-2 align-items-center cursor-pointer&quot;
+                                &gt;
+                                    &lt;div
+                                        class&#x3D;&quot;flex align-items-center justify-content-center border-1 border-circle border-transparent bg-cyan-100 text-500&quot;
+                                        style&#x3D;&quot;height: 30px; width: 30px&quot;
+                                    &gt;
+                                        &lt;i
+                                            class&#x3D;&quot;pi pi-users text-lg text-cyan-500&quot;
+                                        &gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                    &lt;h6 class&#x3D;&quot;m-0 font-semibold&quot;&gt;
+                                        Global Accounts
+                                    &lt;/h6&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a
+                                    class&#x3D;&quot;py-2 px-3 flex gap-2 align-items-center cursor-pointer&quot;
+                                &gt;
+                                    &lt;div
+                                        class&#x3D;&quot;flex align-items-center justify-content-center border-1 border-circle border-transparent bg-pink-100 text-500&quot;
+                                        style&#x3D;&quot;height: 30px; width: 30px&quot;
+                                    &gt;
+                                        &lt;i
+                                            class&#x3D;&quot;pi pi-bell text-lg text-pink-500&quot;
+                                        &gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                    &lt;h6 class&#x3D;&quot;m-0 font-semibold&quot;&gt;
+                                        Notification Preferences
+                                    &lt;/h6&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a
+                                    class&#x3D;&quot;py-2 px-3 flex gap-2 align-items-center cursor-pointer&quot;
+                                &gt;
+                                    &lt;div
+                                        class&#x3D;&quot;flex align-items-center justify-content-center border-1 border-circle border-transparent bg-blue-100 text-500&quot;
+                                        style&#x3D;&quot;height: 30px; width: 30px&quot;
+                                    &gt;
+                                        &lt;i
+                                            class&#x3D;&quot;pi pi-lock text-lg text-blue-500&quot;
+                                        &gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                    &lt;h6 class&#x3D;&quot;m-0 font-semibold&quot;&gt;
+                                        Login Settings
+                                    &lt;/h6&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+
+                &lt;!-- User Profile --&gt;
+                &lt;li class&#x3D;&quot;layout-topbar-profile&quot;&gt;
+                    &lt;a
+                        *ngIf&#x3D;&quot;!layoutService.isMobile()&quot;
+                        pStyleClass&#x3D;&quot;@next&quot;
+                        enterFromClass&#x3D;&quot;hidden&quot;
+                        enterActiveClass&#x3D;&quot;scalein&quot;
+                        leaveToClass&#x3D;&quot;hidden&quot;
+                        leaveActiveClass&#x3D;&quot;fadeout&quot;
+                        [hideOnOutsideClick]&#x3D;&quot;true&quot;
+                    &gt;
+                        &lt;div class&#x3D;&quot;flex gap-2&quot;&gt;
+                            &lt;div class&#x3D;&quot;material-symbols-outlined user-icon&quot;&gt;
+                                account_circle
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;flex flex-column&quot;&gt;
+                                &lt;span class&#x3D;&quot;font-semibold&quot;&gt;&lt;/span&gt;
+                                &lt;span class&#x3D;&quot;text-sm&quot;&gt;&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                    &lt;div class&#x3D;&quot;layout-topbar-menu p-0 shadow-2 hidden&quot;&gt;
+                        &lt;ul class&#x3D;&quot;list-none p-0 m-0&quot;&gt;
+                            &lt;li class&#x3D;&quot;mb-2&quot;&gt;
+                                &lt;div class&#x3D;&quot;flex gap-3 p-3 bg-primary-600&quot;&gt;
+                                    &lt;div class&#x3D;&quot;material-symbols-outlined user-icon&quot;&gt;
+                                        account_circle
+                                    &lt;/div&gt;
+                                    &lt;div
+                                        class&#x3D;&quot;flex flex-column cursor-pointer&quot;
+                                    &gt;
+                                        &lt;span class&#x3D;&quot;font-semibold text-white&quot;&gt;&lt;/span&gt;
+                                        &lt;span class&#x3D;&quot;text-xs font-normal text-white&quot;&gt;&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;py-3 px-4 flex gap-2 cursor-pointer&quot;&gt;
+                                &lt;a&gt;
+                                    &lt;i class&#x3D;&quot;pi pi-cog pi-star text-lg&quot;&gt;&lt;/i&gt;
+                                    &lt;span class&#x3D;&quot;font-semibold mx-3&quot;&gt;Settings&lt;/span&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;py-3 px-4 flex gap-2 cursor-pointer&quot;&gt;
+                                &lt;a&gt;
+                                    &lt;i class&#x3D;&quot;pi pi-file pi-lock text-lg&quot;&gt;&lt;/i&gt;
+                                    &lt;span class&#x3D;&quot;font-semibold mx-3&quot;&gt;Terms of Usage&lt;/span&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;py-3 px-4 flex gap-2 cursor-pointer&quot;&gt;
+                                &lt;a&gt;
+                                    &lt;i
+                                        class&#x3D;&quot;pi pi-compass pi-image text-lg&quot;
+                                    &gt;&lt;/i&gt;
+                                    &lt;span class&#x3D;&quot;font-semibold mx-3&quot;&gt;Support&lt;/span&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;py-3 px-4 flex gap-2 cursor-pointer&quot;&gt;
+                                &lt;a&gt;
+                                    &lt;i
+                                        class&#x3D;&quot;pi pi-power-off pi-image text-lg&quot;
+                                    &gt;&lt;/i&gt;
+                                    &lt;span class&#x3D;&quot;font-semibold mx-3&quot;&gt;Logout&lt;/span&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+
+                &lt;!-- Right Panel Toggle --&gt;
+                &lt;li class&#x3D;&quot;layout-rightpanel-button&quot;&gt;
+                    &lt;a
+                        (click)&#x3D;&quot;
+                            layoutService.state.rightMenuActive &#x3D;
+                                !layoutService.state.rightMenuActive
+                        &quot;
+                    &gt;
+                        &lt;i class&#x3D;&quot;pi pi-arrow-left&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div    class="layout-topbar"    [ngClass]="{        \'border-bottom-none\': layoutService.config().topbarTheme !== \'light\'    }">    <div class="layout-topbar-start">        <!-- Mobile Menu Button -->        <a            #mobileMenuButton            class="layout-menu-button lg:hidden"            (click)="onMenuButtonClick()"            pRipple        >            <i class="pi pi-bars"></i>        </a>        <!-- Logo -->        <a class="layout-topbar-logo"  routerLink="/">            <img                src="./assets/layout/images/logo_nptext.png"                alt="Diverseai-Logo"            />        </a>        <span class="px-4 "><h3 [style]="{\'margin-bottom\':\'0\'}">Diverse AI</h3></span>        <!-- User Icon for Mobile (Removed Notifications and Comments) -->        <a            class="lg:hidden"            pStyleClass="@next"            enterFromClass="hidden"            enterActiveClass="scalein"            leaveToClass="hidden"            leaveActiveClass="fadeout"            [hideOnOutsideClick]="true"        >            <div class="material-symbols-outlined user-icon">                account_circle            </div>        </a>        <!-- User Dropdown Menu -->        <div class="layout-topbar-menu shadow-2 px-3 hidden" style="top: 9rem">            <ul class="list-none p-0 m-0">                <li class="mb-2">                    <div class="flex gap-3 p-3 bg-primary-600">                        <div class="material-symbols-outlined user-icon" style="height: 30px; width: 30px">                            account_circle                        </div>                        <div class="flex flex-column cursor-pointer">                            <span class="font-semibold text-white"></span>                            <span class="text-xs font-normal text-white"></span>                        </div>                    </div>                </li>                <li class="py-3 px-4 flex gap-2 cursor-pointer">                    <a>                        <i class="pi pi-cog pi-star text-lg mr-3"></i>                        <span class="font-semibold">Settings</span>                    </a>                </li>                <li class="py-3 px-4 flex gap-2 cursor-pointer">                    <a>                        <i class="pi pi-file pi-lock text-lg mr-3"></i>                        <span class="font-semibold">Terms of Usage</span>                    </a>                </li>                <li class="py-3 px-4 flex gap-2 cursor-pointer">                    <a>                        <i class="pi pi-compass pi-image text-lg mr-3"></i>                        <span class="font-semibold">Support</span>                    </a>                </li>                <li class="py-3 px-4 flex gap-2 cursor-pointer">                    <a>                        <i class="pi pi-power-off pi-image text-lg mr-3"></i>                        <span class="font-semibold">Logout</span>                    </a>                </li>            </ul>        </div>    </div>    <div class="layout-topbar-end surface-border">        <div class="layout-topbar-actions-start">            <!-- Desktop Menu Button -->            <a                *ngIf="!layoutService.isHorizontal()"                #menuButton                class="layout-menu-button hidden lg:flex"                (click)="onMenuButtonClick()"                pRipple            >                <i class="pi pi-bars"></i>            </a>        </div>        <div class="layout-topbar-actions-end">            <ul class="layout-topbar-items">                <!-- Search Bar -->                <li class="layout-topbar-search hidden lg:flex">                    <i class="pi pi-search"></i>                    <input pInputText type="text" placeholder="Search..." />                </li>                <!-- Responsive Search for Mobile -->                <li class="lg:hidden">                    <a                        pStyleClass="@next"                        enterFromClass="hidden"                        enterActiveClass="scalein"                        leaveToClass="hidden"                        leaveActiveClass="fadeout"                        [hideOnOutsideClick]="true"                        pRipple                    >                        <i class="pi pi-search"></i>                    </a>                    <div                        class="layout-topbar-search hidden absolute origin-top surface-overlay p-2 border-top-1 surface-border shadow-2"                        style="top: 3.5rem"                    >                        <span class="p-input-icon-left w-full">                            <i class="pi pi-search"></i>                            <input                                type="text"                                pInputText                                placeholder="Search"                                class="w-full"                            />                        </span>                    </div>                </li>                <!-- Removed Notifications and Comments Icons -->                <!-- Settings Icon -->                <li>                    <a                        pStyleClass="@next"                        enterFromClass="hidden"                        enterActiveClass="scalein"                        leaveToClass="hidden"                        leaveActiveClass="fadeout"                        [hideOnOutsideClick]="true"                        pRipple                    >                        <i class="pi pi-cog"></i>                    </a>                    <div                        class="layout-topbar-menu shadow-2 pt-0 hidden cursor-pointer"                    >                        <ul class="list-none p-0 m-0">                            <li class="flex justify-content-between align-items-center px-3 p-3 mb-3">                                <h6 class="m-0 font-semibold">Settings</h6>                            </li>                            <li>                                <a                                    class="py-2 px-3 flex gap-2 align-items-center cursor-pointer"                                >                                    <div                                        class="flex align-items-center justify-content-center border-1 border-circle border-transparent bg-blue-100 text-500"                                        style="height: 30px; width: 30px"                                    >                                        <i                                            class="pi pi-user text-lg text-blue-500"                                        ></i>                                    </div>                                    <h6 class="m-0 font-semibold">                                        Account Info                                    </h6>                                </a>                            </li>                            <li>                                <a                                    class="py-2 px-3 flex gap-2 align-items-center cursor-pointer"                                >                                    <div                                        class="flex align-items-center justify-content-center border-1 border-circle border-transparent bg-cyan-100 text-500"                                        style="height: 30px; width: 30px"                                    >                                        <i                                            class="pi pi-users text-lg text-cyan-500"                                        ></i>                                    </div>                                    <h6 class="m-0 font-semibold">                                        Global Accounts                                    </h6>                                </a>                            </li>                            <li>                                <a                                    class="py-2 px-3 flex gap-2 align-items-center cursor-pointer"                                >                                    <div                                        class="flex align-items-center justify-content-center border-1 border-circle border-transparent bg-pink-100 text-500"                                        style="height: 30px; width: 30px"                                    >                                        <i                                            class="pi pi-bell text-lg text-pink-500"                                        ></i>                                    </div>                                    <h6 class="m-0 font-semibold">                                        Notification Preferences                                    </h6>                                </a>                            </li>                            <li>                                <a                                    class="py-2 px-3 flex gap-2 align-items-center cursor-pointer"                                >                                    <div                                        class="flex align-items-center justify-content-center border-1 border-circle border-transparent bg-blue-100 text-500"                                        style="height: 30px; width: 30px"                                    >                                        <i                                            class="pi pi-lock text-lg text-blue-500"                                        ></i>                                    </div>                                    <h6 class="m-0 font-semibold">                                        Login Settings                                    </h6>                                </a>                            </li>                        </ul>                    </div>                </li>                <!-- User Profile -->                <li class="layout-topbar-profile">                    <a                        *ngIf="!layoutService.isMobile()"                        pStyleClass="@next"                        enterFromClass="hidden"                        enterActiveClass="scalein"                        leaveToClass="hidden"                        leaveActiveClass="fadeout"                        [hideOnOutsideClick]="true"                    >                        <div class="flex gap-2">                            <div class="material-symbols-outlined user-icon">                                account_circle                            </div>                            <div class="flex flex-column">                                <span class="font-semibold"></span>                                <span class="text-sm"></span>                            </div>                        </div>                    </a>                    <div class="layout-topbar-menu p-0 shadow-2 hidden">                        <ul class="list-none p-0 m-0">                            <li class="mb-2">                                <div class="flex gap-3 p-3 bg-primary-600">                                    <div class="material-symbols-outlined user-icon">                                        account_circle                                    </div>                                    <div                                        class="flex flex-column cursor-pointer"                                    >                                        <span class="font-semibold text-white"></span>                                        <span class="text-xs font-normal text-white"></span>                                    </div>                                </div>                            </li>                            <li class="py-3 px-4 flex gap-2 cursor-pointer">                                <a>                                    <i class="pi pi-cog pi-star text-lg"></i>                                    <span class="font-semibold mx-3">Settings</span>                                </a>                            </li>                            <li class="py-3 px-4 flex gap-2 cursor-pointer">                                <a>                                    <i class="pi pi-file pi-lock text-lg"></i>                                    <span class="font-semibold mx-3">Terms of Usage</span>                                </a>                            </li>                            <li class="py-3 px-4 flex gap-2 cursor-pointer">                                <a>                                    <i                                        class="pi pi-compass pi-image text-lg"                                    ></i>                                    <span class="font-semibold mx-3">Support</span>                                </a>                            </li>                            <li class="py-3 px-4 flex gap-2 cursor-pointer">                                <a>                                    <i                                        class="pi pi-power-off pi-image text-lg"                                    ></i>                                    <span class="font-semibold mx-3">Logout</span>                                </a>                            </li>                        </ul>                    </div>                </li>                <!-- Right Panel Toggle -->                <li class="layout-rightpanel-button">                    <a                        (click)="                            layoutService.state.rightMenuActive =                                !layoutService.state.rightMenuActive                        "                    >                        <i class="pi pi-arrow-left"></i>                    </a>                </li>            </ul>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AppTopbarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppTopbarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,175 @@
+
+
+<div
+    class="layout-topbar"
+    [ngClass]="{
+        'border-bottom-none': layoutService.config().topbarTheme !== 'light'
+    }"
+>
+    <div class="layout-topbar-start">
+        <!-- Mobile Menu Button -->
+        <a
+            #mobileMenuButton
+            class="layout-menu-button lg:hidden"
+            (click)="onMenuButtonClick()"
+            pRipple
+        >
+            <i class="pi pi-bars"></i>
+        </a>
+
+        <!-- Logo -->
+        <a class="layout-topbar-logo"  routerLink="/">
+            <img
+                src="./assets/layout/images/logo_nptext.png"
+                alt="Diverseai-Logo"
+            />
+        </a>
+        <span class="px-4 "><h3 [style]="{'margin-bottom':'0'}">Diverse AI</h3></span>
+        <!-- User Icon for Mobile (Removed Notifications and Comments) -->
+        <a
+            class="lg:hidden"
+            pStyleClass="@next"
+            enterFromClass="hidden"
+            enterActiveClass="scalein"
+            leaveToClass="hidden"
+            leaveActiveClass="fadeout"
+            [hideOnOutsideClick]="true"
+        >
+            <div class="material-symbols-outlined user-icon">
+                account_circle
+            </div>
+        </a>
+
+        <!-- User Dropdown Menu -->
+        <div class="layout-topbar-menu shadow-2 px-3 hidden" style="top: 9rem">
+            <ul class="list-none p-0 m-0">
+                <li class="mb-2">
+                    <div class="flex gap-3 p-3 bg-primary-600">
+<!--                        <div class="material-symbols-outlined user-icon" style="height: 30px; width: 30px">-->
+<!--                            account_circle-->
+<!--                        </div>-->
+                        <div class="flex flex-column cursor-pointer">
+                            <span class="font-semibold text-white"></span>
+                            <span class="text-xs font-normal text-white"></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="cursor-pointer py-1 px-1 flex menu-buttons">
+                    <a routerLink="/profile">
+                        <i class="material-symbols-outlined menu-icons">account_circle</i>
+                        <span class="font-semibold button-label">Profile</span>
+                    </a>
+                </li>
+
+                <li class="cursor-pointer py-1 px-1 flex gap-2 menu-buttons" (click)="logoutUser()">
+                        <i class="material-symbols-outlined menu-icons">Logout</i>
+                        <span class="font-semibold button-label">Logout</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layout-topbar-end surface-border">
+        <div class="layout-topbar-actions-start">
+            <!-- Desktop Menu Button -->
+            <a
+                *ngIf="!layoutService.isHorizontal()"
+                #menuButton
+                class="layout-menu-button hidden lg:flex"
+                (click)="onMenuButtonClick()"
+                pRipple
+            >
+                <i class="pi pi-bars"></i>
+            </a>
+        </div>
+
+        <div class="layout-topbar-actions-end">
+            <ul class="layout-topbar-items">
+                <!-- Search Bar -->
+<!--                <li class="layout-topbar-search hidden lg:flex">-->
+<!--                    <i class="pi pi-search"></i>-->
+<!--                    <input pInputText type="text" placeholder="Search..." />-->
+<!--                </li>-->
+
+                <!-- Responsive Search for Mobile -->
+<!--                <li class="lg:hidden">-->
+<!--                    <a-->
+<!--                        pStyleClass="@next"-->
+<!--                        enterFromClass="hidden"-->
+<!--                        enterActiveClass="scalein"-->
+<!--                        leaveToClass="hidden"-->
+<!--                        leaveActiveClass="fadeout"-->
+<!--                        [hideOnOutsideClick]="true"-->
+<!--                        pRipple-->
+<!--                    >-->
+<!--                        <i class="pi pi-search"></i>-->
+<!--                    </a>-->
+<!--                    <div-->
+<!--                        class="layout-topbar-search hidden absolute origin-top surface-overlay p-2 border-top-1 surface-border shadow-2"-->
+<!--                        style="top: 3.5rem"-->
+<!--                    >-->
+<!--                        <span class="p-input-icon-left w-full">-->
+<!--                            <i class="pi pi-search"></i>-->
+<!--                            <input-->
+<!--                                type="text"-->
+<!--                                pInputText-->
+<!--                                placeholder="Search"-->
+<!--                                class="w-full"-->
+<!--                            />-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+                <!-- User Profile -->
+                <li class="layout-topbar-profile">
+                    <a
+                        *ngIf="!layoutService.isMobile()"
+                        pStyleClass="@next"
+                        enterFromClass="hidden"
+                        enterActiveClass="scalein"
+                        leaveToClass="hidden"
+                        leaveActiveClass="fadeout"
+                        [hideOnOutsideClick]="true"
+                    >
+                        <div class="flex gap-2">
+                            <span class="material-symbols-outlined user-icon">
+                                account_circle
+                            </span>
+                            <div class="flex flex-column">
+                                <span class="font-semibold"></span>
+                                <span class="text-sm"></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="layout-topbar-menu p-card top-menu p-0 shadow-4 hidden">
+                        <div class="profile-menu">
+                        <ul class="list-none p-0 m-0">
+                            <a routerLink="/profile">
+                            <li class="cursor-pointer py-1 px-1 flex menu-buttons">
+                                    <i class="material-symbols-outlined menu-icons">account_circle</i>
+                                    <span class="font-semibold  button-label">Profile</span>
+                            </li>
+                            </a>
+                            <li class="cursor-pointer py-1 px-1 flex gap-2 menu-buttons" (click)="logoutUser()">
+                                <i class="material-symbols-outlined menu-icons">Logout</i>
+                                <span class="font-semibold button-label">Logout</span>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                </li>
+<!--                <li class="layout-rightpanel-button">-->
+<!--                    <a-->
+<!--                        (click)="-->
+<!--                            layoutService.state.rightMenuActive =-->
+<!--                                !layoutService.state.rightMenuActive-->
+<!--                        "-->
+<!--                    >-->
+<!--                        <i class="pi pi-arrow-left"></i>-->
+<!--                    </a>-->
+<!--                </li>-->
+            </ul>
+        </div>
+    </div>
+</div>

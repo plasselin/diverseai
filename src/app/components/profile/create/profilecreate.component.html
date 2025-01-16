@@ -1,0 +1,144 @@
+<div class="card">
+    <span class="text-900 text-xl font-bold mb-4 block"></span>
+    <div class="grid">
+        <div class="col-12 lg:col-2">
+            <div class="text-900 font-medium text-xl mb-3">Profile</div>
+            <div class="field mb-4 col-12">
+                <p-fileUpload
+                    id="files"
+                    mode="basic"
+                    name="avatar"
+                    url="./upload.php"
+                    accept="*"
+                    [maxFileSize]="1000000"
+                    styleClass="p-button-outlined p-button-plain"
+                    chooseLabel="Upload Files"
+                ></p-fileUpload>
+            </div>
+        </div>
+        <div class="col-12 lg:col-10">
+            <div class="grid formgrid p-fluid">
+                <div class="field mb-4 col-12">
+                    <label for="modelname" class="font-medium text-900"
+                        >Model Name</label
+                    >
+                    <input id="modelname" type="text" pInputText />
+                </div>
+                <div class="field mb-4 col-12">
+                    <label for="tasks" class="font-medium text-900">Tasks</label>
+                    <textarea
+                        id="tasks"
+                        type="text"
+                        pInputTextarea
+                        rows="5"
+                        [autoResize]="true"
+                    ></textarea>
+                </div>
+                <div class="field mb-4 col-12">
+                    <label for="instructions" class="font-medium text-900">Model Instructions</label>
+                    <textarea
+                        id="instructions"
+                        type="text"
+                        pInputTextarea
+                        rows="5"
+                        [autoResize]="true"
+                    ></textarea>
+                </div>
+                <div class="field mb-4 col-12 md:col-6">
+                    <label for="apiendpoints" class="font-medium text-900"
+                        >Api Endpoints</label
+                    >
+                    <input id="apiendpoints" type="text" class="" rows="2" pInputTextarea [autoResize]="true" />
+                </div>
+                <div class="field mb-4 col-12 md:col-6">
+                    <label for="functions" class="font-medium text-900"
+                    >Custom Functions</label
+                    >
+                    <input id="functions" type="text" class="" rows="2" pInputTextarea [autoResize]="true" />
+                </div>
+                <div class="field mb-4 col-12 md:col-6">
+                    <label for="database" class="font-medium text-900">Database Connections</label>
+                    <input id="database" type="text" class="" rows="2" pInputTextarea [autoResize]="true" />
+                </div>
+                <div class="field mb-4 col-12 md:col-6">
+                    <label for="agents" class="font-medium text-900"
+                        >Agents</label
+                    >
+                    <input id="agents" type="text" class="" rows="2" pInputTextarea [autoResize]="true" />
+                </div>
+
+
+                <div class="field mb-4 col-12 md:col-6">
+                    <label for="temperature" class="font-medium text-900"
+                    >Temperature</label
+                    >
+                    <input id="temperature" type="text" class="" rows="2" pInputTextarea [autoResize]="true" />
+                </div>
+
+
+                <div class="field mb-4 col-12 md:col-6">
+                    <label for="embeddings" class="font-medium text-900"
+                    >Available Embeddings</label
+                    >
+                    <input id="embeddings" type="text" class="" rows="2" pInputTextarea [autoResize]="true" />
+                </div>
+
+
+                <div class="field mb-4 col-12 md:col-6">
+                    <label for="threads" class="font-medium text-900">Threads</label>
+                    <input id="threads" type="text" class="" rows="2" pInputTextarea [autoResize]="true" />
+                </div>
+
+
+                <div class="field mb-4 col-12 md:col-6">
+                    <label for="tempstorage" class="font-medium text-900"
+                    >Temporary Storage</label
+                    >
+                    <input id="tempstorage" type="text" class="" rows="2" pInputTextarea [autoResize]="true" />
+                </div>
+
+                <div class="field mb-4 col-12">
+                    <label for="env" class="font-medium text-900">Environment Variables</label>
+                    <textarea
+                        id="env"
+                        type="text"
+                        pInputTextarea
+                        rows="3"
+                        [autoResize]="true"
+                    ></textarea>
+                </div>
+
+                <div class="field mb-4 col-12">
+                    <label for="modelsandroutes" class="font-medium text-900">Data access models & routes</label>
+                    <textarea
+                        id="modelsandroutes"
+                        type="text"
+                        pInputTextarea
+                        rows="10"
+                        [autoResize]="true"
+                    ></textarea>
+                </div>
+
+                <div class="field mb-4 col-12">
+                    <label for="extraparams" class="font-medium text-900">Additionnal Parameters</label>
+                    <textarea
+                        id="extraparams"
+                        type="text"
+                        pInputTextarea
+                        rows="3"
+                        [autoResize]="true"
+                    ></textarea>
+                </div>
+
+                <div class="col-12">
+                    <button
+                        pButton
+                        pRipple
+                        label="Create User"
+                        class="w-auto mt-3"
+                    ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

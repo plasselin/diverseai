@@ -1,0 +1,995 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ChatBoxComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/apps/chat/chat-box/chat-box.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-chat-box</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./chat-box.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#defaultUserId" >defaultUserId</a>
+                            </li>
+                            <li>
+                                <a href="#emojis" >emojis</a>
+                            </li>
+                            <li>
+                                <a href="#message" >message</a>
+                            </li>
+                            <li>
+                                <a href="#textContent" >textContent</a>
+                            </li>
+                            <li>
+                                <a href="#uploadedFiles" >uploadedFiles</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onEmojiSelect" >onEmojiSelect</a>
+                            </li>
+                            <li>
+                                <a href="#parseDate" >parseDate</a>
+                            </li>
+                            <li>
+                                <a href="#sendMessage" >sendMessage</a>
+                            </li>
+                            <li>
+                                <a href="#setMessage" >setMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(chatService: <a href="../injectables/ChatService.html" target="_self">ChatService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>chatService</td>
+
+                                                        <td>
+                                                                        <code><a href="../injectables/ChatService.html" target="_self" >ChatService</a></code>
+                                                        </td>
+
+                                                    <td>
+                                                            No
+                                                    </td>
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <b>user</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:28</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEmojiSelect"></a>
+                    <span class="name">
+                        <span ><b>onEmojiSelect</b></span>
+                        <a href="#onEmojiSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEmojiSelect(emoji: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>emoji</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="parseDate"></a>
+                    <span class="name">
+                        <span ><b>parseDate</b></span>
+                        <a href="#parseDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>parseDate(timestamp: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>timestamp</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendMessage"></a>
+                    <span class="name">
+                        <span ><b>sendMessage</b></span>
+                        <a href="#sendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendMessage()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setMessage"></a>
+                    <span class="name">
+                        <span ><b>setMessage</b></span>
+                        <a href="#setMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setMessage()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultUserId"></a>
+                    <span class="name">
+                        <span ><b>defaultUserId</b></span>
+                        <a href="#defaultUserId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>123</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emojis"></a>
+                    <span class="name">
+                        <span ><b>emojis</b></span>
+                        <a href="#emojis"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+        &#x27;😀&#x27;, &#x27;😃&#x27;, &#x27;😄&#x27;, &#x27;😁&#x27;, &#x27;😆&#x27;, &#x27;😅&#x27;, &#x27;😂&#x27;, &#x27;🤣&#x27;, &#x27;😇&#x27;, &#x27;😉&#x27;, &#x27;😊&#x27;, &#x27;🙂&#x27;, &#x27;🙃&#x27;, &#x27;😋&#x27;, &#x27;😌&#x27;, &#x27;😍&#x27;, &#x27;🥰&#x27;, &#x27;😘&#x27;, &#x27;😗&#x27;, &#x27;😙&#x27;, &#x27;😚&#x27;, &#x27;🤪&#x27;, &#x27;😜&#x27;, &#x27;😝&#x27;, &#x27;😛&#x27;,
+        &#x27;🤑&#x27;, &#x27;😎&#x27;, &#x27;🤓&#x27;, &#x27;🧐&#x27;, &#x27;🤠&#x27;, &#x27;🥳&#x27;, &#x27;🤗&#x27;, &#x27;🤡&#x27;, &#x27;😏&#x27;, &#x27;😶&#x27;, &#x27;😐&#x27;, &#x27;😑&#x27;, &#x27;😒&#x27;, &#x27;🙄&#x27;, &#x27;🤨&#x27;, &#x27;🤔&#x27;, &#x27;🤫&#x27;, &#x27;🤭&#x27;, &#x27;🤥&#x27;, &#x27;😳&#x27;, &#x27;😞&#x27;, &#x27;😟&#x27;, &#x27;😠&#x27;, &#x27;😡&#x27;, &#x27;🤬&#x27;, &#x27;😔&#x27;,
+        &#x27;😟&#x27;, &#x27;😠&#x27;, &#x27;😡&#x27;, &#x27;🤬&#x27;, &#x27;😔&#x27;, &#x27;😕&#x27;, &#x27;🙁&#x27;, &#x27;😬&#x27;, &#x27;🥺&#x27;, &#x27;😣&#x27;, &#x27;😖&#x27;, &#x27;😫&#x27;, &#x27;😩&#x27;, &#x27;🥱&#x27;, &#x27;😤&#x27;, &#x27;😮&#x27;, &#x27;😱&#x27;, &#x27;😨&#x27;, &#x27;😰&#x27;, &#x27;😯&#x27;, &#x27;😦&#x27;, &#x27;😧&#x27;, &#x27;😢&#x27;, &#x27;😥&#x27;, &#x27;😪&#x27;, &#x27;🤤&#x27;
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="message"></a>
+                    <span class="name">
+                        <span ><b>message</b></span>
+                        <a href="#message"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Message.html" target="_self" >Message</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textContent"></a>
+                    <span class="name">
+                        <span ><b>textContent</b></span>
+                        <a href="#textContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uploadedFiles"></a>
+                    <span class="name">
+                        <span ><b>uploadedFiles</b></span>
+                        <a href="#uploadedFiles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/apps/chat/chat-box/chat-box.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
+import { Message } from &#x27;src/app/api/message&#x27;;
+import { User } from &#x27;src/app/api/user&#x27;;
+import { ChatService } from &#x27;../service/chat.service&#x27;;
+
+
+@Component({
+    selector: &#x27;app-chat-box&#x27;,
+    templateUrl: &#x27;./chat-box.component.html&#x27;,
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class ChatBoxComponent implements OnInit {
+
+    defaultUserId: number &#x3D; 123;
+
+    message!: Message;
+
+    textContent: string &#x3D; &#x27;&#x27;;
+
+    uploadedFiles: any[] &#x3D; [];
+
+    emojis &#x3D; [
+        &#x27;😀&#x27;, &#x27;😃&#x27;, &#x27;😄&#x27;, &#x27;😁&#x27;, &#x27;😆&#x27;, &#x27;😅&#x27;, &#x27;😂&#x27;, &#x27;🤣&#x27;, &#x27;😇&#x27;, &#x27;😉&#x27;, &#x27;😊&#x27;, &#x27;🙂&#x27;, &#x27;🙃&#x27;, &#x27;😋&#x27;, &#x27;😌&#x27;, &#x27;😍&#x27;, &#x27;🥰&#x27;, &#x27;😘&#x27;, &#x27;😗&#x27;, &#x27;😙&#x27;, &#x27;😚&#x27;, &#x27;🤪&#x27;, &#x27;😜&#x27;, &#x27;😝&#x27;, &#x27;😛&#x27;,
+        &#x27;🤑&#x27;, &#x27;😎&#x27;, &#x27;🤓&#x27;, &#x27;🧐&#x27;, &#x27;🤠&#x27;, &#x27;🥳&#x27;, &#x27;🤗&#x27;, &#x27;🤡&#x27;, &#x27;😏&#x27;, &#x27;😶&#x27;, &#x27;😐&#x27;, &#x27;😑&#x27;, &#x27;😒&#x27;, &#x27;🙄&#x27;, &#x27;🤨&#x27;, &#x27;🤔&#x27;, &#x27;🤫&#x27;, &#x27;🤭&#x27;, &#x27;🤥&#x27;, &#x27;😳&#x27;, &#x27;😞&#x27;, &#x27;😟&#x27;, &#x27;😠&#x27;, &#x27;😡&#x27;, &#x27;🤬&#x27;, &#x27;😔&#x27;,
+        &#x27;😟&#x27;, &#x27;😠&#x27;, &#x27;😡&#x27;, &#x27;🤬&#x27;, &#x27;😔&#x27;, &#x27;😕&#x27;, &#x27;🙁&#x27;, &#x27;😬&#x27;, &#x27;🥺&#x27;, &#x27;😣&#x27;, &#x27;😖&#x27;, &#x27;😫&#x27;, &#x27;😩&#x27;, &#x27;🥱&#x27;, &#x27;😤&#x27;, &#x27;😮&#x27;, &#x27;😱&#x27;, &#x27;😨&#x27;, &#x27;😰&#x27;, &#x27;😯&#x27;, &#x27;😦&#x27;, &#x27;😧&#x27;, &#x27;😢&#x27;, &#x27;😥&#x27;, &#x27;😪&#x27;, &#x27;🤤&#x27;
+    ];
+
+    @Input() user!: User;
+
+    constructor(private chatService: ChatService) { }
+
+
+
+    setMessage() {
+        if (this.user) {
+            let filteredMessages &#x3D; this.user.messages.filter(m &#x3D;&gt; m.ownerId !&#x3D;&#x3D; this.defaultUserId);
+            this.message &#x3D; filteredMessages[filteredMessages.length - 1];
+        }
+    }
+
+    ngOnInit(): void {
+        this.setMessage();
+    }
+
+    sendMessage() {
+        if (this.textContent &#x3D;&#x3D; &#x27;&#x27; || this.textContent &#x3D;&#x3D;&#x3D; &#x27; &#x27;) {
+            return;
+        }
+        else {
+            let message &#x3D; {
+                text: this.textContent,
+                ownerId: 123,
+                createdAt: new Date().getTime(),
+            }
+
+            this.chatService.sendMessage(message)
+            this.textContent &#x3D; &#x27;&#x27;;
+        }
+    }
+
+    onEmojiSelect(emoji: string) {
+        this.textContent +&#x3D; emoji;
+    }
+
+    parseDate(timestamp: number) {
+        return new Date(timestamp).toTimeString().split(&#x27;:&#x27;).slice(0, 2).join(&#x27;:&#x27;);
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;flex flex-column h-full&quot;&gt;
+    &lt;div class&#x3D;&quot;flex align-items-center border-bottom-1 surface-border p-3 lg:p-6&quot;&gt;
+        &lt;div class&#x3D;&quot;relative flex align-items-center mr-3&quot;&gt;
+            &lt;img src&#x3D;&quot;assets/demo/images/avatar/{{user.image}}&quot; alt&#x3D;&quot;user.name&quot; class&#x3D;&quot;w-4rem h-4rem border-circle shadow-4&quot;&gt;
+            &lt;span class&#x3D;&quot;w-1rem h-1rem border-circle border-2 surface-border absolute bottom-0 right-0&quot; [ngClass]&#x3D;&quot;{&#x27;bg-green-400&#x27;: user.status &#x3D;&#x3D;&#x3D; &#x27;active&#x27;, &#x27;bg-red-400&#x27;: user.status &#x3D;&#x3D;&#x3D; &#x27;busy&#x27;, &#x27;bg-yellow-400&#x27;: user.status &#x3D;&#x3D;&#x3D; &#x27;away&#x27;}&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;mr-2&quot;&gt;
+            &lt;span class&#x3D;&quot;text-900 font-semibold block&quot;&gt;{{user.name}}&lt;/span&gt;
+            &lt;span class&#x3D;&quot;text-700&quot;&gt;Last active 1 hour ago&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;flex align-items-center ml-auto&quot; &gt;
+            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;pi pi-phone&quot; class&#x3D;&quot;p-button-rounded p-button-outlined p-button-secondary mr-3&quot; &gt;&lt;/button&gt;
+            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;pi pi-ellipsis-v&quot; class&#x3D;&quot;p-button-rounded p-button-outlined p-button-secondary&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;p-3 md:px-4 lg:px-6 lg:py-4 mt-2 overflow-y-auto&quot; style&#x3D;&quot;max-height: 53vh;&quot; #chatWindow [scrollTop]&#x3D;&quot;chatWindow.scrollHeight&quot;&gt;
+        &lt;div *ngFor&#x3D;&quot;let message of user.messages&quot;&gt;
+            &lt;div *ngIf&#x3D;&quot;message.ownerId !&#x3D;&#x3D; 123&quot; class&#x3D;&quot;grid grid-nogutter mb-4&quot;&gt;
+                &lt;div class&#x3D;&quot;mt-1 mr-3&quot;&gt;
+                    &lt;img src&#x3D;&quot;assets/demo/images/avatar/{{user.image}}&quot; alt&#x3D;&quot;user.name&quot; class&#x3D;&quot;w-3rem h-3rem border-circle shadow-4&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col mt-3&quot;&gt;
+                    &lt;p class&#x3D;&quot;text-900 font-semibold mb-3&quot;&gt;{{user.name}}&lt;/p&gt;
+                    &lt;span class&#x3D;&quot;text-700 inline-block font-medium border-1 surface-border p-3 white-space-normal border-round&quot; style&#x3D;&quot;word-break: break-word; max-width:80%;&quot;&gt;{{message.text}}&lt;/span&gt;
+                    &lt;p class&#x3D;&quot;text-700 mt-3&quot;&gt;{{parseDate(message.createdAt)}}&lt;i class&#x3D;&quot;pi pi-check text-green-400 ml-2&quot; &gt;&lt;/i&gt;&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div *ngIf&#x3D;&quot;message.ownerId &#x3D;&#x3D;&#x3D; defaultUserId&quot; class&#x3D;&quot;grid grid-nogutter mb-4&quot;&gt;
+                &lt;div class&#x3D;&quot;col mt-3 text-right&quot;&gt;
+                    &lt;span class&#x3D;&quot;inline-block text-left font-medium border-1 surface-border bg-primary-100 text-primary-900 p-3 white-space-normal border-round&quot; style&#x3D;&quot;word-break: break-word; max-width:80%;&quot;&gt;{{message.text}}&lt;/span&gt;
+                    &lt;p class&#x3D;&quot;text-700 mt-3&quot;&gt;{{parseDate(message.createdAt)}} &lt;i class&#x3D;&quot;pi pi-check text-green-400 mr-3&quot; &gt;&lt;/i&gt;&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;p-3 md:p-4 lg:p-6 flex flex-column sm:flex-row align-items-center mt-auto border-top-1 surface-border gap-3&quot;&gt;
+        &lt;input id&#x3D;&quot;message&quot; type&#x3D;&quot;text&quot; pInputText placeholder&#x3D;&quot;Type a message&quot; class&#x3D;&quot;flex-1 w-full sm:w-auto border-round&quot; [(ngModel)]&#x3D;&quot;textContent&quot; (keydown.enter)&#x3D;&quot;sendMessage()&quot;/&gt;
+        &lt;div class&#x3D;&quot;flex w-full sm:w-auto gap-3&quot;&gt;
+            &lt;button pRipple class&#x3D;&quot;p-button p-button-secondary w-full sm:w-auto justify-content-center text-xl&quot; (click)&#x3D;&quot;op.toggle($event)&quot;&gt;😀&lt;/button&gt;
+            &lt;button pButton pRipple label&#x3D;&quot;Send&quot; icon&#x3D;&quot;pi pi-send&quot; class&#x3D;&quot;w-full sm:w-auto&quot; (click)&#x3D;&quot;sendMessage()&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p-overlayPanel #op styleClass&#x3D;&quot;w-full sm:w-30rem&quot;&gt;
+    &lt;ng-template pTemplate&gt;
+        &lt;button *ngFor&#x3D;&quot;let emoji of emojis;&quot; pButton pRipple (click)&#x3D;&quot;op.hide(); onEmojiSelect(emoji)&quot; type&#x3D;&quot;button&quot; [label]&#x3D;&quot;emoji&quot; class&#x3D;&quot;p-2 p-button-text text-2xl&quot;&gt;&lt;/button&gt;
+    &lt;/ng-template&gt;
+&lt;/p-overlayPanel&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="flex flex-column h-full">    <div class="flex align-items-center border-bottom-1 surface-border p-3 lg:p-6">        <div class="relative flex align-items-center mr-3">            <img src="assets/demo/images/avatar/{{user.image}}" alt="user.name" class="w-4rem h-4rem border-circle shadow-4">            <span class="w-1rem h-1rem border-circle border-2 surface-border absolute bottom-0 right-0" [ngClass]="{\'bg-green-400\': user.status === \'active\', \'bg-red-400\': user.status === \'busy\', \'bg-yellow-400\': user.status === \'away\'}"></span>        </div>        <div class="mr-2">            <span class="text-900 font-semibold block">{{user.name}}</span>            <span class="text-700">Last active 1 hour ago</span>        </div>        <div class="flex align-items-center ml-auto" >            <button pButton pRipple type="button" icon="pi pi-phone" class="p-button-rounded p-button-outlined p-button-secondary mr-3" ></button>            <button pButton pRipple type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-outlined p-button-secondary"></button>        </div>    </div>    <div class="p-3 md:px-4 lg:px-6 lg:py-4 mt-2 overflow-y-auto" style="max-height: 53vh;" #chatWindow [scrollTop]="chatWindow.scrollHeight">        <div *ngFor="let message of user.messages">            <div *ngIf="message.ownerId !== 123" class="grid grid-nogutter mb-4">                <div class="mt-1 mr-3">                    <img src="assets/demo/images/avatar/{{user.image}}" alt="user.name" class="w-3rem h-3rem border-circle shadow-4">                </div>                <div class="col mt-3">                    <p class="text-900 font-semibold mb-3">{{user.name}}</p>                    <span class="text-700 inline-block font-medium border-1 surface-border p-3 white-space-normal border-round" style="word-break: break-word; max-width:80%;">{{message.text}}</span>                    <p class="text-700 mt-3">{{parseDate(message.createdAt)}}<i class="pi pi-check text-green-400 ml-2" ></i></p>                </div>            </div>            <div *ngIf="message.ownerId === defaultUserId" class="grid grid-nogutter mb-4">                <div class="col mt-3 text-right">                    <span class="inline-block text-left font-medium border-1 surface-border bg-primary-100 text-primary-900 p-3 white-space-normal border-round" style="word-break: break-word; max-width:80%;">{{message.text}}</span>                    <p class="text-700 mt-3">{{parseDate(message.createdAt)}} <i class="pi pi-check text-green-400 mr-3" ></i></p>                </div>            </div>        </div>    </div>    <div class="p-3 md:p-4 lg:p-6 flex flex-column sm:flex-row align-items-center mt-auto border-top-1 surface-border gap-3">        <input id="message" type="text" pInputText placeholder="Type a message" class="flex-1 w-full sm:w-auto border-round" [(ngModel)]="textContent" (keydown.enter)="sendMessage()"/>        <div class="flex w-full sm:w-auto gap-3">            <button pRipple class="p-button p-button-secondary w-full sm:w-auto justify-content-center text-xl" (click)="op.toggle($event)">😀</button>            <button pButton pRipple label="Send" icon="pi pi-send" class="w-full sm:w-auto" (click)="sendMessage()"></button>        </div>    </div></div><p-overlayPanel #op styleClass="w-full sm:w-30rem">    <ng-template pTemplate>        <button *ngFor="let emoji of emojis;" pButton pRipple (click)="op.hide(); onEmojiSelect(emoji)" type="button" [label]="emoji" class="p-2 p-button-text text-2xl"></button>    </ng-template></p-overlayPanel></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ChatBoxComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ChatBoxComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,802 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CheckoutFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/ecommerce/checkoutform/checkoutform.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./checkoutform.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checked" >checked</a>
+                            </li>
+                            <li>
+                                <a href="#checked2" >checked2</a>
+                            </li>
+                            <li>
+                                <a href="#cities" >cities</a>
+                            </li>
+                            <li>
+                                <a href="#quantities" >quantities</a>
+                            </li>
+                            <li>
+                                <a href="#selectedCity" >selectedCity</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checked"></a>
+                    <span class="name">
+                        <span ><b>checked</b></span>
+                        <a href="#checked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/ecommerce/checkoutform/checkoutform.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checked2"></a>
+                    <span class="name">
+                        <span ><b>checked2</b></span>
+                        <a href="#checked2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/ecommerce/checkoutform/checkoutform.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cities"></a>
+                    <span class="name">
+                        <span ><b>cities</b></span>
+                        <a href="#cities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+        { name: &#x27;USA / New York&#x27;, code: &#x27;NY&#x27; },
+        { name: &#x27;Italy / Rome&#x27;, code: &#x27;RM&#x27; },
+        { name: &#x27;United Kingdom / London&#x27;, code: &#x27;LDN&#x27; },
+        { name: &#x27;Turkey / Istanbul&#x27;, code: &#x27;IST&#x27; },
+        { name: &#x27;France / Paris&#x27;, code: &#x27;PRS&#x27; },
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/ecommerce/checkoutform/checkoutform.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quantities"></a>
+                    <span class="name">
+                        <span ><b>quantities</b></span>
+                        <a href="#quantities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[1, 1, 1]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/components/ecommerce/checkoutform/checkoutform.component.ts:7</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedCity"></a>
+                    <span class="name">
+                        <span ><b>selectedCity</b></span>
+                        <a href="#selectedCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/ecommerce/checkoutform/checkoutform.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="value"></a>
+                    <span class="name">
+                        <span ><b>value</b></span>
+                        <a href="#value"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/ecommerce/checkoutform/checkoutform.component.ts:9</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+    templateUrl: &#x27;./checkoutform.component.html&#x27;,
+})
+export class CheckoutFormComponent {
+    quantities: number[] &#x3D; [1, 1, 1];
+
+    value: string &#x3D; &#x27;&#x27;;
+
+    checked: boolean &#x3D; true;
+
+    checked2: boolean &#x3D; true;
+
+    cities &#x3D; [
+        { name: &#x27;USA / New York&#x27;, code: &#x27;NY&#x27; },
+        { name: &#x27;Italy / Rome&#x27;, code: &#x27;RM&#x27; },
+        { name: &#x27;United Kingdom / London&#x27;, code: &#x27;LDN&#x27; },
+        { name: &#x27;Turkey / Istanbul&#x27;, code: &#x27;IST&#x27; },
+        { name: &#x27;France / Paris&#x27;, code: &#x27;PRS&#x27; },
+    ];
+
+    selectedCity: string &#x3D; &#x27;&#x27;;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;div class&#x3D;&quot;grid grid-nogutter&quot;&gt;
+        &lt;div class&#x3D;&quot;col-12 px-4 mt-4 md:mt-6 md:px-6&quot;&gt;
+            &lt;span class&#x3D;&quot;text-900 block font-bold text-xl&quot;&gt;Checkout&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-12 lg:col-6 h-full px-4 py-4 md:px-6&quot;&gt;
+            &lt;ul class&#x3D;&quot;flex list-none flex-wrap p-0 mb-6&quot;&gt;
+                &lt;li class&#x3D;&quot;flex align-items-center text-primary mr-2&quot;&gt;
+                    Cart
+                    &lt;i class&#x3D;&quot;pi pi-chevron-right text-500 text-xs&quot;&gt;&lt;/i&gt;
+                &lt;/li&gt;
+                &lt;li class&#x3D;&quot;flex align-items-center text-500 mr-2&quot;&gt;
+                    Information&lt;i
+                        class&#x3D;&quot;pi pi-chevron-right text-500 text-xs mr-2&quot;
+                    &gt;&lt;/i&gt;
+                &lt;/li&gt;
+                &lt;li class&#x3D;&quot;flex align-items-center text-500 mr-2&quot;&gt;
+                    Shipping&lt;i
+                        class&#x3D;&quot;pi pi-chevron-right text-500 text-xs mr-2&quot;
+                    &gt;&lt;/i&gt;
+                &lt;/li&gt;
+                &lt;li class&#x3D;&quot;flex align-items-center text-500 mr-2&quot;&gt;Payment&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class&#x3D;&quot;grid formgrid&quot;&gt;
+                &lt;div class&#x3D;&quot;col-12 field mb-6&quot;&gt;
+                    &lt;span class&#x3D;&quot;text-900 text-2xl block font-medium mb-5&quot;
+                        &gt;Contact Information&lt;/span
+                    &gt;
+                    &lt;input
+                        id&#x3D;&quot;email&quot;
+                        placeholder&#x3D;&quot;Email&quot;
+                        type&#x3D;&quot;text&quot;
+                        class&#x3D;&quot;p-inputtext w-full mb-4&quot;
+                    /&gt;
+                    &lt;p-checkbox
+                        name&#x3D;&quot;checkbox-1&quot;
+                        [(ngModel)]&#x3D;&quot;checked&quot;
+                        [binary]&#x3D;&quot;true&quot;
+                        class&#x3D;&quot;text-900&quot;
+                        inputId&#x3D;&quot;id&quot;
+                    &gt;&lt;/p-checkbox&gt;
+                    &lt;label for&#x3D;&quot;id&quot; class&#x3D;&quot;m-0 ml-2&quot;
+                        &gt;Email me with news and offers&lt;/label
+                    &gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 field mb-4&quot;&gt;
+                    &lt;span class&#x3D;&quot;text-900 text-2xl block font-medium mb-5&quot;
+                        &gt;Shipping&lt;/span
+                    &gt;
+                    &lt;p-dropdown
+                        [options]&#x3D;&quot;cities&quot;
+                        [(ngModel)]&#x3D;&quot;selectedCity&quot;
+                        placeholder&#x3D;&quot;Country / City&quot;
+                        optionLabel&#x3D;&quot;name&quot;
+                        [showClear]&#x3D;&quot;true&quot;
+                        styleClass&#x3D;&quot;w-full&quot;
+                    &gt;&lt;/p-dropdown&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-6 field mb-4&quot;&gt;
+                    &lt;input
+                        id&#x3D;&quot;name&quot;
+                        placeholder&#x3D;&quot;Name&quot;
+                        type&#x3D;&quot;text&quot;
+                        class&#x3D;&quot;p-inputtext w-full&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-6 field mb-4&quot;&gt;
+                    &lt;input
+                        id&#x3D;&quot;lastname&quot;
+                        placeholder&#x3D;&quot;Last Name&quot;
+                        type&#x3D;&quot;text&quot;
+                        class&#x3D;&quot;p-inputtext w-full&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 field mb-4&quot;&gt;
+                    &lt;input
+                        id&#x3D;&quot;address&quot;
+                        placeholder&#x3D;&quot;Address&quot;
+                        type&#x3D;&quot;text&quot;
+                        class&#x3D;&quot;p-inputtext w-full&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 field mb-4&quot;&gt;
+                    &lt;input
+                        id&#x3D;&quot;address2&quot;
+                        placeholder&#x3D;&quot;Apartment, suite, etc&quot;
+                        type&#x3D;&quot;text&quot;
+                        class&#x3D;&quot;p-inputtext w-full&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-6 field mb-4&quot;&gt;
+                    &lt;input
+                        id&#x3D;&quot;pc&quot;
+                        placeholder&#x3D;&quot;Postal Code&quot;
+                        type&#x3D;&quot;text&quot;
+                        class&#x3D;&quot;p-inputtext w-full&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-6 field mb-4&quot;&gt;
+                    &lt;input
+                        id&#x3D;&quot;city&quot;
+                        placeholder&#x3D;&quot;City&quot;
+                        type&#x3D;&quot;text&quot;
+                        class&#x3D;&quot;p-inputtext w-full&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-6 field mb-4&quot;&gt;
+                    &lt;p-checkbox
+                        name&#x3D;&quot;checkbox-1&quot;
+                        [(ngModel)]&#x3D;&quot;checked2&quot;
+                        [binary]&#x3D;&quot;true&quot;
+                        label&#x3D;&quot;Save for next purchase&quot;
+                        class&#x3D;&quot;text-900&quot;
+                        inputId&#x3D;&quot;id&quot;
+                    &gt;&lt;/p-checkbox&gt;
+                &lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;col-12 flex flex-column lg:flex-row justify-content-center align-items-center lg:justify-content-end my-6&quot;
+                &gt;
+                    &lt;button
+                        pButton
+                        pRipple
+                        class&#x3D;&quot;p-button-secondary p-button-outlined mt-3 lg:mt-0 w-full lg:w-auto flex-order-2 lg:flex-order-1 lg:mr-4&quot;
+                        label&#x3D;&quot;Return to Cart&quot;
+                        icon&#x3D;&quot;pi pi-fw pi-arrow-left&quot;
+                        id&#x3D;&quot;return-card&quot;
+                    &gt;&lt;/button&gt;
+                    &lt;button
+                        pButton
+                        pRipple
+                        class&#x3D;&quot;p-button-primary w-full lg:w-auto flex-order-1 lg:flex-order-2&quot;
+                        label&#x3D;&quot;Continue to Shipping&quot;
+                        icon&#x3D;&quot;pi pi-fw pi-check&quot;
+                    &gt;&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-12 lg:col-6 px-4 py-4 md:px-6&quot;&gt;
+            &lt;div class&#x3D;&quot;pb-3 surface-border&quot;&gt;
+                &lt;span class&#x3D;&quot;text-900 font-medium text-xl&quot;&gt;Your Cart&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div
+                class&#x3D;&quot;flex flex-column lg:flex-row flex-wrap lg:align-items-center py-2 mt-3 surface-border&quot;
+            &gt;
+                &lt;img
+                    src&#x3D;&quot;assets/demo/images/ecommerce/shop/shop-1.png&quot;
+                    class&#x3D;&quot;w-8rem h-8rem flex-shrink-0 mb-3&quot;
+                    alt&#x3D;&quot;product&quot;
+                /&gt;
+                &lt;div class&#x3D;&quot;flex-auto lg:ml-3&quot;&gt;
+                    &lt;div
+                        class&#x3D;&quot;flex align-items-center justify-content-between mb-3&quot;
+                    &gt;
+                        &lt;span class&#x3D;&quot;text-900 font-bold&quot;&gt;Product Name&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;text-900 font-bold&quot;&gt;$123.00&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;text-600 text-sm mb-3&quot;&gt;Black | Large&lt;/div&gt;
+                    &lt;div
+                        class&#x3D;&quot;flex flex-auto justify-content-between align-items-center&quot;
+                    &gt;
+                        &lt;p-inputNumber
+                            [showButtons]&#x3D;&quot;true&quot;
+                            buttonLayout&#x3D;&quot;horizontal&quot;
+                            spinnerMode&#x3D;&quot;horizontal&quot;
+                            [min]&#x3D;&quot;0&quot;
+                            inputStyleClass&#x3D;&quot;w-2rem text-center py-2 px-1 border-transparent outline-none shadow-none&quot;
+                            [(ngModel)]&#x3D;&quot;quantities[0]&quot;
+                            class&#x3D;&quot;border-1 surface-border border-round&quot;
+                            decrementButtonClass&#x3D;&quot;p-button-text text-600 hover:text-primary py-1 px-1&quot;
+                            incrementButtonClass&#x3D;&quot;p-button-text text-600 hover:text-primary py-1 px-1&quot;
+                            incrementButtonIcon&#x3D;&quot;pi pi-plus&quot;
+                            decrementButtonIcon&#x3D;&quot;pi pi-minus&quot;
+                        &gt;&lt;/p-inputNumber&gt;
+                        &lt;button
+                            pButton
+                            pRipple
+                            icon&#x3D;&quot;pi pi-trash&quot;
+                            class&#x3D;&quot;p-button-text p-button-rounded&quot;
+                        &gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;py-2 mt-3 surface-border&quot;&gt;
+                &lt;p-inputGroup class&#x3D;&quot;mb-3&quot;&gt;
+                    &lt;input
+                        type&#x3D;&quot;text&quot;
+                        [(ngModel)]&#x3D;&quot;value&quot;
+                        pInputText
+                        placeholder&#x3D;&quot;Promo code&quot;
+                        class&#x3D;&quot;w-full&quot;
+                    /&gt;
+                    &lt;button
+                        type&#x3D;&quot;button&quot;
+                        pButton
+                        pRipple
+                        label&#x3D;&quot;Apply&quot;
+                        [disabled]&#x3D;&quot;!value&quot;
+                    &gt;&lt;/button&gt;
+                &lt;/p-inputGroup&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;py-2 mt-3&quot;&gt;
+                &lt;div
+                    class&#x3D;&quot;flex justify-content-between align-items-center mb-3&quot;
+                &gt;
+                    &lt;span class&#x3D;&quot;text-900 font-medium&quot;&gt;Subtotal&lt;/span&gt;
+                    &lt;span class&#x3D;&quot;text-900&quot;&gt;$123.00&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;flex justify-content-between align-items-center mb-3&quot;
+                &gt;
+                    &lt;span class&#x3D;&quot;text-900 font-medium&quot;&gt;Shipping&lt;/span&gt;
+                    &lt;span class&#x3D;&quot;text-primary font-bold&quot;&gt;Free&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;flex justify-content-between align-items-center mb-3&quot;
+                &gt;
+                    &lt;span class&#x3D;&quot;text-900 font-bold&quot;&gt;Total&lt;/span&gt;
+                    &lt;span class&#x3D;&quot;text-900 font-medium text-xl&quot;&gt;$123.00&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div
+                class&#x3D;&quot;py-2 mt-3 bg-yellow-100 flex align-items-center justify-content-center border-round&quot;
+            &gt;
+                &lt;img
+                    src&#x3D;&quot;assets/demo/images/ecommerce/shop/flag.png&quot;
+                    class&#x3D;&quot;mr-2&quot;
+                    alt&#x3D;&quot;Country Flag&quot;
+                /&gt;&lt;span class&#x3D;&quot;text-black-alpha-90 font-medium&quot;
+                    &gt;No additional duties or taxes.&lt;/span
+                &gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card">    <div class="grid grid-nogutter">        <div class="col-12 px-4 mt-4 md:mt-6 md:px-6">            <span class="text-900 block font-bold text-xl">Checkout</span>        </div>        <div class="col-12 lg:col-6 h-full px-4 py-4 md:px-6">            <ul class="flex list-none flex-wrap p-0 mb-6">                <li class="flex align-items-center text-primary mr-2">                    Cart                    <i class="pi pi-chevron-right text-500 text-xs"></i>                </li>                <li class="flex align-items-center text-500 mr-2">                    Information<i                        class="pi pi-chevron-right text-500 text-xs mr-2"                    ></i>                </li>                <li class="flex align-items-center text-500 mr-2">                    Shipping<i                        class="pi pi-chevron-right text-500 text-xs mr-2"                    ></i>                </li>                <li class="flex align-items-center text-500 mr-2">Payment</li>            </ul>            <div class="grid formgrid">                <div class="col-12 field mb-6">                    <span class="text-900 text-2xl block font-medium mb-5"                        >Contact Information</span                    >                    <input                        id="email"                        placeholder="Email"                        type="text"                        class="p-inputtext w-full mb-4"                    />                    <p-checkbox                        name="checkbox-1"                        [(ngModel)]="checked"                        [binary]="true"                        class="text-900"                        inputId="id"                    ></p-checkbox>                    <label for="id" class="m-0 ml-2"                        >Email me with news and offers</label                    >                </div>                <div class="col-12 field mb-4">                    <span class="text-900 text-2xl block font-medium mb-5"                        >Shipping</span                    >                    <p-dropdown                        [options]="cities"                        [(ngModel)]="selectedCity"                        placeholder="Country / City"                        optionLabel="name"                        [showClear]="true"                        styleClass="w-full"                    ></p-dropdown>                </div>                <div class="col-12 lg:col-6 field mb-4">                    <input                        id="name"                        placeholder="Name"                        type="text"                        class="p-inputtext w-full"                    />                </div>                <div class="col-12 lg:col-6 field mb-4">                    <input                        id="lastname"                        placeholder="Last Name"                        type="text"                        class="p-inputtext w-full"                    />                </div>                <div class="col-12 field mb-4">                    <input                        id="address"                        placeholder="Address"                        type="text"                        class="p-inputtext w-full"                    />                </div>                <div class="col-12 field mb-4">                    <input                        id="address2"                        placeholder="Apartment, suite, etc"                        type="text"                        class="p-inputtext w-full"                    />                </div>                <div class="col-12 lg:col-6 field mb-4">                    <input                        id="pc"                        placeholder="Postal Code"                        type="text"                        class="p-inputtext w-full"                    />                </div>                <div class="col-12 lg:col-6 field mb-4">                    <input                        id="city"                        placeholder="City"                        type="text"                        class="p-inputtext w-full"                    />                </div>                <div class="col-12 lg:col-6 field mb-4">                    <p-checkbox                        name="checkbox-1"                        [(ngModel)]="checked2"                        [binary]="true"                        label="Save for next purchase"                        class="text-900"                        inputId="id"                    ></p-checkbox>                </div>                <div                    class="col-12 flex flex-column lg:flex-row justify-content-center align-items-center lg:justify-content-end my-6"                >                    <button                        pButton                        pRipple                        class="p-button-secondary p-button-outlined mt-3 lg:mt-0 w-full lg:w-auto flex-order-2 lg:flex-order-1 lg:mr-4"                        label="Return to Cart"                        icon="pi pi-fw pi-arrow-left"                        id="return-card"                    ></button>                    <button                        pButton                        pRipple                        class="p-button-primary w-full lg:w-auto flex-order-1 lg:flex-order-2"                        label="Continue to Shipping"                        icon="pi pi-fw pi-check"                    ></button>                </div>            </div>        </div>        <div class="col-12 lg:col-6 px-4 py-4 md:px-6">            <div class="pb-3 surface-border">                <span class="text-900 font-medium text-xl">Your Cart</span>            </div>            <div                class="flex flex-column lg:flex-row flex-wrap lg:align-items-center py-2 mt-3 surface-border"            >                <img                    src="assets/demo/images/ecommerce/shop/shop-1.png"                    class="w-8rem h-8rem flex-shrink-0 mb-3"                    alt="product"                />                <div class="flex-auto lg:ml-3">                    <div                        class="flex align-items-center justify-content-between mb-3"                    >                        <span class="text-900 font-bold">Product Name</span>                        <span class="text-900 font-bold">$123.00</span>                    </div>                    <div class="text-600 text-sm mb-3">Black | Large</div>                    <div                        class="flex flex-auto justify-content-between align-items-center"                    >                        <p-inputNumber                            [showButtons]="true"                            buttonLayout="horizontal"                            spinnerMode="horizontal"                            [min]="0"                            inputStyleClass="w-2rem text-center py-2 px-1 border-transparent outline-none shadow-none"                            [(ngModel)]="quantities[0]"                            class="border-1 surface-border border-round"                            decrementButtonClass="p-button-text text-600 hover:text-primary py-1 px-1"                            incrementButtonClass="p-button-text text-600 hover:text-primary py-1 px-1"                            incrementButtonIcon="pi pi-plus"                            decrementButtonIcon="pi pi-minus"                        ></p-inputNumber>                        <button                            pButton                            pRipple                            icon="pi pi-trash"                            class="p-button-text p-button-rounded"                        ></button>                    </div>                </div>            </div>            <div class="py-2 mt-3 surface-border">                <p-inputGroup class="mb-3">                    <input                        type="text"                        [(ngModel)]="value"                        pInputText                        placeholder="Promo code"                        class="w-full"                    />                    <button                        type="button"                        pButton                        pRipple                        label="Apply"                        [disabled]="!value"                    ></button>                </p-inputGroup>            </div>            <div class="py-2 mt-3">                <div                    class="flex justify-content-between align-items-center mb-3"                >                    <span class="text-900 font-medium">Subtotal</span>                    <span class="text-900">$123.00</span>                </div>                <div                    class="flex justify-content-between align-items-center mb-3"                >                    <span class="text-900 font-medium">Shipping</span>                    <span class="text-primary font-bold">Free</span>                </div>                <div                    class="flex justify-content-between align-items-center mb-3"                >                    <span class="text-900 font-bold">Total</span>                    <span class="text-900 font-medium text-xl">$123.00</span>                </div>            </div>            <div                class="py-2 mt-3 bg-yellow-100 flex align-items-center justify-content-center border-round"            >                <img                    src="assets/demo/images/ecommerce/shop/flag.png"                    class="mr-2"                    alt="Country Flag"                /><span class="text-black-alpha-90 font-medium"                    >No additional duties or taxes.</span                >            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CheckoutFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CheckoutFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

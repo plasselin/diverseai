@@ -1,0 +1,976 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>poseidon-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">poseidon-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ProductOverviewComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/ecommerce/productoverview/productoverview.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./productoverview.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#color" >color</a>
+                            </li>
+                            <li>
+                                <a href="#images" >images</a>
+                            </li>
+                            <li>
+                                <a href="#liked" >liked</a>
+                            </li>
+                            <li>
+                                <a href="#quantity" >quantity</a>
+                            </li>
+                            <li>
+                                <a href="#selectedImageIndex" >selectedImageIndex</a>
+                            </li>
+                            <li>
+                                <a href="#size" >size</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">src/app/components/ecommerce/productoverview/productoverview.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="color"></a>
+                    <span class="name">
+                        <span ><b>color</b></span>
+                        <a href="#color"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;bluegray&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/components/ecommerce/productoverview/productoverview.component.ts:7</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="images"></a>
+                    <span class="name">
+                        <span ><b>images</b></span>
+                        <a href="#images"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/ecommerce/productoverview/productoverview.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="liked"></a>
+                    <span class="name">
+                        <span ><b>liked</b></span>
+                        <a href="#liked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/ecommerce/productoverview/productoverview.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quantity"></a>
+                    <span class="name">
+                        <span ><b>quantity</b></span>
+                        <a href="#quantity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/ecommerce/productoverview/productoverview.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedImageIndex"></a>
+                    <span class="name">
+                        <span ><b>selectedImageIndex</b></span>
+                        <a href="#selectedImageIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/ecommerce/productoverview/productoverview.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="size"></a>
+                    <span class="name">
+                        <span ><b>size</b></span>
+                        <a href="#size"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;M&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/ecommerce/productoverview/productoverview.component.ts:9</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+    templateUrl: &#x27;./productoverview.component.html&#x27;,
+})
+export class ProductOverviewComponent implements OnInit {
+    color: string &#x3D; &#x27;bluegray&#x27;;
+
+    size: string &#x3D; &#x27;M&#x27;;
+
+    liked: boolean &#x3D; false;
+
+    images: string[] &#x3D; [];
+
+    selectedImageIndex: number &#x3D; 0;
+
+    quantity: number &#x3D; 1;
+
+    ngOnInit(): void {
+        this.images &#x3D; [
+            &#x27;product-overview-3-1.png&#x27;,
+            &#x27;product-overview-3-2.png&#x27;,
+            &#x27;product-overview-3-3.png&#x27;,
+            &#x27;product-overview-3-4.png&#x27;,
+        ];
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;div class&#x3D;&quot;grid mb-7&quot;&gt;
+        &lt;div class&#x3D;&quot;col-12 lg:col-7&quot;&gt;
+            &lt;div class&#x3D;&quot;flex&quot;&gt;
+                &lt;div
+                    class&#x3D;&quot;flex flex-column w-2 justify-content-between&quot;
+                    style&#x3D;&quot;row-gap: 1rem&quot;
+                &gt;
+                    &lt;img
+                        *ngFor&#x3D;&quot;let image of images; let i &#x3D; index&quot;
+                        [ngClass]&#x3D;&quot;{
+                            &#x27;border-primary&#x27;: selectedImageIndex &#x3D;&#x3D;&#x3D; i
+                        }&quot;
+                        src&#x3D;&quot;assets/demo/images/ecommerce/productoverview/{{
+                            image
+                        }}&quot;
+                        class&#x3D;&quot;w-full cursor-pointer border-2 border-transparent transition-colors transition-duration-150 border-round&quot;
+                        (click)&#x3D;&quot;selectedImageIndex &#x3D; i&quot;
+                    /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;pl-3 w-10 flex&quot;&gt;
+                    &lt;img
+                        src&#x3D;&quot;assets/demo/images/ecommerce/productoverview/{{
+                            images[selectedImageIndex]
+                        }}&quot;
+                        class&#x3D;&quot;w-full border-2 border-transparent border-round&quot;
+                    /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-12 lg:col-4 py-3 lg:pl-6&quot;&gt;
+            &lt;div
+                class&#x3D;&quot;flex align-items-center text-xl font-medium text-900 mb-4&quot;
+            &gt;
+                Product Title Placeholder
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;flex align-items-center justify-content-between mb-5&quot;&gt;
+                &lt;span class&#x3D;&quot;text-900 font-medium text-3xl block&quot;&gt;$120&lt;/span&gt;
+                &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+                    &lt;span class&#x3D;&quot;mr-3&quot;&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star text-600 mr-1&quot;&gt;&lt;/i&gt;
+                    &lt;/span&gt;
+                    &lt;span class&#x3D;&quot;text-sm&quot;
+                        &gt;&lt;b class&#x3D;&quot;text-900 mr-1&quot;&gt;24&lt;/b&gt;
+                        &lt;span class&#x3D;&quot;text-500&quot;&gt;&lt;/span&gt;reviews&lt;/span
+                    &gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;font-bold text-900 mb-3&quot;&gt;Color&lt;/div&gt;
+            &lt;div class&#x3D;&quot;flex align-items-center mb-5&quot;&gt;
+                &lt;div
+                    class&#x3D;&quot;w-2rem h-2rem flex-shrink-0 border-circle bg-bluegray-500 cursor-pointer border-2 surface-border transition-all transition-duration-300 mr-3&quot;
+                    [style.box-shadow]&#x3D;&quot;
+                        color &#x3D;&#x3D;&#x3D; &#x27;bluegray&#x27;
+                            ? &#x27;0 0 0 0.2rem var(--bluegray-500)&#x27;
+                            : null
+                    &quot;
+                    (click)&#x3D;&quot;color &#x3D; &#x27;bluegray&#x27;&quot;
+                &gt;&lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;w-2rem h-2rem flex-shrink-0 border-circle bg-green-500 cursor-pointer border-2 surface-border transition-all transition-duration-300 mr-3&quot;
+                    [style.box-shadow]&#x3D;&quot;
+                        color &#x3D;&#x3D;&#x3D; &#x27;green&#x27;
+                            ? &#x27;0 0 0 0.2rem var(--green-500)&#x27;
+                            : null
+                    &quot;
+                    (click)&#x3D;&quot;color &#x3D; &#x27;green&#x27;&quot;
+                &gt;&lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;w-2rem h-2rem flex-shrink-0 border-circle bg-blue-500 cursor-pointer border-2 surface-border transition-all transition-duration-300&quot;
+                    [style.box-shadow]&#x3D;&quot;
+                        color &#x3D;&#x3D;&#x3D; &#x27;blue&#x27; ? &#x27;0 0 0 0.2rem var(--blue-500)&#x27; : null
+                    &quot;
+                    (click)&#x3D;&quot;color &#x3D; &#x27;blue&#x27;&quot;
+                &gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;mb-3 flex align-items-center justify-content-between&quot;&gt;
+                &lt;span class&#x3D;&quot;font-bold text-900&quot;&gt;Size&lt;/span&gt;
+                &lt;a
+                    tabindex&#x3D;&quot;0&quot;
+                    class&#x3D;&quot;cursor-pointer text-600 text-sm flex align-items-center&quot;
+                    &gt;Size Guide &lt;i class&#x3D;&quot;pi pi-angle-right ml-1&quot;&gt;&lt;/i
+                &gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid grid-nogutter align-items-center mb-5&quot;&gt;
+                &lt;div
+                    class&#x3D;&quot;col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors mr-3&quot;
+                    [ngClass]&#x3D;&quot;{
+                        &#x27;border-blue-500&#x27;: size &#x3D;&#x3D;&#x3D; &#x27;XS&#x27;,
+                        &#x27;border-2&#x27;: size &#x3D;&#x3D;&#x3D; &#x27;XS&#x27;,
+                        &#x27;text-blue-500&#x27;: size &#x3D;&#x3D;&#x3D; &#x27;XS&#x27;,
+                       
+                    }&quot;
+                    (click)&#x3D;&quot;size &#x3D; &#x27;XS&#x27;&quot;
+                &gt;
+                    XS
+                &lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors mr-3&quot;
+                    [ngClass]&#x3D;&quot;{
+                        &#x27;border-blue-500 border-2 text-blue-500&#x27;: size &#x3D;&#x3D;&#x3D; &#x27;S&#x27;,
+                       
+                    }&quot;
+                    (click)&#x3D;&quot;size &#x3D; &#x27;S&#x27;&quot;
+                &gt;
+                    S
+                &lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors mr-3&quot;
+                    [ngClass]&#x3D;&quot;{
+                        &#x27;border-blue-500 border-2 text-blue-500&#x27;: size &#x3D;&#x3D;&#x3D; &#x27;M&#x27;,
+                  
+                    }&quot;
+                    (click)&#x3D;&quot;size &#x3D; &#x27;M&#x27;&quot;
+                &gt;
+                    M
+                &lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors mr-3&quot;
+                    [ngClass]&#x3D;&quot;{
+                        &#x27;border-blue-500 border-2 text-blue-500&#x27;: size &#x3D;&#x3D;&#x3D; &#x27;L&#x27;,
+             
+                    }&quot;
+                    (click)&#x3D;&quot;size &#x3D; &#x27;L&#x27;&quot;
+                &gt;
+                    L
+                &lt;/div&gt;
+                &lt;div
+                    class&#x3D;&quot;col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors&quot;
+                    [ngClass]&#x3D;&quot;{
+                        &#x27;border-blue-500 border-2 text-blue-500&#x27;: size &#x3D;&#x3D;&#x3D; &#x27;XL&#x27;
+                    }&quot;
+                    (click)&#x3D;&quot;size &#x3D; &#x27;XL&#x27;&quot;
+                &gt;
+                    XL
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;font-bold text-900 mb-3&quot;&gt;Quantity&lt;/div&gt;
+            &lt;div
+                class&#x3D;&quot;flex flex-column sm:flex-row sm:align-items-center sm:justify-content-between&quot;
+            &gt;
+                &lt;p-inputNumber
+                    [showButtons]&#x3D;&quot;true&quot;
+                    buttonLayout&#x3D;&quot;horizontal&quot;
+                    spinnerMode&#x3D;&quot;horizontal&quot;
+                    [min]&#x3D;&quot;0&quot;
+                    inputStyleClass&#x3D;&quot;w-3rem text-center&quot;
+                    [(ngModel)]&#x3D;&quot;quantity&quot;
+                    decrementButtonClass&#x3D;&quot;p-button-text&quot;
+                    incrementButtonClass&#x3D;&quot;p-button-text&quot;
+                    incrementButtonIcon&#x3D;&quot;pi pi-plus&quot;
+                    decrementButtonIcon&#x3D;&quot;pi pi-minus&quot;
+                &gt;&lt;/p-inputNumber&gt;
+                &lt;div
+                    class&#x3D;&quot;flex align-items-center flex-1 mt-3 sm:mt-0 ml-0 sm:ml-5&quot;
+                &gt;
+                    &lt;button
+                        pButton
+                        pRipple
+                        label&#x3D;&quot;Add to Cart&quot;
+                        class&#x3D;&quot;flex-1 mr-5&quot;
+                    &gt;&lt;/button&gt;
+                    &lt;i
+                        class&#x3D;&quot;pi text-2xl cursor-pointer&quot;
+                        [ngClass]&#x3D;&quot;{
+                            &#x27;pi-heart text-600&#x27;: !liked,
+                            &#x27;pi-heart-fill text-orange-500&#x27;: liked
+                        }&quot;
+                        (click)&#x3D;&quot;liked &#x3D; !liked&quot;
+                    &gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p-tabView&gt;
+        &lt;p-tabPanel header&#x3D;&quot;Details&quot;&gt;
+            &lt;div class&#x3D;&quot;text-900 font-bold text-3xl mb-4 mt-2&quot;&gt;
+                Product Details
+            &lt;/div&gt;
+            &lt;p class&#x3D;&quot;line-height-3 text-600 p-0 mx-0 mt-0 mb-4&quot;&gt;
+                Volutpat maecenas volutpat blandit aliquam etiam erat velit
+                scelerisque in. Duis ultricies lacus sed turpis tincidunt id.
+                Sed tempus urna et pharetra. Metus vulputate eu scelerisque
+                felis imperdiet proin fermentum. Venenatis urna cursus eget nunc
+                scelerisque viverra mauris in. Viverra justo nec ultrices dui
+                sapien eget mi proin. Laoreet suspendisse interdum consectetur
+                libero id faucibus.
+            &lt;/p&gt;
+
+            &lt;div class&#x3D;&quot;grid&quot;&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-4&quot;&gt;
+                    &lt;span class&#x3D;&quot;text-900 block font-medium mb-3 font-bold&quot;
+                        &gt;Highlights&lt;/span
+                    &gt;
+                    &lt;ul class&#x3D;&quot;py-0 m-0 text-600 mb-3 pl-3&quot;&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;Vulputate sapien nec.&lt;/li&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;Purus gravida quis blandit.&lt;/li&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;
+                            Nisi quis eleifend quam adipiscing.
+                        &lt;/li&gt;
+                        &lt;li&gt;Imperdiet proin fermentum.&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-4&quot;&gt;
+                    &lt;span class&#x3D;&quot;text-900 block mb-3 font-bold&quot;
+                        &gt;Size and Fit&lt;/span
+                    &gt;
+                    &lt;ul class&#x3D;&quot;list-none p-0 m-0 text-600 mb-4 text-600&quot;&gt;
+                        &lt;li class&#x3D;&quot;mb-3&quot;&gt;
+                            &lt;span class&#x3D;&quot;font-semibold&quot;&gt;Leo vel:&lt;/span&gt; Egestas
+                            congue.
+                        &lt;/li&gt;
+                        &lt;li class&#x3D;&quot;mb-3&quot;&gt;
+                            &lt;span class&#x3D;&quot;font-semibold&quot;&gt;Sociis natoque:&lt;/span&gt;
+                            Parturient montes nascetur.
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;span class&#x3D;&quot;font-semibold&quot;&gt;Suspendisse in:&lt;/span&gt;
+                            Purus sit amet volutpat.
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 lg:col-4&quot;&gt;
+                    &lt;span class&#x3D;&quot;text-900 block mb-3 font-bold&quot;
+                        &gt;Material &amp; Care&lt;/span
+                    &gt;
+                    &lt;ul
+                        class&#x3D;&quot;p-0 m-0 flex flex-wrap flex-column xl:flex-row text-600&quot;
+                    &gt;
+                        &lt;li
+                            class&#x3D;&quot;flex align-items-center white-space-nowrap w-10rem block mr-2 mb-3&quot;
+                        &gt;
+                            &lt;i class&#x3D;&quot;pi pi-sun mr-2 text-900&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;Not dryer safe&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li
+                            class&#x3D;&quot;flex align-items-center white-space-nowrap w-10rem block mb-3&quot;
+                        &gt;
+                            &lt;i class&#x3D;&quot;pi pi-times-circle mr-2 text-900&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;No chemical wash&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li
+                            class&#x3D;&quot;flex align-items-center white-space-nowrap w-10rem block mb-3 mr-2&quot;
+                        &gt;
+                            &lt;i class&#x3D;&quot;pi pi-sliders-h mr-2 text-900&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;Iron medium heat&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li
+                            class&#x3D;&quot;flex align-items-center white-space-nowrap w-10rem block mb-3&quot;
+                        &gt;
+                            &lt;i class&#x3D;&quot;pi pi-minus-circle mr-2 text-900&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;Dry flat&lt;/span&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/p-tabPanel&gt;
+        &lt;p-tabPanel header&#x3D;&quot;Reviews&quot;&gt;
+            &lt;div class&#x3D;&quot;text-900 font-bold text-3xl mb-4 mt-2&quot;&gt;
+                Customer Reviews
+            &lt;/div&gt;
+            &lt;ul class&#x3D;&quot;list-none p-0 m-0&quot;&gt;
+                &lt;li class&#x3D;&quot;pb-5 border-bottom-1 surface-border&quot;&gt;
+                    &lt;span&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-gray-500&quot;&gt;&lt;/i&gt;
+                    &lt;/span&gt;
+                    &lt;div class&#x3D;&quot;text-900 font-bold text-xl my-3&quot;&gt;
+                        Absolute Perfection!
+                    &lt;/div&gt;
+                    &lt;p class&#x3D;&quot;mx-0 mt-0 mb-3 text-600 line-height-3&quot;&gt;
+                        Blandit libero volutpat sed cras ornare arcu dui
+                        vivamus. Arcu dictum varius duis at consectetur lorem
+                        donec massa. Imperdiet proin fermentum leo vel orci
+                        porta non. Porttitor rhoncus dolor purus non.
+                    &lt;/p&gt;
+                    &lt;span class&#x3D;&quot;font-medium&quot;
+                        &gt;Darlene Robertson, 2 days ago&lt;/span
+                    &gt;
+                &lt;/li&gt;
+                &lt;li class&#x3D;&quot;py-5 border-bottom-1 surface-border&quot;&gt;
+                    &lt;span&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                        &lt;i class&#x3D;&quot;pi pi-star-fill text-yellow-500&quot;&gt;&lt;/i&gt;
+                    &lt;/span&gt;
+                    &lt;div class&#x3D;&quot;text-900 font-bold text-xl my-3&quot;&gt;Classy&lt;/div&gt;
+                    &lt;p class&#x3D;&quot;mx-0 mt-0 mb-3 text-600 line-height-3&quot;&gt;
+                        Venenatis cras sed felis eget. Proin nibh nisl
+                        condimentum id venenatis a condimentum.
+                    &lt;/p&gt;
+                    &lt;span class&#x3D;&quot;font-medium&quot;&gt;Kristin Watson, 2 days ago&lt;/span&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/p-tabPanel&gt;
+        &lt;p-tabPanel header&#x3D;&quot;Shipping and Returns&quot;&gt;
+            &lt;div class&#x3D;&quot;text-900 font-bold text-3xl mb-4 mt-2&quot;&gt;
+                Shipping Placeholder
+            &lt;/div&gt;
+            &lt;p class&#x3D;&quot;line-height-3 text-600 p-0 mx-0 mt-0 mb-4&quot;&gt;
+                Mattis aliquam faucibus purus in massa tempor nec feugiat nisl.
+                Justo donec enim diam vulputate ut pharetra. Tempus egestas sed
+                sed risus. Feugiat sed lectus vestibulum mattis. Tristique nulla
+                aliquet enim tortor at auctor urna nunc. Habitant morbi
+                tristique senectus et. Facilisi nullam vehicula ipsum.
+            &lt;/p&gt;
+
+            &lt;div class&#x3D;&quot;grid&quot;&gt;
+                &lt;div class&#x3D;&quot;col-12 md:col-6&quot;&gt;
+                    &lt;span class&#x3D;&quot;text-900 block font-bold mb-3 font-bold&quot;
+                        &gt;Shipping Costs&lt;/span
+                    &gt;
+                    &lt;ul class&#x3D;&quot;py-0 pl-3 m-0 text-600 mb-3&quot;&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;Japan - JPY 2,500.&lt;/li&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;Europe - EUR 10&lt;/li&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;Switzerland - CHF 10&lt;/li&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;Canada - CAD 25&lt;/li&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;USA - USD 20&lt;/li&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;Australia - AUD 30&lt;/li&gt;
+                        &lt;li class&#x3D;&quot;mb-2&quot;&gt;United Kingdom - GBP 10&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 md:col-6&quot;&gt;
+                    &lt;span class&#x3D;&quot;text-900 block font-bold mb-3&quot;
+                        &gt;Return Policy&lt;/span
+                    &gt;
+                    &lt;p class&#x3D;&quot;line-height-3 text-600 p-0 m-0&quot;&gt;
+                        Pharetra et ultrices neque ornare aenean euismod
+                        elementum nisi. Diam phasellus vestibulum lorem sed.
+                        Mattis molestie a iaculis at.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/p-tabPanel&gt;
+    &lt;/p-tabView&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card">    <div class="grid mb-7">        <div class="col-12 lg:col-7">            <div class="flex">                <div                    class="flex flex-column w-2 justify-content-between"                    style="row-gap: 1rem"                >                    <img                        *ngFor="let image of images; let i = index"                        [ngClass]="{                            \'border-primary\': selectedImageIndex === i                        }"                        src="assets/demo/images/ecommerce/productoverview/{{                            image                        }}"                        class="w-full cursor-pointer border-2 border-transparent transition-colors transition-duration-150 border-round"                        (click)="selectedImageIndex = i"                    />                </div>                <div class="pl-3 w-10 flex">                    <img                        src="assets/demo/images/ecommerce/productoverview/{{                            images[selectedImageIndex]                        }}"                        class="w-full border-2 border-transparent border-round"                    />                </div>            </div>        </div>        <div class="col-12 lg:col-4 py-3 lg:pl-6">            <div                class="flex align-items-center text-xl font-medium text-900 mb-4"            >                Product Title Placeholder            </div>            <div class="flex align-items-center justify-content-between mb-5">                <span class="text-900 font-medium text-3xl block">$120</span>                <div class="flex align-items-center">                    <span class="mr-3">                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star text-600 mr-1"></i>                    </span>                    <span class="text-sm"                        ><b class="text-900 mr-1">24</b>                        <span class="text-500"></span>reviews</span                    >                </div>            </div>            <div class="font-bold text-900 mb-3">Color</div>            <div class="flex align-items-center mb-5">                <div                    class="w-2rem h-2rem flex-shrink-0 border-circle bg-bluegray-500 cursor-pointer border-2 surface-border transition-all transition-duration-300 mr-3"                    [style.box-shadow]="                        color === \'bluegray\'                            ? \'0 0 0 0.2rem var(--bluegray-500)\'                            : null                    "                    (click)="color = \'bluegray\'"                ></div>                <div                    class="w-2rem h-2rem flex-shrink-0 border-circle bg-green-500 cursor-pointer border-2 surface-border transition-all transition-duration-300 mr-3"                    [style.box-shadow]="                        color === \'green\'                            ? \'0 0 0 0.2rem var(--green-500)\'                            : null                    "                    (click)="color = \'green\'"                ></div>                <div                    class="w-2rem h-2rem flex-shrink-0 border-circle bg-blue-500 cursor-pointer border-2 surface-border transition-all transition-duration-300"                    [style.box-shadow]="                        color === \'blue\' ? \'0 0 0 0.2rem var(--blue-500)\' : null                    "                    (click)="color = \'blue\'"                ></div>            </div>            <div class="mb-3 flex align-items-center justify-content-between">                <span class="font-bold text-900">Size</span>                <a                    tabindex="0"                    class="cursor-pointer text-600 text-sm flex align-items-center"                    >Size Guide <i class="pi pi-angle-right ml-1"></i                ></a>            </div>            <div class="grid grid-nogutter align-items-center mb-5">                <div                    class="col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors mr-3"                    [ngClass]="{                        \'border-blue-500\': size === \'XS\',                        \'border-2\': size === \'XS\',                        \'text-blue-500\': size === \'XS\',                                           }"                    (click)="size = \'XS\'"                >                    XS                </div>                <div                    class="col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors mr-3"                    [ngClass]="{                        \'border-blue-500 border-2 text-blue-500\': size === \'S\',                                           }"                    (click)="size = \'S\'"                >                    S                </div>                <div                    class="col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors mr-3"                    [ngClass]="{                        \'border-blue-500 border-2 text-blue-500\': size === \'M\',                                      }"                    (click)="size = \'M\'"                >                    M                </div>                <div                    class="col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors mr-3"                    [ngClass]="{                        \'border-blue-500 border-2 text-blue-500\': size === \'L\',                                 }"                    (click)="size = \'L\'"                >                    L                </div>                <div                    class="col h-3rem border-1 border-300 text-900 inline-flex justify-content-center align-items-center flex-shrink-0 border-round cursor-pointer hover:surface-100 transition-duration-150 transition-colors"                    [ngClass]="{                        \'border-blue-500 border-2 text-blue-500\': size === \'XL\'                    }"                    (click)="size = \'XL\'"                >                    XL                </div>            </div>            <div class="font-bold text-900 mb-3">Quantity</div>            <div                class="flex flex-column sm:flex-row sm:align-items-center sm:justify-content-between"            >                <p-inputNumber                    [showButtons]="true"                    buttonLayout="horizontal"                    spinnerMode="horizontal"                    [min]="0"                    inputStyleClass="w-3rem text-center"                    [(ngModel)]="quantity"                    decrementButtonClass="p-button-text"                    incrementButtonClass="p-button-text"                    incrementButtonIcon="pi pi-plus"                    decrementButtonIcon="pi pi-minus"                ></p-inputNumber>                <div                    class="flex align-items-center flex-1 mt-3 sm:mt-0 ml-0 sm:ml-5"                >                    <button                        pButton                        pRipple                        label="Add to Cart"                        class="flex-1 mr-5"                    ></button>                    <i                        class="pi text-2xl cursor-pointer"                        [ngClass]="{                            \'pi-heart text-600\': !liked,                            \'pi-heart-fill text-orange-500\': liked                        }"                        (click)="liked = !liked"                    ></i>                </div>            </div>        </div>    </div>    <p-tabView>        <p-tabPanel header="Details">            <div class="text-900 font-bold text-3xl mb-4 mt-2">                Product Details            </div>            <p class="line-height-3 text-600 p-0 mx-0 mt-0 mb-4">                Volutpat maecenas volutpat blandit aliquam etiam erat velit                scelerisque in. Duis ultricies lacus sed turpis tincidunt id.                Sed tempus urna et pharetra. Metus vulputate eu scelerisque                felis imperdiet proin fermentum. Venenatis urna cursus eget nunc                scelerisque viverra mauris in. Viverra justo nec ultrices dui                sapien eget mi proin. Laoreet suspendisse interdum consectetur                libero id faucibus.            </p>            <div class="grid">                <div class="col-12 lg:col-4">                    <span class="text-900 block font-medium mb-3 font-bold"                        >Highlights</span                    >                    <ul class="py-0 m-0 text-600 mb-3 pl-3">                        <li class="mb-2">Vulputate sapien nec.</li>                        <li class="mb-2">Purus gravida quis blandit.</li>                        <li class="mb-2">                            Nisi quis eleifend quam adipiscing.                        </li>                        <li>Imperdiet proin fermentum.</li>                    </ul>                </div>                <div class="col-12 lg:col-4">                    <span class="text-900 block mb-3 font-bold"                        >Size and Fit</span                    >                    <ul class="list-none p-0 m-0 text-600 mb-4 text-600">                        <li class="mb-3">                            <span class="font-semibold">Leo vel:</span> Egestas                            congue.                        </li>                        <li class="mb-3">                            <span class="font-semibold">Sociis natoque:</span>                            Parturient montes nascetur.                        </li>                        <li>                            <span class="font-semibold">Suspendisse in:</span>                            Purus sit amet volutpat.                        </li>                    </ul>                </div>                <div class="col-12 lg:col-4">                    <span class="text-900 block mb-3 font-bold"                        >Material & Care</span                    >                    <ul                        class="p-0 m-0 flex flex-wrap flex-column xl:flex-row text-600"                    >                        <li                            class="flex align-items-center white-space-nowrap w-10rem block mr-2 mb-3"                        >                            <i class="pi pi-sun mr-2 text-900"></i>                            <span>Not dryer safe</span>                        </li>                        <li                            class="flex align-items-center white-space-nowrap w-10rem block mb-3"                        >                            <i class="pi pi-times-circle mr-2 text-900"></i>                            <span>No chemical wash</span>                        </li>                        <li                            class="flex align-items-center white-space-nowrap w-10rem block mb-3 mr-2"                        >                            <i class="pi pi-sliders-h mr-2 text-900"></i>                            <span>Iron medium heat</span>                        </li>                        <li                            class="flex align-items-center white-space-nowrap w-10rem block mb-3"                        >                            <i class="pi pi-minus-circle mr-2 text-900"></i>                            <span>Dry flat</span>                        </li>                    </ul>                </div>            </div>        </p-tabPanel>        <p-tabPanel header="Reviews">            <div class="text-900 font-bold text-3xl mb-4 mt-2">                Customer Reviews            </div>            <ul class="list-none p-0 m-0">                <li class="pb-5 border-bottom-1 surface-border">                    <span>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-gray-500"></i>                    </span>                    <div class="text-900 font-bold text-xl my-3">                        Absolute Perfection!                    </div>                    <p class="mx-0 mt-0 mb-3 text-600 line-height-3">                        Blandit libero volutpat sed cras ornare arcu dui                        vivamus. Arcu dictum varius duis at consectetur lorem                        donec massa. Imperdiet proin fermentum leo vel orci                        porta non. Porttitor rhoncus dolor purus non.                    </p>                    <span class="font-medium"                        >Darlene Robertson, 2 days ago</span                    >                </li>                <li class="py-5 border-bottom-1 surface-border">                    <span>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500 mr-1"></i>                        <i class="pi pi-star-fill text-yellow-500"></i>                    </span>                    <div class="text-900 font-bold text-xl my-3">Classy</div>                    <p class="mx-0 mt-0 mb-3 text-600 line-height-3">                        Venenatis cras sed felis eget. Proin nibh nisl                        condimentum id venenatis a condimentum.                    </p>                    <span class="font-medium">Kristin Watson, 2 days ago</span>                </li>            </ul>        </p-tabPanel>        <p-tabPanel header="Shipping and Returns">            <div class="text-900 font-bold text-3xl mb-4 mt-2">                Shipping Placeholder            </div>            <p class="line-height-3 text-600 p-0 mx-0 mt-0 mb-4">                Mattis aliquam faucibus purus in massa tempor nec feugiat nisl.                Justo donec enim diam vulputate ut pharetra. Tempus egestas sed                sed risus. Feugiat sed lectus vestibulum mattis. Tristique nulla                aliquet enim tortor at auctor urna nunc. Habitant morbi                tristique senectus et. Facilisi nullam vehicula ipsum.            </p>            <div class="grid">                <div class="col-12 md:col-6">                    <span class="text-900 block font-bold mb-3 font-bold"                        >Shipping Costs</span                    >                    <ul class="py-0 pl-3 m-0 text-600 mb-3">                        <li class="mb-2">Japan - JPY 2,500.</li>                        <li class="mb-2">Europe - EUR 10</li>                        <li class="mb-2">Switzerland - CHF 10</li>                        <li class="mb-2">Canada - CAD 25</li>                        <li class="mb-2">USA - USD 20</li>                        <li class="mb-2">Australia - AUD 30</li>                        <li class="mb-2">United Kingdom - GBP 10</li>                    </ul>                </div>                <div class="col-12 md:col-6">                    <span class="text-900 block font-bold mb-3"                        >Return Policy</span                    >                    <p class="line-height-3 text-600 p-0 m-0">                        Pharetra et ultrices neque ornare aenean euismod                        elementum nisi. Diam phasellus vestibulum lorem sed.                        Mattis molestie a iaculis at.                    </p>                </div>            </div>        </p-tabPanel>    </p-tabView></div></div>'
+    var COMPONENTS = [{'name': 'AccessdeniedComponent', 'selector': ''},{'name': 'AppBreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppConfigComponent', 'selector': 'app-config'},{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppLayoutComponent', 'selector': 'app-layout'},{'name': 'AppMenuComponent', 'selector': 'app-menu'},{'name': 'AppMenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'AppRightMenuComponent', 'selector': 'app-rightmenu'},{'name': 'AppSidebarComponent', 'selector': 'app-sidebar'},{'name': 'AppTopbarComponent', 'selector': 'app-topbar'},{'name': 'BlocksComponent', 'selector': ''},{'name': 'BlockViewerComponent', 'selector': 'block-viewer'},{'name': 'BlogCommentsComponent', 'selector': 'app-blog-comments'},{'name': 'BlogDetailComponent', 'selector': ''},{'name': 'BlogEditComponent', 'selector': ''},{'name': 'BlogListCardComponent', 'selector': 'app-blog-list-card'},{'name': 'BlogListComponent', 'selector': ''},{'name': 'ButtonDemoComponent', 'selector': ''},{'name': 'CalendarAppComponent', 'selector': ''},{'name': 'ChartsDemoComponent', 'selector': ''},{'name': 'ChatAppComponent', 'selector': ''},{'name': 'ChatBoxComponent', 'selector': 'app-chat-box'},{'name': 'ChatSidebarComponent', 'selector': 'app-chat-sidebar'},{'name': 'CheckoutFormComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'ConfirmationComponent', 'selector': ''},{'name': 'ContactComponent', 'selector': ''},{'name': 'CreateTaskComponent', 'selector': 'app-create-task'},{'name': 'CrudComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DocumentationComponent', 'selector': ''},{'name': 'EmailConfirmationComponent', 'selector': 'app-email-confirmation'},{'name': 'EmptyDemoComponent', 'selector': ''},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FaqComponent', 'selector': ''},{'name': 'FileAppComponent', 'selector': ''},{'name': 'FileDemoComponent', 'selector': ''},{'name': 'FloatLabelDemoComponent', 'selector': ''},{'name': 'FormLayoutDemoComponent', 'selector': ''},{'name': 'HelpComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconsComponent', 'selector': ''},{'name': 'InputDemoComponent', 'selector': ''},{'name': 'InvalidStateDemoComponent', 'selector': ''},{'name': 'InvoiceComponent', 'selector': ''},{'name': 'KanbanAppComponent', 'selector': ''},{'name': 'KanbanCardComponent', 'selector': 'app-kanban-card'},{'name': 'KanbanListComponent', 'selector': 'app-kanban-list'},{'name': 'KanbanSidebarComponent', 'selector': 'app-kanban-sidebar'},{'name': 'LandingComponent', 'selector': ''},{'name': 'ListDemoComponent', 'selector': ''},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MailAppComponent', 'selector': ''},{'name': 'MailArchiveComponent', 'selector': 'app-mail-archive'},{'name': 'MailComposeComponent', 'selector': ''},{'name': 'MailDetailComponent', 'selector': ''},{'name': 'MailImportantComponent', 'selector': 'app-mail-important'},{'name': 'MailInboxComponent', 'selector': 'app-mail-inbox'},{'name': 'MailReplyComponent', 'selector': 'app-mail-reply'},{'name': 'MailSentComponent', 'selector': ''},{'name': 'MailSidebarComponent', 'selector': 'app-mail-sidebar'},{'name': 'MailSpamComponent', 'selector': 'app-mail-spam'},{'name': 'MailStarredComponent', 'selector': 'app-mail-starred'},{'name': 'MailTableComponent', 'selector': 'app-mail-table'},{'name': 'MailTrashComponent', 'selector': ''},{'name': 'MediaDemoComponent', 'selector': ''},{'name': 'MenusComponent', 'selector': ''},{'name': 'MessagesDemoComponent', 'selector': ''},{'name': 'MiscDemoComponent', 'selector': ''},{'name': 'NewCommentComponent', 'selector': 'app-new-comment'},{'name': 'NewProductComponent', 'selector': ''},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'OrderHistoryComponent', 'selector': ''},{'name': 'OrderSummaryComponent', 'selector': ''},{'name': 'OverlaysDemoComponent', 'selector': ''},{'name': 'PanelsDemoComponent', 'selector': ''},{'name': 'PaymentComponent', 'selector': ''},{'name': 'PersonalComponent', 'selector': ''},{'name': 'ProductListComponent', 'selector': ''},{'name': 'ProductOverviewComponent', 'selector': ''},{'name': 'ProfileCreateComponent', 'selector': ''},{'name': 'ProfileListComponent', 'selector': ''},{'name': 'SeatComponent', 'selector': ''},{'name': 'ShoppingCartComponent', 'selector': ''},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TableDemoComponent', 'selector': ''},{'name': 'TaskListAppComponent', 'selector': ''},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TimelineDemoComponent', 'selector': ''},{'name': 'TreeDemoComponent', 'selector': ''},{'name': 'UploaderComponent', 'selector': 'app-file-uploader'},{'name': 'UserCardComponent', 'selector': 'app-user-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProductOverviewComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProductOverviewComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
