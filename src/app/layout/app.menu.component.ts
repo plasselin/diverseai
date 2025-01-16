@@ -33,11 +33,6 @@ export class AppMenuComponent implements OnInit {
                         routerLink: ['/info'],
                     },
                     {
-                        label: 'Under the Hood',
-                        icon: 'material-icons-outlined settings',
-                        routerLink: ['/code'],
-                    },
-                    {
                         label: 'Final Result',
                         icon: 'material-icons-outlined chat_info',
                         routerLink: ['/assistant'],
