@@ -25,17 +25,17 @@ export class ChatSidebarComponent implements OnInit {
         this.store.dispatch(ChatActions.updateModel({ model: this.selectedModel }));
         this.store.dispatch(ChatActions.updateTemperature({ temperature: this.temperature }));
 
-        console.log('Initial Model:', this.selectedModel);
-        console.log('Initial Temperature:', this.temperature);
+        // console.log('Initial Model:', this.selectedModel);
+        // console.log('Initial Temperature:', this.temperature);
     }
 
     logTemperature() {
-        console.log('Updated Temperature:', this.temperature);
+        // console.log('Updated Temperature:', this.temperature);
         this.store.dispatch(ChatActions.updateTemperature({ temperature: this.temperature }));
     }
 
     logModel() {
-        console.log('Selected Model:', this.selectedModel);
+        // console.log('Selected Model:', this.selectedModel);
         this.store.dispatch(ChatActions.updateModel({ model: this.selectedModel }));
     }
 }

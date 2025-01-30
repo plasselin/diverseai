@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         this.isAuthenticated$.subscribe((isAuthenticated) => {
             if (isAuthenticated) {
                 this.cdr.detectChanges();
-                console.log('User is authenticated, proceed to next route');
+                // console.log('User is authenticated, proceed to next route');
             }
         });
     }
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     onSubmit(): void {
         if (this.loginForm.valid) {
             const loginData = this.loginForm.value;
-            console.log('Login form data:', loginData );
+            // console.log('Login form data:', loginData );
             this.store.dispatch(AuthActions.login({ loginData }));        }
     }
 }

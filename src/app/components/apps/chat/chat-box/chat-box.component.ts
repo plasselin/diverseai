@@ -54,12 +54,12 @@ export class ChatBoxComponent implements OnInit {
 
         this.store.select(selectTemperature).subscribe(temp => {
             this.temperature = temp;
-            console.log('Updated Temperature:', this.temperature);
+            //console.log('Updated Temperature:', this.temperature);
         });
 
         this.store.select(selectModel).subscribe(mod => {
             this.model = mod;
-            console.log('Updated Model:', this.model);
+            //console.log('Updated Model:', this.model);
         });
 
         this.messages$.subscribe(messages => {
@@ -137,7 +137,7 @@ export class ChatBoxComponent implements OnInit {
         this.isVoiceEnabled = !this.isVoiceEnabled;
 
         if (this.isVoiceEnabled && !this.hasAssistantResponse) {
-            console.log('TTS is on standby, waiting for the next assistant message.');
+            //console.log('TTS is on standby, waiting for the next assistant message.');
         }
     }
 

@@ -13,7 +13,7 @@ export class ChatEffects {
         private chatService: ChatService,
         private whisperService: WhisperService,
     ) {
-        console.log('ChatEffects initialized!');
+        //console.log('ChatEffects initialized!');
     }
 
 

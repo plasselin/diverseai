@@ -76,8 +76,8 @@ export const authReducer = createReducer(
     on(AuthActions.requestProfileSuccess, (state, { profile }) => ({
         ...state,
         user: {
-            ...state.user, // Keep any existing user data
-            ...profile, // Merge with new profile data
+            ...state.user,
+            ...profile,
         },
         isLimitReached: profile.isLimitReached, // Use the updated profile data
         loading: false,

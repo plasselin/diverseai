@@ -8,6 +8,6 @@ export class ChatService {
     constructor(private http: HttpClient) {}
 
     sendMessageToBackend(message: Message): Observable<any> {
-        return this.http.post<any>('http://localhost:8000/chatapi/chat/completion/', { message: message });
+        return this.http.post<any>('https://diverse-data.com/chatapi/chat/completion/', { message: message });
     }
 }

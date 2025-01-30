@@ -20,8 +20,7 @@ import { CookieService } from 'ngx-cookie-service';
     providedIn: 'root'
 })
 export class AuthService {
-    private apiUrl = 'http://localhost:8000/api/';
-    private hostUrl = 'http://localhost:4200/';
+    private apiUrl = 'https://diverse-data.com/auth/';
 
     private jwtHelper = new JwtHelperService();
 
